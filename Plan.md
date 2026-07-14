@@ -69,6 +69,33 @@ The first complete educational module, matching Plan.md §10 (Screens 1–11):
 
 Per discussion: since the teacher reads short on-screen English and explains live in Hindi, every answer-bearing moment (quiz questions, practice questions, and the Place Value Chart's digit click) now shows a short "why" explanation, not just the correct answer — reinforces understanding instead of just stating a fact.
 
+### Visual design pass
+
+The plan's "bright but professional visuals" requirement (§4) wasn't being met by the initial flat white/blue look, so a design pass was done across all built pages (not deferred to a later phase, since this is a baseline requirement, not projector-specific tuning):
+
+- Global gradient-tinted background (`src/index.css`) instead of flat white
+- `src/components/common/SelectionCard.jsx` — shared card style (hover lift, lock icon for "Coming Soon") used across Class/Subject/Chapter/Topic selection pages
+- Home page redesigned with a frosted card, icon badge, and icons on buttons (`lucide-react`)
+- Lesson and Quiz pages redesigned with frosted header/footer bars, a step-progress bar, and content inside a floating card
+
+### Navigation: breadcrumb + Back button
+
+Added because browser back-button-only navigation isn't practical for live classroom use:
+
+- `src/components/common/BackButton.jsx`, `Breadcrumb.jsx`, `PageHeader.jsx` — a large Back button (goes up one level) plus a clickable breadcrumb trail (Home › Class 5 › Mathematics › ...), wired into all four selection pages
+- Still to do: same breadcrumb/back treatment inside the Lesson and Quiz page headers (currently they still use a plain-text breadcrumb string)
+
+### Bug fix: lesson/quiz exit button
+
+The "✕" exit button in `LessonLayout` and `QuizPage` was hardcoded to navigate to Home. Fixed to navigate back to the Topic selection page instead (`exitTo` prop), matching where the teacher actually came from.
+
+### Working agreement: content/UX improvements
+
+Per user instruction: don't follow Plan.md rigidly — if an improvement is spotted while building (missing theory before a demo, a confusing flow, etc.), Claude should proactively suggest it, and the user decides whether to add it. Two examples already applied to the Place Value lesson:
+
+- Added a "What is Face Value?" theory step (previously only Place Value had an intro, even though Face Value was tested in practice/quiz)
+- Added a "What is Expanded Form?" theory step, which also introduces Standard Form as its counterpart, before the expanded-form reveal demo
+
 ---
 
 ## 1. Project Goal

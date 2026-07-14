@@ -8,8 +8,18 @@ export const placeValueLesson = {
       text: 'A digit gets its value from the place where it is written.',
     },
     {
+      type: 'text',
+      title: 'What is Face Value?',
+      text: 'Face Value is just the digit itself — it never changes, no matter where the digit is written.',
+    },
+    {
       type: 'visual',
       component: 'PlaceValueChart',
+    },
+    {
+      type: 'text',
+      title: 'What is Expanded Form?',
+      text: 'Expanded Form breaks a number into the sum of its place values. Writing it back together the normal way is called Standard Form.',
     },
     {
       type: 'visual',
