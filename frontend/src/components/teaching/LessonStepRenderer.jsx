@@ -2,10 +2,15 @@ import ExplanationPanel from './ExplanationPanel.jsx'
 import ExampleCard from './ExampleCard.jsx'
 import SummaryCard from './SummaryCard.jsx'
 import AnimatedStepDemo from './AnimatedStepDemo.jsx'
+import PracticeQuestion from './PracticeQuestion.jsx'
 import PlaceValueChart from '../numbers/PlaceValueChart.jsx'
+import ExpandedFormReveal from '../numbers/ExpandedFormReveal.jsx'
+import CustomNumberChart from '../numbers/CustomNumberChart.jsx'
 
 const visualComponents = {
   PlaceValueChart,
+  ExpandedFormReveal,
+  CustomNumberChart,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
@@ -36,7 +41,7 @@ function LessonStepRenderer({ step }) {
 
     case 'activity':
     case 'question':
-      return placeholder('Practice question')
+      return <PracticeQuestion question={step.question} answer={step.answer} />
 
     case 'answer':
       return placeholder('Answer reveal')
