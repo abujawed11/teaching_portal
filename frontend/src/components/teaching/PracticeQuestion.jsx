@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from '../common/Button.jsx'
 
-function PracticeQuestion({ question, answer }) {
+function PracticeQuestion({ question, answer, explanation }) {
   const [showAnswer, setShowAnswer] = useState(false)
 
   return (
@@ -15,15 +15,16 @@ function PracticeQuestion({ question, answer }) {
 
       <AnimatePresence>
         {showAnswer && (
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="text-projector-sm font-bold text-success"
+            className="flex flex-col items-center gap-2"
           >
-            {answer}
-          </motion.p>
+            <p className="text-projector-sm font-bold text-success">{answer}</p>
+            {explanation && <p className="text-base text-slate-500 max-w-xl">{explanation}</p>}
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

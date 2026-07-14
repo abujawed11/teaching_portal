@@ -41,7 +41,13 @@ function LessonStepRenderer({ step }) {
 
     case 'activity':
     case 'question':
-      return <PracticeQuestion question={step.question} answer={step.answer} />
+      return (
+        <PracticeQuestion
+          question={step.question}
+          answer={step.answer}
+          explanation={step.explanation}
+        />
+      )
 
     case 'answer':
       return placeholder('Answer reveal')

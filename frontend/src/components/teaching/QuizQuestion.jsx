@@ -80,11 +80,16 @@ function QuizQuestion({ questionData, onAnswered }) {
       )}
 
       {submitted && (
-        <p className={`text-projector-sm font-bold ${isCorrect(questionData.type === 'mcq' ? selected : fillValue) ? 'text-success' : 'text-danger'}`}>
-          {isCorrect(questionData.type === 'mcq' ? selected : fillValue)
-            ? 'Correct!'
-            : `Correct answer: ${questionData.correctAnswer}`}
-        </p>
+        <div className="flex flex-col items-center gap-2">
+          <p className={`text-projector-sm font-bold ${isCorrect(questionData.type === 'mcq' ? selected : fillValue) ? 'text-success' : 'text-danger'}`}>
+            {isCorrect(questionData.type === 'mcq' ? selected : fillValue)
+              ? 'Correct!'
+              : `Correct answer: ${questionData.correctAnswer}`}
+          </p>
+          {questionData.explanation && (
+            <p className="text-base text-slate-500 max-w-xl">{questionData.explanation}</p>
+          )}
+        </div>
       )}
     </div>
   )

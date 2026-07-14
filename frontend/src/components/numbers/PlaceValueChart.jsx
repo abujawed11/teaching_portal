@@ -64,6 +64,11 @@ function PlaceValueChart({ number = 45672 }) {
               {selected.placeValue.toLocaleString('en-IN')}
             </span>
           </p>
+          <p className="text-base text-slate-500 pt-2">
+            This {selected.digit} is in the {selected.label} place, so it is worth {selected.digit}{' '}
+            × {PLACE_VALUES[selectedIndex].toLocaleString('en-IN')} ={' '}
+            {selected.placeValue.toLocaleString('en-IN')}.
+          </p>
         </motion.div>
       )}
     </div>

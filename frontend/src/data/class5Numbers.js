@@ -31,21 +31,25 @@ export const placeValueLesson = {
       type: 'question',
       question: 'What is the place value of 5 in 45,672?',
       answer: '5,000',
+      explanation: '5 is in the Thousands place, so its place value is 5 × 1,000 = 5,000.',
     },
     {
       type: 'question',
       question: 'What is the face value of 6 in 45,672?',
       answer: '6',
+      explanation: 'Face value is just the digit itself, no matter where it is written.',
     },
     {
       type: 'question',
       question: 'Write 45,672 in expanded form.',
       answer: '40,000 + 5,000 + 600 + 70 + 2',
+      explanation: 'Each digit is multiplied by its place value, then added together.',
     },
     {
       type: 'question',
       question: 'Which number is 40,000 + 5,000 + 600 + 70 + 2?',
       answer: '45,672',
+      explanation: 'Adding the parts by place: 40,000 + 5,000 + 600 + 70 + 2 = 45,672.',
     },
     {
       type: 'summary',
