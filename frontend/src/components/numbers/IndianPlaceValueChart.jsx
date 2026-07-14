@@ -17,6 +17,14 @@ const PLACE_VALUES = [1e8, 1e7, 1e6, 1e5, 1e4, 1e3, 100, 10, 1]
 // Indian comma grouping: rightmost group of 3, then groups of 2 — add a visual gap before these column indices.
 const GROUP_START_INDICES = new Set([2, 4, 6])
 
+// Each comma group gets its own tint so the grouping is visually obvious.
+function getGroupClasses(i) {
+  if (i <= 1) return 'bg-amber-100 text-amber-900 hover:bg-amber-200'
+  if (i <= 3) return 'bg-violet-100 text-violet-900 hover:bg-violet-200'
+  if (i <= 5) return 'bg-emerald-100 text-emerald-900 hover:bg-emerald-200'
+  return 'bg-sky-100 text-sky-900 hover:bg-sky-200'
+}
+
 function getColumns(number) {
   const digits = String(number).padStart(9, '0').split('').map(Number)
   return digits.map((digit, i) => ({
@@ -33,7 +41,7 @@ function IndianPlaceValueChart({ number = 74532618 }) {
 
   return (
     <div className="flex flex-col items-center gap-8 w-full">
-      <div className="flex flex-wrap justify-center gap-1">
+      <div className="flex flex-nowrap justify-center gap-1 w-full overflow-x-auto py-1">
         {columns.map((col, i) => (
           <motion.button
             key={i}
@@ -41,20 +49,18 @@ function IndianPlaceValueChart({ number = 74532618 }) {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
-            className={`flex flex-col items-center gap-2 rounded-xl px-2 sm:px-3 py-3 min-w-[56px] sm:min-w-[76px] transition-colors
-              ${GROUP_START_INDICES.has(i) ? 'ml-3 sm:ml-5' : ''}
+            className={`flex flex-col items-center gap-1 shrink-0 rounded-xl px-1.5 sm:px-2 py-2 sm:py-3 min-w-[46px] sm:min-w-[64px] transition-colors
+              ${GROUP_START_INDICES.has(i) ? 'ml-2 sm:ml-3' : ''}
               ${
                 selectedIndex === i
                   ? 'bg-primary text-white'
                   : 'bg-slate-100 text-ink hover:bg-slate-200'
               }`}
           >
-            <span className="text-[0.65rem] sm:text-xs font-medium text-center leading-tight">
+            <span className="text-[0.6rem] sm:text-xs font-medium text-center leading-tight">
               {col.label}
             </span>
-            <span className="text-projector-sm sm:text-projector-md font-extrabold">
-              {col.digit}
-            </span>
+            <span className="text-xl sm:text-projector-sm font-extrabold">{col.digit}</span>
           </motion.button>
         ))}
       </div>
