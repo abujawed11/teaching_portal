@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { chapters } from '../data/chapters.js'
+import SelectionCard from '../components/common/SelectionCard.jsx'
 
 function ChapterSelectionPage() {
   const navigate = useNavigate()
@@ -14,22 +15,14 @@ function ChapterSelectionPage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
         {chapterList.map((c) => (
-          <button
+          <SelectionCard
             key={c.id}
-            disabled={!c.active}
+            label={c.label}
+            active={c.active}
             onClick={() =>
-              c.active && navigate(`/class/${classId}/subject/${subjectId}/chapter/${c.id}/topic`)
+              navigate(`/class/${classId}/subject/${subjectId}/chapter/${c.id}/topic`)
             }
-            className={`rounded-2xl p-8 text-projector-sm font-semibold shadow transition-colors text-center
-              ${
-                c.active
-                  ? 'bg-primary text-white hover:bg-primary-dark cursor-pointer'
-                  : 'bg-slate-100 text-slate-400 cursor-not-allowed'
-              }`}
-          >
-            {c.label}
-            {!c.active && <div className="text-sm font-normal mt-2">Coming Soon</div>}
-          </button>
+          />
         ))}
       </div>
     </div>

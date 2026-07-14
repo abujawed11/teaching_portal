@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { subjects } from '../data/subjects.js'
+import SelectionCard from '../components/common/SelectionCard.jsx'
 
 function SubjectSelectionPage() {
   const navigate = useNavigate()
@@ -13,20 +14,12 @@ function SubjectSelectionPage() {
 
       <div className="grid grid-cols-2 gap-6 w-full max-w-2xl">
         {subjects.map((s) => (
-          <button
+          <SelectionCard
             key={s.id}
-            disabled={!s.active}
-            onClick={() => s.active && navigate(`/class/${classId}/subject/${s.id}/chapter`)}
-            className={`rounded-2xl p-10 text-projector-sm font-semibold shadow transition-colors
-              ${
-                s.active
-                  ? 'bg-primary text-white hover:bg-primary-dark cursor-pointer'
-                  : 'bg-slate-100 text-slate-400 cursor-not-allowed'
-              }`}
-          >
-            {s.label}
-            {!s.active && <div className="text-sm font-normal mt-2">Coming Soon</div>}
-          </button>
+            label={s.label}
+            active={s.active}
+            onClick={() => navigate(`/class/${classId}/subject/${s.id}/chapter`)}
+          />
         ))}
       </div>
     </div>

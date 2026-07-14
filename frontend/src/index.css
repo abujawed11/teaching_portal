@@ -8,6 +8,7 @@
   --color-success: #16a34a;
   --color-danger: #dc2626;
   --color-surface: #ffffff;
+  --color-surface-soft: #f5f7fb;
   --color-ink: #0f172a;
 
   /* Extra-large font sizes for projector readability */
@@ -18,8 +19,12 @@
 }
 
 body {
-  background-color: var(--color-surface);
   color: var(--color-ink);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1.125rem;
+  background-color: var(--color-surface-soft);
+  background-image: radial-gradient(circle at 15% 10%, #dbeafe 0%, transparent 45%),
+    radial-gradient(circle at 85% 90%, #fef3c7 0%, transparent 40%);
+  background-attachment: fixed;
+  min-height: 100vh;
 }

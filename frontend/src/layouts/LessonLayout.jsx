@@ -12,34 +12,47 @@ function LessonLayout({
 }) {
   const navigate = useNavigate()
   const { isFullscreen, toggleFullscreen } = useFullscreen()
+  const progress = totalSteps > 0 ? (currentStep / totalSteps) * 100 : 0
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="flex items-center justify-between gap-4 px-6 py-4 border-b border-slate-200">
-        <div className="text-sm sm:text-base font-medium text-slate-500 truncate">
-          {breadcrumb}
+      <header className="bg-white/80 backdrop-blur shadow-sm">
+        <div className="flex items-center justify-between gap-4 px-6 py-4">
+          <div className="text-sm sm:text-base font-medium text-slate-500 truncate">
+            {breadcrumb}
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <button
+              onClick={toggleFullscreen}
+              aria-label={isFullscreen ? 'Exit full-screen' : 'Enter full-screen'}
+              className="p-2 rounded-lg hover:bg-slate-100 text-ink"
+            >
+              {isFullscreen ? <Minimize size={22} /> : <Maximize size={22} />}
+            </button>
+            <button
+              onClick={() => navigate('/')}
+              aria-label="Exit lesson"
+              className="p-2 rounded-lg hover:bg-slate-100 text-ink"
+            >
+              <X size={22} />
+            </button>
+          </div>
         </div>
-        <div className="flex items-center gap-3 shrink-0">
-          <button
-            onClick={toggleFullscreen}
-            aria-label={isFullscreen ? 'Exit full-screen' : 'Enter full-screen'}
-            className="p-2 rounded-lg hover:bg-slate-100 text-ink"
-          >
-            {isFullscreen ? <Minimize size={22} /> : <Maximize size={22} />}
-          </button>
-          <button
-            onClick={() => navigate('/')}
-            aria-label="Exit lesson"
-            className="p-2 rounded-lg hover:bg-slate-100 text-ink"
-          >
-            <X size={22} />
-          </button>
+        <div className="h-1 bg-slate-100">
+          <div
+            className="h-full bg-primary transition-all duration-300"
+            style={{ width: `${progress}%` }}
+          />
         </div>
       </header>
 
-      <main className="flex-1 flex items-center justify-center p-8">{children}</main>
+      <main className="flex-1 flex items-center justify-center p-8">
+        <div className="bg-white/80 backdrop-blur rounded-3xl shadow-xl shadow-slate-200/60 px-8 py-12 sm:px-14 w-full max-w-4xl flex items-center justify-center">
+          {children}
+        </div>
+      </main>
 
-      <footer className="flex items-center justify-between gap-4 px-6 py-4 border-t border-slate-200">
+      <footer className="bg-white/80 backdrop-blur shadow-sm flex items-center justify-between gap-4 px-6 py-4">
         <button
           onClick={onPrevious}
           disabled={currentStep <= 1}
