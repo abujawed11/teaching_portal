@@ -1,5 +1,48 @@
 # Digital Teaching Portal — Phase-wise Development Plan
 
+## 0. Progress Log
+
+| Phase | Status |
+|---|---|
+| Phase 0 — Project Cleanup and Foundation | ✅ Done |
+| Phase 1 — Core UI and Navigation | ✅ Done |
+| Phase 2 — Reusable Teaching Engine | Not started |
+| Phase 3 — Class 5 Chapter 1: Numbers | Not started |
+
+### Decision: Styling approach
+
+The original plan specified "Plain CSS or CSS Modules". This was changed by decision:
+
+> **Tailwind CSS v4** is used instead, configured via the CSS-first `@theme` block in `src/index.css` (no `tailwind.config.js` needed in v4). Reason: faster iteration for many small interactive components, and Tailwind's scale naturally enforces the large-font/high-contrast projector requirements once theme tokens are set.
+
+Framer Motion is used as planned, for step-by-step teaching animations.
+
+### Phase 0 — what was built
+
+- Removed unused Vite starter assets (`react.svg`, `vite.svg`, `hero.png`) and empty `App.css`
+- Installed `react-router-dom` and `framer-motion`
+- `BrowserRouter` wired in `src/main.jsx`
+- Folder structure created: `components/{common,teaching,numbers}`, `data`, `hooks`, `layouts`, `pages`
+- Tailwind v4 `@theme` design tokens added in `src/index.css`: brand colors (`--color-primary`, `--color-accent`, `--color-success`, `--color-danger`, `--color-surface`, `--color-ink`) and projector-scale font sizes (`--font-size-projector-sm/md/lg/xl`)
+- Base body styles (system font stack, base readable font size, high-contrast surface/ink colors)
+- `src/hooks/useFullscreen.js` — full-screen enter/exit/toggle hook
+- `src/components/common/Button.jsx` — reusable large, high-contrast button (primary/secondary/danger variants, focus-visible ring, disabled state)
+- `src/components/common/ErrorBoundary.jsx` — app-wide error boundary, wired into `main.jsx`
+
+### Phase 1 — what was built
+
+Full navigation flow implemented: **Home → Class → Subject → Chapter → Topic**
+
+- `src/pages/HomePage.jsx` — portal name, tagline, "Start Teaching", "Continue Last Lesson" (placeholder, disabled), quick access to Class 5 Mathematics, working Projector Mode fullscreen toggle
+- `src/pages/ClassSelectionPage.jsx` + `src/data/classes.js` — Class 5 active, Classes 4/6–10 shown as "Coming Soon"
+- `src/pages/SubjectSelectionPage.jsx` + `src/data/subjects.js` — Mathematics active, Science "Coming Soon"
+- `src/pages/ChapterSelectionPage.jsx` + `src/data/chapters.js` — Chapter 1: Numbers active, other chapters "Coming Soon"
+- `src/pages/TopicSelectionPage.jsx` + `src/data/topics.js` — Place Value active, other 8 topics under Chapter 1 "Coming Soon"
+- `src/pages/NotFoundPage.jsx` — catch-all route (`*`), used since the Place Value lesson page itself isn't built yet (Phase 2/3)
+- Routes wired in `src/App.jsx` using nested URL params (`/class/:classId/subject/:subjectId/chapter/:chapterId/topic`)
+
+---
+
 ## 1. Project Goal
 
 Build a projector-friendly interactive teaching website for Mathematics and Science students from Classes 4 to 10.
@@ -141,7 +184,7 @@ Every topic should follow this structure:
 - React
 - Vite
 - React Router
-- Plain CSS or CSS Modules
+- ~~Plain CSS or CSS Modules~~ → **Tailwind CSS v4** (decision changed, see Progress Log)
 - Framer Motion for animations
 - Lucide React for icons
 
@@ -291,7 +334,7 @@ Classes 6, 7, and 8 may appear as “Coming Soon”.
 
 # 8. Phase-wise Development Plan
 
-## Phase 0 — Project Cleanup and Foundation
+## Phase 0 — Project Cleanup and Foundation ✅ Done
 
 ### Goal
 
@@ -323,7 +366,7 @@ A clean application that opens without errors and shows a basic home page.
 
 ---
 
-## Phase 1 — Core UI and Navigation
+## Phase 1 — Core UI and Navigation ✅ Done
 
 ### Goal
 
