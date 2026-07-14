@@ -6,8 +6,9 @@
 |---|---|
 | Phase 0 — Project Cleanup and Foundation | ✅ Done |
 | Phase 1 — Core UI and Navigation | ✅ Done |
-| Phase 2 — Reusable Teaching Engine | Not started |
-| Phase 3 — Class 5 Chapter 1: Numbers | Not started |
+| Phase 2 — Reusable Teaching Engine | ✅ Done |
+| Phase 3 — Class 5 Chapter 1: Numbers (Module 3.1 Place Value) | ✅ Done |
+| Phase 3 — Modules 3.2–3.7 (other Numbers topics) | Not started |
 
 ### Decision: Styling approach
 
@@ -40,6 +41,33 @@ Full navigation flow implemented: **Home → Class → Subject → Chapter → T
 - `src/pages/TopicSelectionPage.jsx` + `src/data/topics.js` — Place Value active, other 8 topics under Chapter 1 "Coming Soon"
 - `src/pages/NotFoundPage.jsx` — catch-all route (`*`), used since the Place Value lesson page itself isn't built yet (Phase 2/3)
 - Routes wired in `src/App.jsx` using nested URL params (`/class/:classId/subject/:subjectId/chapter/:chapterId/topic`)
+
+### Phase 2 — what was built
+
+Data-driven, reusable lesson engine:
+
+- `src/layouts/LessonLayout.jsx` — top bar (breadcrumb + fullscreen + exit), main content area, bottom bar (Previous / step counter / Next)
+- `src/pages/LessonPage.jsx` — reads route params, loads a lesson by `topicId` from a lesson registry, steps through it
+- `src/components/teaching/LessonStepRenderer.jsx` — switches on `step.type` and renders the right component; supports `intro`/`text`, `visual`/`animation` (via a component registry keyed by `step.component`), `example`, `activity`/`question`, `answer`, `summary`, `homework`
+- Content components: `ExplanationPanel.jsx`, `ExampleCard.jsx`, `SummaryCard.jsx`, `PracticeQuestion.jsx` (with Reveal/Hide Answer)
+- `src/components/teaching/AnimationControls.jsx` — reusable Play/Pause/Replay/Reset control bar
+- `src/components/teaching/AnimatedStepDemo.jsx` — fallback demo animation for any `visual`/`animation` step whose real component isn't built yet
+- Lessons are plain JS data objects (`src/data/class5Numbers.js`), per the plan's data-driven approach — no giant hardcoded components
+
+### Phase 3, Module 3.1 — Place Value (what was built)
+
+The first complete educational module, matching Plan.md §10 (Screens 1–11):
+
+- `src/components/numbers/PlaceValueChart.jsx` — animated digit columns (Ten Thousands → Ones) for a sample number; clicking a digit shows Digit, Place, Face Value, Place Value, **and a "why" explanation line** (digit × place value = result)
+- `src/components/numbers/ExpandedFormReveal.jsx` — reveals expanded-form parts one at a time on click (teacher-controlled, not autoplay), with Reset
+- `src/components/numbers/CustomNumberChart.jsx` — teacher enters any number (0–99,999), with input validation (whole numbers only, in-range, clear error messages), regenerates the place-value chart
+- `src/data/class5Numbers.js` — the full Place Value lesson: intro → chart → expanded form → worked example → custom number → 4 practice questions (place value, face value, expanded form, expanded-to-standard) → summary. Practice questions include a "Reveal Answer" button plus a short explanation shown alongside the answer
+- `src/data/quizzes.js` + `src/pages/QuizPage.jsx` + `src/components/teaching/QuizQuestion.jsx` — 10-question chapter quiz (mix of multiple-choice and fill-in-the-blank), each question shows correct/incorrect feedback **and an explanation**, tracks score, gated "Next Question" until answered, final score screen with Retry Quiz, full-screen toggle
+- "Take Quiz" button appears on the lesson's final (summary) step, linking to `.../topic/:topicId/quiz`
+
+### Decision: explanations everywhere, not just quiz
+
+Per discussion: since the teacher reads short on-screen English and explains live in Hindi, every answer-bearing moment (quiz questions, practice questions, and the Place Value Chart's digit click) now shows a short "why" explanation, not just the correct answer — reinforces understanding instead of just stating a fact.
 
 ---
 
@@ -441,7 +469,7 @@ Teacher can navigate from home to any Chapter 1 topic.
 
 ---
 
-## Phase 2 — Reusable Teaching Engine
+## Phase 2 — Reusable Teaching Engine ✅ Done
 
 ### Goal
 
@@ -533,7 +561,7 @@ A reusable lesson player that can display multiple lesson step types.
 
 ---
 
-## Phase 3 — Class 5 Chapter 1: Numbers
+## Phase 3 — Class 5 Chapter 1: Numbers (Module 3.1 Place Value ✅ Done; Modules 3.2–3.7 not started)
 
 This is the first complete educational module.
 
