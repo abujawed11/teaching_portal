@@ -60,7 +60,7 @@ function LessonPage() {
       onNext={() => setCurrentStepIndex((s) => Math.min(totalSteps - 1, s + 1))}
     >
       <div className="flex flex-col items-center gap-8">
-        <LessonStepRenderer step={currentStep} />
+        <LessonStepRenderer key={currentStepIndex} step={currentStep} />
         {isLastStep && hasQuiz && (
           <Button
             onClick={() =>
