@@ -2,14 +2,34 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { X } from 'lucide-react'
 import { quizzes } from '../data/quizzes.js'
+import { subjects } from '../data/subjects.js'
+import { chapters } from '../data/chapters.js'
+import { topics } from '../data/topics.js'
 import QuizQuestion from '../components/teaching/QuizQuestion.jsx'
 import Button from '../components/common/Button.jsx'
+import BackButton from '../components/common/BackButton.jsx'
+import Breadcrumb from '../components/common/Breadcrumb.jsx'
 import { useFullscreen } from '../hooks/useFullscreen.js'
 
 function QuizPage() {
   const navigate = useNavigate()
   const { classId, subjectId, chapterId, topicId } = useParams()
   const { isFullscreen, toggleFullscreen } = useFullscreen()
+
+  const subjectLabel = subjects.find((s) => s.id === subjectId)?.label ?? subjectId
+  const chapterLabel =
+    (chapters[subjectId] ?? []).find((c) => c.id === chapterId)?.label ?? chapterId
+  const topicLabel = (topics[chapterId] ?? []).find((t) => t.id === topicId)?.label ?? topicId
+  const topicListPath = `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic`
+
+  const breadcrumb = [
+    { label: 'Home', to: '/' },
+    { label: `Class ${classId}`, to: '/class' },
+    { label: subjectLabel, to: `/class/${classId}/subject` },
+    { label: chapterLabel, to: `/class/${classId}/subject/${subjectId}/chapter` },
+    { label: topicLabel, to: topicListPath },
+    { label: 'Quiz' },
+  ]
 
   const questions = quizzes[topicId] ?? []
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -49,9 +69,10 @@ function QuizPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-white/80 backdrop-blur shadow-sm">
-        <div className="flex items-center justify-between gap-4 px-6 py-4">
-          <div className="text-sm sm:text-base font-medium text-slate-500 truncate">
-            Class {classId} • {subjectId} • {chapterId} • Quiz
+        <div className="flex items-center justify-between gap-4 px-6 py-4 flex-wrap">
+          <div className="flex items-center gap-4 min-w-0">
+            <BackButton to={topicListPath} />
+            <Breadcrumb items={breadcrumb} />
           </div>
           <div className="flex items-center gap-3 shrink-0">
             <button
@@ -62,10 +83,8 @@ function QuizPage() {
               {isFullscreen ? 'Exit Full-screen' : 'Full-screen'}
             </button>
             <button
-              onClick={() =>
-                navigate(`/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic`)
-              }
-              aria-label="Exit quiz"
+              onClick={() => navigate('/')}
+              aria-label="Exit to home"
               className="p-2 rounded-lg hover:bg-slate-100 text-ink"
             >
               <X size={22} />

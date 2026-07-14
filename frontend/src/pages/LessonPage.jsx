@@ -5,6 +5,8 @@ import LessonStepRenderer from '../components/teaching/LessonStepRenderer.jsx'
 import Button from '../components/common/Button.jsx'
 import { placeValueLesson } from '../data/class5Numbers.js'
 import { quizzes } from '../data/quizzes.js'
+import { subjects } from '../data/subjects.js'
+import { chapters } from '../data/chapters.js'
 
 const lessonsByTopic = {
   'place-value': placeValueLesson,
@@ -22,12 +24,22 @@ function LessonPage() {
   const isLastStep = currentStepIndex === totalSteps - 1
   const hasQuiz = Boolean(quizzes[topicId])
 
-  const breadcrumb = `Class ${classId} • ${subjectId} • ${chapterId} • ${lesson?.title ?? topicId}`
-  const exitTo = `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic`
+  const subjectLabel = subjects.find((s) => s.id === subjectId)?.label ?? subjectId
+  const chapterLabel =
+    (chapters[subjectId] ?? []).find((c) => c.id === chapterId)?.label ?? chapterId
+  const topicListPath = `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic`
+
+  const breadcrumb = [
+    { label: 'Home', to: '/' },
+    { label: `Class ${classId}`, to: '/class' },
+    { label: subjectLabel, to: `/class/${classId}/subject` },
+    { label: chapterLabel, to: `/class/${classId}/subject/${subjectId}/chapter` },
+    { label: lesson?.title ?? topicId },
+  ]
 
   if (!lesson) {
     return (
-      <LessonLayout breadcrumb={breadcrumb} exitTo={exitTo} currentStep={1} totalSteps={1}>
+      <LessonLayout breadcrumb={breadcrumb} backTo={topicListPath} currentStep={1} totalSteps={1}>
         <div className="text-center space-y-3">
           <h1 className="text-projector-md font-extrabold text-primary">Lesson Coming Soon</h1>
           <p className="text-projector-sm text-ink">This topic hasn't been built yet.</p>
@@ -39,7 +51,7 @@ function LessonPage() {
   return (
     <LessonLayout
       breadcrumb={breadcrumb}
-      exitTo={exitTo}
+      backTo={topicListPath}
       currentStep={currentStepIndex + 1}
       totalSteps={totalSteps}
       onPrevious={() => setCurrentStepIndex((s) => Math.max(0, s - 1))}

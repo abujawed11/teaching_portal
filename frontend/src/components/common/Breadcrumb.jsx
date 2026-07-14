@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 
-function Breadcrumb({ items }) {
+function Breadcrumb({ items = [] }) {
   const navigate = useNavigate()
 
   return (
