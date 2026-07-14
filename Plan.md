@@ -8,7 +8,8 @@
 | Phase 1 — Core UI and Navigation | ✅ Done |
 | Phase 2 — Reusable Teaching Engine | ✅ Done |
 | Phase 3 — Class 5 Chapter 1: Numbers (Module 3.1 Place Value) | ✅ Done |
-| Phase 3 — Modules 3.2–3.7 (other Numbers topics) | Not started |
+| Phase 3 — Module 3.2 Indian Number System | ✅ Done |
+| Phase 3 — Modules 3.3–3.7 (remaining Numbers topics) | Not started |
 
 ### Decision: Styling approach
 
@@ -82,12 +83,15 @@ The plan's "bright but professional visuals" requirement (§4) wasn't being met 
 
 Added because browser back-button-only navigation isn't practical for live classroom use:
 
-- `src/components/common/BackButton.jsx`, `Breadcrumb.jsx`, `PageHeader.jsx` — a large Back button (goes up one level) plus a clickable breadcrumb trail (Home › Class 5 › Mathematics › ...), wired into all four selection pages
-- Still to do: same breadcrumb/back treatment inside the Lesson and Quiz page headers (currently they still use a plain-text breadcrumb string)
+- `src/components/common/BackButton.jsx`, `Breadcrumb.jsx`, `PageHeader.jsx` — a large Back button (goes up one level) plus a clickable breadcrumb trail (Home › Class 5 › Mathematics › ...), wired into all four selection pages, and also into the Lesson (`LessonLayout`) and Quiz (`QuizPage`) headers
+- Final design for Lesson/Quiz headers: **Back button** = go up one level to the Topic selection page (`backTo` prop); **✕** = exit all the way to Home. Two distinct actions, not redundant.
 
-### Bug fix: lesson/quiz exit button
+### Bug fixes
 
-The "✕" exit button in `LessonLayout` and `QuizPage` was hardcoded to navigate to Home. Fixed to navigate back to the Topic selection page instead (`exitTo` prop), matching where the teacher actually came from.
+- The "✕" exit button in `LessonLayout`/`QuizPage` was originally hardcoded to navigate to Home regardless of context; fixed, then further refined into the Back-button/✕ split described above.
+- `PracticeQuestion`'s "Reveal Answer" state was leaking across lesson steps — clicking Next while an answer was revealed kept it revealed on the next question too, because React reused the same component instance. Fixed by giving `LessonStepRenderer` a `key={currentStepIndex}` in `LessonPage`, forcing a full remount (and state reset) on every step change.
+- `QuizPage`'s fullscreen button used a text label ("Full-screen") while `LessonLayout`'s used an icon — inconsistent. Fixed to use the same Maximize/Minimize icon.
+- `IndianPlaceValueChart`'s 9 columns wrapped onto two lines at some viewport widths (`flex-wrap`), breaking the layout. Fixed with `flex-nowrap` + horizontal scroll scoped to the chart only (not the whole page), plus smaller column sizing.
 
 ### Working agreement: content/UX improvements
 
@@ -95,6 +99,27 @@ Per user instruction: don't follow Plan.md rigidly — if an improvement is spot
 
 - Added a "What is Face Value?" theory step (previously only Place Value had an intro, even though Face Value was tested in practice/quiz)
 - Added a "What is Expanded Form?" theory step, which also introduces Standard Form as its counterpart, before the expanded-form reveal demo
+
+### Phase 3, Module 3.2 — Indian Number System (what was built)
+
+Mirrors the Place Value module's structure, per Plan.md §Module 3.2:
+
+- `src/components/numbers/IndianPlaceValueChart.jsx` — 9-column chart (Ten Crore → One) with the same digit-click reveal + "why" explanation pattern as the Place Value chart
+- `src/components/numbers/CommaPlacementReveal.jsx` — reveals Indian comma grouping one comma at a time (rightmost group of 3, then groups of 2), e.g. `74532618` → `74532,618` → `745,32,618` → `7,45,32,618`
+- `src/components/numbers/NumberNameReveal.jsx` — reveals the number's word-name one phrase at a time (crore → lakh → thousand → ones)
+- `src/components/numbers/IndianNumberConverter.jsx` — teacher enters any number (0–999,999,999, validated), sees it comma-formatted and read out in words ("Try Your Own Number")
+- `src/utils/numberToIndianWords.js` — number-to-Indian-words conversion utility (reverse, words-to-number, not built yet — see below)
+- `src/data/indianNumberSystem.js` — full lesson: intro → chart → comma theory + reveal → number-name theory + reveal → converter → 4 practice questions → summary
+- `quizzes['indian-number-system']` — 10-question quiz, same engine as Place Value's quiz
+- `topics.js` — "Indian Number System" marked active
+
+### Decision: color-coded comma groups
+
+Per discussion: the Place Value groupings (Crore/Lakh/Thousand/Ones) are now color-coded consistently across all three related components (chart, comma reveal, number-name reveal) using a shared mapping in `src/utils/indianGroupColors.js` — amber=Crore, violet=Lakh, emerald=Thousand, sky=Ones — plus a small `IndianGroupLegend.jsx` repeated near each. This ties the visual grouping, the comma placement, and the number name together so the concept reads as one system rather than three separate demos. Not yet applied to the Module 3.1 (English) Place Value Chart, which only has 5 uniform columns.
+
+### Not yet built: number-name → numeral conversion
+
+The plan calls for both directions ("Number-name-to-number conversion" and "Number-to-number-name conversion" — Module 3.2). Only the forward direction (number → words) is built; parsing typed English number-words back into a numeral would need a small parser and hasn't been built yet.
 
 ---
 
@@ -588,7 +613,7 @@ A reusable lesson player that can display multiple lesson step types.
 
 ---
 
-## Phase 3 — Class 5 Chapter 1: Numbers (Module 3.1 Place Value ✅ Done; Modules 3.2–3.7 not started)
+## Phase 3 — Class 5 Chapter 1: Numbers (Modules 3.1 Place Value & 3.2 Indian Number System ✅ Done; Modules 3.3–3.7 not started)
 
 This is the first complete educational module.
 

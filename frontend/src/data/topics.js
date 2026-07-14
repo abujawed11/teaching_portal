@@ -2,7 +2,7 @@ export const topics = {
   numbers: [
     { id: 'place-value', label: 'Place Value', active: true },
     { id: 'indian-number-system', label: 'Indian Number System', active: true },
-    { id: 'international-number-system', label: 'International Number System', active: false },
+    { id: 'international-number-system', label: 'International Number System', active: true },
     { id: 'comparing-numbers', label: 'Comparing Numbers', active: false },
     { id: 'ascending-descending-order', label: 'Ascending and Descending Order', active: false },
     { id: 'number-line', label: 'Number Line', active: false },

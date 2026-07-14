@@ -10,6 +10,11 @@ import IndianPlaceValueChart from '../numbers/IndianPlaceValueChart.jsx'
 import CommaPlacementReveal from '../numbers/CommaPlacementReveal.jsx'
 import NumberNameReveal from '../numbers/NumberNameReveal.jsx'
 import IndianNumberConverter from '../numbers/IndianNumberConverter.jsx'
+import InternationalPlaceValueChart from '../numbers/InternationalPlaceValueChart.jsx'
+import InternationalCommaReveal from '../numbers/InternationalCommaReveal.jsx'
+import InternationalNumberNameReveal from '../numbers/InternationalNumberNameReveal.jsx'
+import IndianVsInternationalComparison from '../numbers/IndianVsInternationalComparison.jsx'
+import InternationalNumberConverter from '../numbers/InternationalNumberConverter.jsx'
 
 const visualComponents = {
   PlaceValueChart,
@@ -19,6 +24,11 @@ const visualComponents = {
   CommaPlacementReveal,
   NumberNameReveal,
   IndianNumberConverter,
+  InternationalPlaceValueChart,
+  InternationalCommaReveal,
+  InternationalNumberNameReveal,
+  IndianVsInternationalComparison,
+  InternationalNumberConverter,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
