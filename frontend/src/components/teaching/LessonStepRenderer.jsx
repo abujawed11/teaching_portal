@@ -6,11 +6,17 @@ import PracticeQuestion from './PracticeQuestion.jsx'
 import PlaceValueChart from '../numbers/PlaceValueChart.jsx'
 import ExpandedFormReveal from '../numbers/ExpandedFormReveal.jsx'
 import CustomNumberChart from '../numbers/CustomNumberChart.jsx'
+import IndianPlaceValueChart from '../numbers/IndianPlaceValueChart.jsx'
+import CommaPlacementReveal from '../numbers/CommaPlacementReveal.jsx'
+import NumberNameReveal from '../numbers/NumberNameReveal.jsx'
 
 const visualComponents = {
   PlaceValueChart,
   ExpandedFormReveal,
   CustomNumberChart,
+  IndianPlaceValueChart,
+  CommaPlacementReveal,
+  NumberNameReveal,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

@@ -4,12 +4,14 @@ import LessonLayout from '../layouts/LessonLayout.jsx'
 import LessonStepRenderer from '../components/teaching/LessonStepRenderer.jsx'
 import Button from '../components/common/Button.jsx'
 import { placeValueLesson } from '../data/class5Numbers.js'
+import { indianNumberSystemLesson } from '../data/indianNumberSystem.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
 
 const lessonsByTopic = {
   'place-value': placeValueLesson,
+  'indian-number-system': indianNumberSystemLesson,
 }
 
 function LessonPage() {
