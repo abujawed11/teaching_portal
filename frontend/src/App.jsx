@@ -5,6 +5,7 @@ import ClassSelectionPage from './pages/ClassSelectionPage.jsx'
 import SubjectSelectionPage from './pages/SubjectSelectionPage.jsx'
 import ChapterSelectionPage from './pages/ChapterSelectionPage.jsx'
 import TopicSelectionPage from './pages/TopicSelectionPage.jsx'
+import LessonPage from './pages/LessonPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 
 function App() {
@@ -20,6 +21,10 @@ function App() {
       <Route
         path="/class/:classId/subject/:subjectId/chapter/:chapterId/topic"
         element={<TopicSelectionPage />}
+      />
+      <Route
+        path="/class/:classId/subject/:subjectId/chapter/:chapterId/topic/:topicId"
+        element={<LessonPage />}
       />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
