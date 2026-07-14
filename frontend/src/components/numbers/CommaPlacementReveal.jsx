@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { RefreshCw } from 'lucide-react'
+import { groupForGroupIndex, GROUP_COLORS } from '../../utils/indianGroupColors.js'
+import IndianGroupLegend from './IndianGroupLegend.jsx'
 
 // Indian grouping: rightmost group of 3 digits, then groups of 2. Returns groups left to right.
 function getGroups(number) {
@@ -23,14 +25,21 @@ function getGroups(number) {
   return groups
 }
 
-function formatWithReveal(groups, revealedFromRight) {
+// Returns segments to render, e.g. [{text: "745", group: null}, {text: "32", group: "thousand"}, {text: "618", group: "ones"}]
+function buildSegments(groups, revealedFromRight) {
   const totalCommas = groups.length - 1
   const hideCount = totalCommas - revealedFromRight
-  if (hideCount <= 0) return groups.join(',')
 
-  const merged = groups.slice(0, hideCount + 1).join('')
-  const shown = groups.slice(hideCount + 1)
-  return [merged, ...shown].join(',')
+  if (hideCount <= 0) {
+    return groups.map((text, i) => ({ text, group: groupForGroupIndex(i, groups.length) }))
+  }
+
+  const mergedText = groups.slice(0, hideCount + 1).join('')
+  const shownGroups = groups
+    .slice(hideCount + 1)
+    .map((text, i) => ({ text, group: groupForGroupIndex(hideCount + 1 + i, groups.length) }))
+
+  return [{ text: mergedText, group: null }, ...shownGroups]
 }
 
 function CommaPlacementReveal({ number = 74532618 }) {
@@ -43,9 +52,18 @@ function CommaPlacementReveal({ number = 74532618 }) {
 
   return (
     <div className="flex flex-col items-center gap-8 w-full">
-      <p className="text-projector-lg font-extrabold text-primary tabular-nums">
-        {formatWithReveal(groups, revealed)}
+      <p className="text-projector-lg font-extrabold tabular-nums">
+        {buildSegments(groups, revealed).map((segment, i, arr) => (
+          <span key={i}>
+            <span className={segment.group ? GROUP_COLORS[segment.group].text : 'text-ink'}>
+              {segment.text}
+            </span>
+            {i < arr.length - 1 && <span className="text-ink">,</span>}
+          </span>
+        ))}
       </p>
+
+      <IndianGroupLegend />
 
       <div className="flex items-center gap-3">
         <button

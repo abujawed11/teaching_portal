@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { RefreshCw } from 'lucide-react'
-import { getIndianWordParts } from '../../utils/numberToIndianWords.js'
+import { getIndianWordPartsTagged } from '../../utils/numberToIndianWords.js'
+import { GROUP_COLORS } from '../../utils/indianGroupColors.js'
+import IndianGroupLegend from './IndianGroupLegend.jsx'
 
 function NumberNameReveal({ number = 74532618 }) {
-  const parts = getIndianWordParts(number)
+  const parts = getIndianWordPartsTagged(number)
   const [revealedCount, setRevealedCount] = useState(0)
 
   const revealNext = () => setRevealedCount((c) => Math.min(parts.length, c + 1))
@@ -24,13 +26,15 @@ function NumberNameReveal({ number = 74532618 }) {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-projector-sm font-bold text-ink"
+              className={`text-projector-sm font-bold ${GROUP_COLORS[part.group].text}`}
             >
-              {part}
+              {part.text}
             </motion.span>
           ) : null,
         )}
       </div>
+
+      <IndianGroupLegend />
 
       <div className="flex items-center gap-3">
         <button
