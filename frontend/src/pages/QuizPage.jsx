@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { X } from 'lucide-react'
+import { X, Maximize, Minimize } from 'lucide-react'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
@@ -78,9 +78,9 @@ function QuizPage() {
             <button
               onClick={toggleFullscreen}
               aria-label={isFullscreen ? 'Exit full-screen' : 'Enter full-screen'}
-              className="text-sm font-medium text-slate-500 hover:text-ink"
+              className="p-2 rounded-lg hover:bg-slate-100 text-ink"
             >
-              {isFullscreen ? 'Exit Full-screen' : 'Full-screen'}
+              {isFullscreen ? <Minimize size={22} /> : <Maximize size={22} />}
             </button>
             <button
               onClick={() => navigate('/')}
