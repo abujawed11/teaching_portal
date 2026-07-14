@@ -6,6 +6,7 @@ import SubjectSelectionPage from './pages/SubjectSelectionPage.jsx'
 import ChapterSelectionPage from './pages/ChapterSelectionPage.jsx'
 import TopicSelectionPage from './pages/TopicSelectionPage.jsx'
 import LessonPage from './pages/LessonPage.jsx'
+import QuizPage from './pages/QuizPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
       <Route
         path="/class/:classId/subject/:subjectId/chapter/:chapterId/topic/:topicId"
         element={<LessonPage />}
+      />
+      <Route
+        path="/class/:classId/subject/:subjectId/chapter/:chapterId/topic/:topicId/quiz"
+        element={<QuizPage />}
       />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

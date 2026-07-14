@@ -1,8 +1,10 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import LessonLayout from '../layouts/LessonLayout.jsx'
 import LessonStepRenderer from '../components/teaching/LessonStepRenderer.jsx'
+import Button from '../components/common/Button.jsx'
 import { placeValueLesson } from '../data/class5Numbers.js'
+import { quizzes } from '../data/quizzes.js'
 
 const lessonsByTopic = {
   'place-value': placeValueLesson,
@@ -10,12 +12,15 @@ const lessonsByTopic = {
 
 function LessonPage() {
   const { classId, subjectId, chapterId, topicId } = useParams()
+  const navigate = useNavigate()
   const [currentStepIndex, setCurrentStepIndex] = useState(0)
 
   const lesson = lessonsByTopic[topicId]
   const steps = lesson?.steps ?? []
   const totalSteps = steps.length
   const currentStep = steps[currentStepIndex]
+  const isLastStep = currentStepIndex === totalSteps - 1
+  const hasQuiz = Boolean(quizzes[topicId])
 
   const breadcrumb = `Class ${classId} • ${subjectId} • ${chapterId} • ${lesson?.title ?? topicId}`
 
@@ -38,7 +43,20 @@ function LessonPage() {
       onPrevious={() => setCurrentStepIndex((s) => Math.max(0, s - 1))}
       onNext={() => setCurrentStepIndex((s) => Math.min(totalSteps - 1, s + 1))}
     >
-      <LessonStepRenderer step={currentStep} />
+      <div className="flex flex-col items-center gap-8">
+        <LessonStepRenderer step={currentStep} />
+        {isLastStep && hasQuiz && (
+          <Button
+            onClick={() =>
+              navigate(
+                `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic/${topicId}/quiz`,
+              )
+            }
+          >
+            Take Quiz
+          </Button>
+        )}
+      </div>
     </LessonLayout>
   )
 }
