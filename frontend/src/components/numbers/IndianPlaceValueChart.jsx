@@ -51,11 +51,7 @@ function IndianPlaceValueChart({ number = 74532618 }) {
             transition={{ duration: 0.4, delay: i * 0.1 }}
             className={`flex flex-col items-center gap-1 shrink-0 rounded-xl px-1.5 sm:px-2 py-2 sm:py-3 min-w-[46px] sm:min-w-[64px] transition-colors
               ${GROUP_START_INDICES.has(i) ? 'ml-2 sm:ml-3' : ''}
-              ${
-                selectedIndex === i
-                  ? 'bg-primary text-white'
-                  : 'bg-slate-100 text-ink hover:bg-slate-200'
-              }`}
+              ${selectedIndex === i ? 'bg-primary text-white' : getGroupClasses(i)}`}
           >
             <span className="text-[0.6rem] sm:text-xs font-medium text-center leading-tight">
               {col.label}
