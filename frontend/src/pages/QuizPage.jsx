@@ -62,7 +62,9 @@ function QuizPage() {
               {isFullscreen ? 'Exit Full-screen' : 'Full-screen'}
             </button>
             <button
-              onClick={() => navigate('/')}
+              onClick={() =>
+                navigate(`/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic`)
+              }
               aria-label="Exit quiz"
               className="p-2 rounded-lg hover:bg-slate-100 text-ink"
             >

@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { subjects } from '../data/subjects.js'
 import SelectionCard from '../components/common/SelectionCard.jsx'
+import PageHeader from '../components/common/PageHeader.jsx'
 
 function SubjectSelectionPage() {
   const navigate = useNavigate()
@@ -8,9 +9,14 @@ function SubjectSelectionPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center gap-10 p-8">
-      <h1 className="text-projector-md font-extrabold text-primary text-center">
-        Class {classId}: Select a Subject
-      </h1>
+      <PageHeader
+        backTo="/class"
+        breadcrumb={[
+          { label: 'Home', to: '/' },
+          { label: `Class ${classId}`, to: '/class' },
+        ]}
+        title="Select a Subject"
+      />
 
       <div className="grid grid-cols-2 gap-6 w-full max-w-2xl">
         {subjects.map((s) => (

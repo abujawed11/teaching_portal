@@ -23,10 +23,11 @@ function LessonPage() {
   const hasQuiz = Boolean(quizzes[topicId])
 
   const breadcrumb = `Class ${classId} • ${subjectId} • ${chapterId} • ${lesson?.title ?? topicId}`
+  const exitTo = `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic`
 
   if (!lesson) {
     return (
-      <LessonLayout breadcrumb={breadcrumb} currentStep={1} totalSteps={1}>
+      <LessonLayout breadcrumb={breadcrumb} exitTo={exitTo} currentStep={1} totalSteps={1}>
         <div className="text-center space-y-3">
           <h1 className="text-projector-md font-extrabold text-primary">Lesson Coming Soon</h1>
           <p className="text-projector-sm text-ink">This topic hasn't been built yet.</p>
@@ -38,6 +39,7 @@ function LessonPage() {
   return (
     <LessonLayout
       breadcrumb={breadcrumb}
+      exitTo={exitTo}
       currentStep={currentStepIndex + 1}
       totalSteps={totalSteps}
       onPrevious={() => setCurrentStepIndex((s) => Math.max(0, s - 1))}

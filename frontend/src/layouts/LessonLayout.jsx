@@ -4,6 +4,7 @@ import { useFullscreen } from '../hooks/useFullscreen.js'
 
 function LessonLayout({
   breadcrumb,
+  exitTo = '/',
   children,
   currentStep,
   totalSteps,
@@ -30,7 +31,7 @@ function LessonLayout({
               {isFullscreen ? <Minimize size={22} /> : <Maximize size={22} />}
             </button>
             <button
-              onClick={() => navigate('/')}
+              onClick={() => navigate(exitTo)}
               aria-label="Exit lesson"
               className="p-2 rounded-lg hover:bg-slate-100 text-ink"
             >
