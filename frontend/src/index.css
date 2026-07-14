@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@theme {
+  /* Brand colors - bright but professional, high contrast */
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-accent: #f59e0b;
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+  --color-surface: #ffffff;
+  --color-ink: #0f172a;
+
+  /* Extra-large font sizes for projector readability */
+  --font-size-projector-sm: 1.5rem;
+  --font-size-projector-md: 2.25rem;
+  --font-size-projector-lg: 3.5rem;
+  --font-size-projector-xl: 5rem;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.125rem;
+}
