@@ -6,6 +6,7 @@ import Button from '../components/common/Button.jsx'
 import { placeValueLesson } from '../data/class5Numbers.js'
 import { indianNumberSystemLesson } from '../data/indianNumberSystem.js'
 import { internationalNumberSystemLesson } from '../data/internationalNumberSystem.js'
+import { comparingNumbersLesson } from '../data/comparingNumbers.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
@@ -14,6 +15,7 @@ const lessonsByTopic = {
   'place-value': placeValueLesson,
   'indian-number-system': indianNumberSystemLesson,
   'international-number-system': internationalNumberSystemLesson,
+  'comparing-numbers': comparingNumbersLesson,
 }
 
 function LessonPage() {

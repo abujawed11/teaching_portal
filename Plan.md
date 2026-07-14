@@ -9,7 +9,8 @@
 | Phase 2 — Reusable Teaching Engine | ✅ Done |
 | Phase 3 — Class 5 Chapter 1: Numbers (Module 3.1 Place Value) | ✅ Done |
 | Phase 3 — Module 3.2 Indian Number System | ✅ Done |
-| Phase 3 — Modules 3.3–3.7 (remaining Numbers topics) | Not started |
+| Phase 3 — Module 3.3 International Number System | ✅ Done |
+| Phase 3 — Modules 3.4–3.7 (remaining Numbers topics) | Not started |
 
 ### Decision: Styling approach
 
@@ -119,7 +120,22 @@ Per discussion: the Place Value groupings (Crore/Lakh/Thousand/Ones) are now col
 
 ### Not yet built: number-name → numeral conversion
 
-The plan calls for both directions ("Number-name-to-number conversion" and "Number-to-number-name conversion" — Module 3.2). Only the forward direction (number → words) is built; parsing typed English number-words back into a numeral would need a small parser and hasn't been built yet.
+The plan calls for both directions ("Number-name-to-number conversion" and "Number-to-number-name conversion" — Module 3.2). Only the forward direction (number → words) is built; parsing typed English number-words back into a numeral would need a small parser and hasn't been built yet. Same gap applies to Module 3.3 below.
+
+### Phase 3, Module 3.3 — International Number System (what was built)
+
+Mirrors Module 3.2's structure, per Plan.md §Module 3.3:
+
+- `src/components/numbers/InternationalPlaceValueChart.jsx` — 9-column chart (Hundred Million → One), grouped in 3s (Million/Thousand/Ones), color-coded with a legend
+- `src/components/numbers/InternationalCommaReveal.jsx` — reveals International comma grouping one comma at a time (all groups of 3), e.g. `74532618` → `74532,618` → `74,532,618`
+- `src/components/numbers/InternationalNumberNameReveal.jsx` — reveals the number's word-name one phrase at a time (million → thousand → hundreds)
+- `src/components/numbers/IndianVsInternationalComparison.jsx` — shows the same number in both systems side by side, explaining the different comma positions
+- `src/components/numbers/InternationalNumberConverter.jsx` — teacher enters any number, sees it comma-formatted + read in International words ("Try Your Own Number")
+- `src/utils/englishNumberWords.js` — shared ones/tens-to-words helper extracted from the Indian words utility, reused by both Indian and International word converters (avoids duplicating that logic)
+- `src/utils/numberToInternationalWords.js` + `src/utils/internationalGroupColors.js` — International-specific word conversion and group color mapping (amber=Million, violet=Thousand, emerald=Ones — 3 groups here vs. 4 for Indian)
+- `src/data/internationalNumberSystem.js` — full lesson: intro → chart → comma theory + reveal → number-name theory + reveal → Indian vs. International comparison → converter → 4 practice questions (including cross-system conversion) → summary
+- `quizzes['international-number-system']` — 10-question quiz, same engine as the other modules' quizzes
+- `topics.js` — "International Number System" marked active
 
 ---
 
@@ -613,7 +629,7 @@ A reusable lesson player that can display multiple lesson step types.
 
 ---
 
-## Phase 3 — Class 5 Chapter 1: Numbers (Modules 3.1 Place Value & 3.2 Indian Number System ✅ Done; Modules 3.3–3.7 not started)
+## Phase 3 — Class 5 Chapter 1: Numbers (Modules 3.1–3.3 ✅ Done; Modules 3.4–3.7 not started)
 
 This is the first complete educational module.
 
