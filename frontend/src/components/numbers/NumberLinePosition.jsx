@@ -18,7 +18,7 @@ function NumberLinePosition({ numbers = [3, 7, 12, 5], max = 15 }) {
 
   return (
     <div className="flex flex-col items-center gap-8 w-full">
-      <div className="w-full max-w-2xl px-4">
+      <div className="w-[42rem] max-w-full px-4">
         <div className="relative h-2 bg-slate-200 rounded-full">
           {ticks.map((t) => (
             <div
