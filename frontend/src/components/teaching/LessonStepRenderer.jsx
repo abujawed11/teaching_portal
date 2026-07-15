@@ -16,6 +16,7 @@ import InternationalNumberNameReveal from '../numbers/InternationalNumberNameRev
 import IndianVsInternationalComparison from '../numbers/IndianVsInternationalComparison.jsx'
 import InternationalNumberConverter from '../numbers/InternationalNumberConverter.jsx'
 import NumberComparisonReveal from '../numbers/NumberComparisonReveal.jsx'
+import CustomNumberComparison from '../numbers/CustomNumberComparison.jsx'
 
 const visualComponents = {
   PlaceValueChart,
@@ -31,6 +32,7 @@ const visualComponents = {
   IndianVsInternationalComparison,
   InternationalNumberConverter,
   NumberComparisonReveal,
+  CustomNumberComparison,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

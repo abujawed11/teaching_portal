@@ -12,6 +12,38 @@
 | Phase 3 — Module 3.3 International Number System | ✅ Done |
 | Phase 3 — Module 3.4 Comparing Numbers | 🔶 In progress |
 | Phase 3 — Modules 3.5–3.7 (remaining Numbers topics) | Not started |
+| Phase 3 — Module 3.8 Rounding Numbers (nearest 10/100/1,000) | Not started |
+| Phase 3 — Module 3.9 Addition & Subtraction of Large Numbers | Not started |
+| Phase 3 — Module 3.10 Number Tricks & Puzzles | Not started |
+
+### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
+
+The teacher provided the real current NCERT Class 5 Maths textbook PDFs at `D:\react\teaching_portal\books` (**Maths Mela**, First Edition June 2025, built for NEP 2020 / NCF-SE 2023). It was checked against our Plan.md, and it differs from what Plan.md originally assumed (the older NCERT structure):
+
+- There is **no chapter literally called "Numbers"** — the book is theme-woven (Chapter 1 "We the Travellers—I", Chapter 4 "We the Travellers—II", etc.), with numbers content folded into travel/real-world narratives.
+- Numbers stay capped at **5 digits (Ones → Ten Thousands)** throughout the chapters checked (1 and 4). **Lakhs, Crores, and Millions are not taught in Grade 5 in this book at all** — no Indian-system vs. International-system distinction appears.
+- Chapter 1 ("We the Travellers—I") covers: reading/writing numbers up to 5 digits, place value, expanded form, comparing numbers (place-value-chart based, digit-by-digit — matches our Module 3.4), ascending/descending order, and **rounding to nearest 10/100/1,000** (not previously in our plan).
+- Chapter 4 ("We the Travellers—II") covers: **addition and subtraction of large numbers** with regrouping (not previously in our plan), heavy real-world word problems (travel distance, fuel, money/budgets), and several genuine **math tricks**: add-to-make-100/1,000 shortcut, quick subtract-9/99 tricks, consecutive-number-sum patterns, palindrome numbers, even/odd number patterns, and logic puzzles (river-crossing, pile-of-pebbles game, digit-swap-always-gives-9 trick, King's Horses perimeter illusion).
+
+**Decision on scope, per discussion:** Modules 3.2 (Indian Number System) and 3.3 (International Number System) go beyond what this specific book teaches at Grade 5 — but they are **kept, not cut, and not deprioritized**. Per the user: a coaching class that only repeats the textbook gives parents/students no reason to attend over just reading the book at home. Teaching genuinely more — building a stronger number-sense foundation — is the coaching center's differentiator, so 3.2/3.3 get **equal priority and equal teaching rigor** as the NCERT-aligned modules, not "optional/skip-if-short-on-time" treatment.
+
+To keep this differentiation *visible* (not just internal), and to avoid ever silently treating extra content as lower-priority: modules will be tagged in the UI (topic selection cards) as either **"NCERT Chapter"** or **"Beyond NCERT — Strong Foundation"** — a small badge, not a warning. This lets the teacher sequence lessons however makes sense pedagogically, while giving parents/students a visible reason the coaching content covers more than school. Not built yet — apply when Module 3.2/3.3's topic cards are next touched, and to any future enrichment module (e.g. 3.10 Number Tricks & Puzzles, which is also "Beyond NCERT" since it draws on genuine problem-solving depth, even though its individual tricks are lifted from the book itself).
+
+New modules added to the Progress Log above as a result of this check (not yet built): **3.8 Rounding Numbers**, **3.9 Addition & Subtraction of Large Numbers**, **3.10 Number Tricks & Puzzles** (pulls together the puzzle/trick content from both chapters checked so far, feeding into [[Working agreement: tricks and shortcuts]] above).
+
+Only Chapters 1 and 4 have been checked so far. Other chapters (Fractions, Angles as Turns, Far and Near, etc.) haven't been reviewed yet — worth checking before assuming the rest of Plan.md's Class 5 topic list (Phase 9) still matches.
+
+### Chapters 2, 3, 5, 6, 7 reviewed (content notes only — not yet reconciled into Phase 9 topic list)
+
+Checked against the actual book PDFs (`eemm102`–`eemm107.pdf`). Summary of what each covers, to fold into Phase 9 planning later:
+
+- **Chapter 2 — Fractions**: equivalent fractions (via fraction-kit pieces, grids, number patterns), comparing fractions (same denominator, same numerator, using 1 as reference, using 1/2 as reference), fractions greater than 1 (mixed numbers via "parathas" context and number lines). No fraction addition/subtraction/multiplication yet in this chapter — comparison-focused.
+- **Chapter 3 — Angles as Turns**: angles introduced entirely through the idea of "turns" (full/half/quarter turn), not protractor-degree measurement — acute/right/obtuse/straight angle via fractions of a turn (1/4, 1/8, 1/12 etc.), a paper-fan and circle-cutout "angle measuring tool" the students build themselves, clockwise vs. anti-clockwise, compass directions (N/S/E/W) combined with turns, clock minute-hand turns. No degree unit (°) at all — this is a fresh, non-protractor approach to angles that doesn't match any existing Plan.md geometry module description.
+- **Chapter 5 — Far and Near (Measurement/Length)**: units cm/m/km and mm, conversions between them (10mm=1cm, 100cm=1m, 1000m=1km), double-number-line conversion drills, add/subtract/multiply/divide lengths with regrouping (real column-method worked examples), estimation, feet/inches as an informal secondary unit (1 inch ≈ 2cm 5mm). This is squarely Plan.md's Phase 9 "Measurement" topic (Class 5, item 8) — content is ready to map directly into that module when built.
+- **Chapter 6 — The Dairy Farm (Multiplication)**: this chapter is a goldmine of exactly the kind of "genuine math shortcut tricks" the [[Working agreement: tricks and shortcuts]] section calls for — commutativity, ×10/×100/×1,000 place-shift patterns, doubling-and-halving strategy, nearest-multiple (round-and-adjust) strategy, area-model/distributive multiplication shown 3 ways (Nida's expanded grid, Kanti's/John's distributive column methods, "Mili's father's" standard algorithm), estimation, and several number-pattern puzzles (11×11, 111×111 palindrome patterns, 5×5/15×15/25×25 patterns, 9× digit-sum patterns). Directly feeds a future Class 5 "Multiplication" module (Phase 9, item 3) **and** should backfill 3.10 Number Tricks & Puzzles.
+- **Chapter 7 — Shapes and Patterns**: hands-on paper-weaving patterns (over/under sequences), tessellation (which regular polygons tile without gaps: triangle/square/hexagon yes, pentagon/octagon no), triangle classification by sides (isosceles/equilateral/scalene) via paper-folding, quadrilateral classification (kite, parallelogram, rectangle — defined by equal-side/equal-angle relationships, discovered by cutting a rhombus into triangles), tangram, circle constructions (diameters → quadrilaterals, thread-art circle designs), cube/net activities, Platonic solids (icosahedron, dodecahedron) via nets, a logic puzzle. This is rich and matches/expands Plan.md's Phase 9 "Geometry" (Class 5, item 10) — much more hands-on/paper-craft-based than the existing Plan.md geometry description assumes.
+
+**Not yet reviewed**: remaining chapters (book likely continues past 107 — chapter numbers/filenames not yet confirmed for Decimals, Perimeter and Area, Time and Money, Data Handling, Patterns, etc.). Per user instruction, stop reading further chapters for now — resume chapter review only when asked, reading at most 1–2 chapters at a time rather than in bulk, so each can be discussed and reconciled into this plan before moving on.
 
 ### Decision: Styling approach
 
