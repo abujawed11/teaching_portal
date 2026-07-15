@@ -359,6 +359,27 @@ The **full detailed plan** — 14 course levels (Computer Foundations through Be
 
 Status: planning only, not yet reviewed/approved for implementation. No code has been written for this course. Mathematics (Phase 3 onward, above) remains the active focus until this course is picked up.
 
+### Phase C0 — Integration into portal navigation (✅ Done)
+
+Digital Skills is reached the same way Mathematics is, without inventing a parallel navigation system, and without being falsely nested under one grade (it's not tied to a single class):
+
+- `classes.js` — added a `digital-skills` entry alongside the real numbered classes (`isCourse: true` flag), shown as a card directly under "Start Teaching" → Class Selection, same grid as Class 4–10.
+- `ClassSelectionPage.jsx` — clicking a card with `isCourse: true` skips Subject Selection entirely (there's only one subject for it) and goes straight to Level (Chapter) Selection: `/class/digital-skills/subject/digital-skills/chapter`.
+- `subjects.js` / `chapters.js` / `topics.js` — `digital-skills` subject added; all 14 course levels added as chapters (Level 1: Computer Foundations active, Levels 2–14 "Coming Soon"); Level 1's lessons added as topics (all inactive placeholders — no lesson content built yet).
+- `src/utils/navBreadcrumb.js` — new shared helper (`buildBreadcrumb`, `isCourseMode`) used by `ChapterSelectionPage`, `TopicSelectionPage`, `LessonPage`, and `QuizPage`: when `classId === subjectId` (the course-mode signal), the breadcrumb omits the fake "Class digital-skills" crumb and links the subject label straight back to `/class`. Avoids duplicating this special-case logic in four files.
+- `ChapterSelectionPage.jsx` / `TopicSelectionPage.jsx` — page titles say "Select a Level" / "Select a Lesson" for `digital-skills` (still "Select a Chapter" / "Select a Topic" for Mathematics) — reuses the same page/component, just relabeled text.
+
+No new pages or routes were created — Level = Chapter, Lesson = Topic, reusing the exact same `ChapterSelectionPage`/`TopicSelectionPage`/`LessonPage`/`QuizPage` components Mathematics uses.
+
+### Working agreement: images in Digital Skills lessons
+
+Per user request: this course should use real images in its animations/steps wherever they'd make a concept clearer or more attractive (unlike Mathematics, where content is abstract enough that animations/SVGs suffice). Agreed workflow, to remember across sessions:
+
+- **When to use a photo vs. an original illustration/icon**: real photos for concrete hardware and devices where recognizing the real thing matters (CPU, RAM stick, motherboard, HDD/SSD, GPU, ports, laptop/tablet/phone/desktop). Original SVG illustrations (like the pizza fraction graphic) or `lucide-react` icons (already an installed MIT-licensed dependency) for abstract concepts (input→process→output flow, network/internet diagrams) — cheaper to build, no copyright risk, scales cleanly on a projector.
+- **Copyright constraint** (same rule as the NCERT-images note above): never use NCERT/textbook images or ad-hoc Google Image results. Only openly-licensed sources (Unsplash, Pexels, Wikimedia Commons) or the user's own photos of real hardware.
+- **File location**: `frontend/public/images/computer/<level-or-lesson-folder>/<filename>`, referenced with a plain `<img src="/images/computer/...">` tag (not imported through `src/assets`) — matches how a growing, teacher-supplied image library should work, and keeps them out of the JS bundle.
+- **Process**: whenever an `<img>` tag is added while building a Digital Skills lesson, the exact recommended pixel size (based on where it sits in the layout) and the exact file path to save it to will be stated at that point, so the user knows exactly what to bring and where to paste it. Not a one-time upfront image list — decided lesson by lesson, same as the rest of this course's content.
+
 ---
 
 ## 2. Current Project Setup
