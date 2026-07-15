@@ -13,6 +13,7 @@ import { numberLineLesson } from '../data/numberLine.js'
 import { chapterPracticeLesson } from '../data/chapterPractice.js'
 import { whatIsAFractionLesson } from '../data/whatIsAFraction.js'
 import { equivalentFractionsLesson } from '../data/equivalentFractions.js'
+import { comparingFractionsLesson } from '../data/comparingFractions.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
@@ -28,6 +29,7 @@ const lessonsByTopic = {
   'chapter-practice': chapterPracticeLesson,
   'what-is-a-fraction': whatIsAFractionLesson,
   'equivalent-fractions': equivalentFractionsLesson,
+  'comparing-fractions': comparingFractionsLesson,
 }
 
 function LessonPage() {

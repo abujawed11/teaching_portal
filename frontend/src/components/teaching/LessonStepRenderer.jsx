@@ -29,6 +29,8 @@ import CustomFractionVisual from '../fractions/CustomFractionVisual.jsx'
 import PizzaFractionIllustration from '../fractions/PizzaFractionIllustration.jsx'
 import EquivalentFractionsReveal from '../fractions/EquivalentFractionsReveal.jsx'
 import CustomEquivalentFractions from '../fractions/CustomEquivalentFractions.jsx'
+import FractionCompareVisual from '../fractions/FractionCompareVisual.jsx'
+import CustomFractionCompare from '../fractions/CustomFractionCompare.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -60,6 +62,8 @@ const visualComponents = {
   CustomFractionVisual,
   EquivalentFractionsReveal,
   CustomEquivalentFractions,
+  FractionCompareVisual,
+  CustomFractionCompare,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

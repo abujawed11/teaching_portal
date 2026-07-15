@@ -14,7 +14,7 @@ export const topics = {
   fractions: [
     { id: 'what-is-a-fraction', label: 'What is a Fraction?', active: true },
     { id: 'equivalent-fractions', label: 'Equivalent Fractions', active: true },
-    { id: 'comparing-fractions', label: 'Comparing Fractions', active: false },
+    { id: 'comparing-fractions', label: 'Comparing Fractions', active: true },
     { id: 'fractions-greater-than-one', label: 'Fractions Greater Than 1', active: false },
     { id: 'fraction-tricks', label: 'Fraction Tricks & Practice', active: false },
     { id: 'fractions-chapter-practice', label: 'Chapter Practice', active: false },

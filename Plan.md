@@ -20,7 +20,9 @@
 | Phase 3 — Chapter 1 Practice (mixed review) | ✅ Done |
 | Phase 3 — Chapter 1 Quiz (mixed, chapter-wide) | ✅ Done |
 | Phase 3 — Class 5 Chapter 2: Fractions (Module 4.1 What is a Fraction?) | ✅ Done |
-| Phase 3 — Modules 4.2–4.5 (remaining Fractions topics) | Not started |
+| Phase 3 — Module 4.2 Equivalent Fractions | ✅ Done |
+| Phase 3 — Module 4.3 Comparing Fractions | ✅ Done |
+| Phase 3 — Modules 4.4–4.5 (remaining Fractions topics) | Not started |
 
 ### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
 
@@ -273,9 +275,45 @@ Note (per the Chapter 2 review): the actual book's Chapter 2 does **not** cover 
 - `quizzes['what-is-a-fraction']` — 10-question quiz.
 - `topics.js` — "What is a Fraction?" marked active under the `fractions` chapter.
 
+Also added a small custom SVG pizza illustration (`src/components/fractions/PizzaFractionIllustration.jsx`) to the intro step, per user request to explore original illustrations (Option 1) before falling back to icons/stock photos (Option 2) — see the copyright note below.
+
+**Copyright note (important, do not reuse NCERT's own images)**: the teacher asked whether NCERT's own photos/illustrations from the textbook PDFs could be used for visual appeal. Checked the book's front matter — it explicitly states "ALL RIGHTS RESERVED... no part of this publication may be reproduced..." and every page is watermarked "not to be republished." Decision: never copy NCERT's images into the app. Instead use (in order of preference) fully original illustrations we draw ourselves (SVG/CSS, like the pizza above), `lucide-react` icons (already an MIT-licensed dependency), or openly-licensed stock photos (Unsplash/Pexels) if a real photo is ever needed.
+
 Verified with `npm run build` — no errors.
 
-Next step: Module 4.2 (Equivalent Fractions).
+### Full Chapter 2 content audit (read complete `eemm102.pdf`)
+
+Per user request, read the entire actual Chapter 2 PDF (not just the earlier summary) to verify our module plan has full coverage before continuing. Findings:
+
+- Confirmed our planned 4-strategy breakdown for Module 4.3 (same denominator, same numerator, reference to 1, reference to 1/2) exactly matches the book's structure.
+- Confirmed Module 4.4's "parathas" repeated-unit-fraction approach (building up to mixed numbers, number line placement) matches the book's "Fractions Greater Than 1" section.
+- **Gap found and fixed**: the book opens the chapter with a caveat — fractions can only be compared fairly when they come from the same-sized whole (Tamanna's two-different-size-chocolates example: 1/3 of a big one can beat 1/2 of a small one). This wasn't in our lessons. Added to `whatIsAFraction.js` as a new theory step + practice question + quiz question, and restated briefly in `comparingFractions.js`'s intro since it's directly relevant there too.
+- **Gap found and fixed**: the book's "Fun with Fraction Kit" section has students discover equivalence hands-on by asking "how many 1/6s make 1/3?" before teaching the abstract "multiply top and bottom" rule. Added this as two extra interactive steps in `equivalentFractions.js` (reusing `EquivalentFractionsReveal` with `maxK: 2`, animated rather than static text per user request) plus two matching practice questions and two quiz questions.
+- Skipped, not fraction content: the book's "Fun with Relations" (a family-relationship logic riddle) is an unrelated aside at the chapter's end, not worth building.
+- Noted for later: the book's "Try This" ant-length problem (real-world application of repeated unit fractions) is good bonus material — candidate for the Chapter 2 Practice wrap-up when built.
+
+### Phase 3, Module 4.2 — Equivalent Fractions (✅ Done)
+
+- `src/components/fractions/EquivalentFractionsReveal.jsx` — a fixed-width bar showing a starting fraction (e.g. 1/2); teacher clicks "Split Into Smaller Parts" to multiply numerator and denominator by an increasing factor k (up to `maxK`), animating the bar into more/thinner segments while the shaded proportion visually stays identical, with a growing equivalence chain (`1/2 = 2/4 = 3/6...`) displayed below.
+- `src/components/fractions/CustomEquivalentFractions.jsx` — teacher enters a starting numerator/denominator (validated: proper fraction, denominator 2–12), reuses `EquivalentFractionsReveal`.
+- `src/data/equivalentFractions.js` — intro → "fitting smaller pieces" concept (two animated `EquivalentFractionsReveal` demos with `maxK: 2`, per the Chapter 2 audit above) → the multiply-by-k rule theory → main reveal demo → cross-multiply trick → worked example → custom tool → 6 practice questions → summary.
+- `quizzes['equivalent-fractions']` — 10-question quiz, including the "how many X pieces fit into Y" question style.
+- `topics.js` — "Equivalent Fractions" marked active.
+
+Verified with `npm run build` — no errors.
+
+### Phase 3, Module 4.3 — Comparing Fractions (✅ Done)
+
+- `src/utils/compareFractions.js` — shared `compareFractions` (cross-multiplication comparison) and `detectStrategy` (auto-picks same-denominator / same-numerator / reference-to-1 / reference-to-half / cross-multiply, in that priority order) utilities.
+- `src/components/fractions/FractionCompareVisual.jsx` — shows two fractions as proportionally-filled bars; teacher clicks "Compare" to reveal both bars filling in and a reasoning sentence tailored to whichever strategy is passed in as a prop.
+- `src/components/fractions/CustomFractionCompare.jsx` — teacher enters any two fractions (validated), auto-detects the best strategy via `detectStrategy`, reuses `FractionCompareVisual`.
+- `src/data/comparingFractions.js` — intro (restating the same-whole caveat) → all 4 strategies, each with its own theory step + a guided demo using the book's own examples (Sevi/Shami's chikki, parathas, Sevi/Shami again, a reference-to-half example) → a "pick the fastest strategy" trick step → custom tool → 4 practice questions (one per strategy) → summary.
+- `quizzes['comparing-fractions']` — 10-question quiz covering all 4 strategies plus the same-whole concept.
+- `topics.js` — "Comparing Fractions" marked active.
+
+Verified with `npm run build` — no errors.
+
+Next step: Module 4.4 (Fractions Greater Than 1).
 
 ---
 
