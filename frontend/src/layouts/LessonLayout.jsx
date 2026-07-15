@@ -51,7 +51,7 @@ function LessonLayout({
       </header>
 
       <main className="flex-1 flex items-center justify-center p-8">
-        <div className="bg-white/80 backdrop-blur rounded-3xl shadow-xl shadow-slate-200/60 px-8 py-12 sm:px-14 w-full max-w-4xl flex items-center justify-center">
+        <div className="bg-white/80 backdrop-blur rounded-3xl shadow-xl shadow-slate-200/60 px-8 py-12 sm:px-14 w-full max-w-6xl flex items-center justify-center">
           {children}
         </div>
       </main>

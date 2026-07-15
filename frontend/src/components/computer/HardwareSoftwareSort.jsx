@@ -76,11 +76,11 @@ function HardwareSoftwareSort() {
           <img
             src={item.image}
             alt={item.label}
-            className="w-40 h-40 object-cover rounded-2xl shadow-lg shadow-slate-300/50"
+            className="w-56 h-56 object-cover rounded-2xl shadow-lg shadow-slate-300/50"
           />
         ) : (
-          <div className="w-40 h-40 flex items-center justify-center rounded-2xl bg-slate-100">
-            <Icon size={64} className="text-slate-500" />
+          <div className="w-56 h-56 flex items-center justify-center rounded-2xl bg-slate-100">
+            <Icon size={80} className="text-slate-500" />
           </div>
         )}
         <p className="text-projector-sm font-bold text-ink">{item.label}</p>

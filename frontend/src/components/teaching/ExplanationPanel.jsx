@@ -7,21 +7,21 @@ function ExplanationPanel({ title, text, illustration, image, images }) {
         <img
           src={image.src}
           alt={image.alt}
-          className="rounded-2xl shadow-lg shadow-slate-300/50 max-h-64 sm:max-h-80 w-auto object-contain"
+          className="rounded-2xl shadow-lg shadow-slate-300/50 max-h-80 sm:max-h-[26rem] w-auto object-contain"
         />
       )}
 
       {images && images.length > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 w-full">
           {images.map((img) => (
             <figure key={img.src} className="flex flex-col items-center gap-2">
               <img
                 src={img.src}
                 alt={img.alt}
-                className="rounded-xl shadow-md shadow-slate-300/50 w-full h-24 sm:h-28 object-cover"
+                className="rounded-xl shadow-md shadow-slate-300/50 w-full aspect-square object-cover"
               />
               {img.caption && (
-                <figcaption className="text-xs sm:text-sm text-slate-500">{img.caption}</figcaption>
+                <figcaption className="text-sm sm:text-base text-slate-500">{img.caption}</figcaption>
               )}
             </figure>
           ))}

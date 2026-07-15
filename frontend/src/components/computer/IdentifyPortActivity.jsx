@@ -63,7 +63,7 @@ function IdentifyPortActivity() {
       <img
         src={port.image}
         alt="Identify this port"
-        className="w-56 h-40 object-cover rounded-2xl shadow-lg shadow-slate-300/50"
+        className="w-80 h-56 object-cover rounded-2xl shadow-lg shadow-slate-300/50"
       />
 
       {result && (

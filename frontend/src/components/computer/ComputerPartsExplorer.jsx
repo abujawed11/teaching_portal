@@ -44,12 +44,12 @@ function ComputerPartsExplorer() {
 
   return (
     <div className="flex flex-col items-center gap-8 w-full">
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 w-full">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 w-full">
         {parts.map((part) => (
           <button
             key={part.id}
             onClick={() => setSelectedId(part.id)}
-            className={`flex flex-col items-center gap-2 p-3 rounded-2xl border-2 transition-colors ${
+            className={`flex flex-col items-center gap-3 p-4 rounded-2xl border-2 transition-colors ${
               selectedId === part.id
                 ? 'border-primary bg-primary/10'
                 : 'border-slate-200 hover:border-primary/50'
@@ -58,9 +58,9 @@ function ComputerPartsExplorer() {
             <img
               src={part.image}
               alt={part.fullName}
-              className="w-full h-20 sm:h-24 object-cover rounded-xl"
+              className="w-full aspect-square object-cover rounded-xl"
             />
-            <span className="text-sm sm:text-base font-bold text-ink">{part.name}</span>
+            <span className="text-base sm:text-lg font-bold text-ink">{part.name}</span>
           </button>
         ))}
       </div>
