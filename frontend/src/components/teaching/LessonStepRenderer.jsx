@@ -26,6 +26,11 @@ import NumberLineJump from '../numbers/NumberLineJump.jsx'
 import CustomNumberLineJump from '../numbers/CustomNumberLineJump.jsx'
 import FractionVisual from '../fractions/FractionVisual.jsx'
 import CustomFractionVisual from '../fractions/CustomFractionVisual.jsx'
+import PizzaFractionIllustration from '../fractions/PizzaFractionIllustration.jsx'
+
+const illustrationComponents = {
+  PizzaFractionIllustration,
+}
 
 const visualComponents = {
   PlaceValueChart,
@@ -63,8 +68,16 @@ function LessonStepRenderer({ step }) {
 
   switch (step.type) {
     case 'intro':
-    case 'text':
-      return <ExplanationPanel title={step.title} text={step.text} />
+    case 'text': {
+      const IllustrationComponent = illustrationComponents[step.illustration]
+      return (
+        <ExplanationPanel
+          title={step.title}
+          text={step.text}
+          illustration={IllustrationComponent ? <IllustrationComponent {...step.illustrationProps} /> : null}
+        />
+      )
+    }
 
     case 'visual':
     case 'animation': {

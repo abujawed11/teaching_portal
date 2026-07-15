@@ -5,7 +5,9 @@ export const whatIsAFractionLesson = {
     {
       type: 'intro',
       title: 'What is a Fraction?',
-      text: 'A fraction shows a part of a whole that has been divided into equal parts — like a chocolate bar broken into equal pieces.',
+      text: 'A fraction shows a part of a whole that has been divided into equal parts — like a chocolate bar broken into equal pieces, or a pizza cut into slices.',
+      illustration: 'PizzaFractionIllustration',
+      illustrationProps: { numerator: 3, denominator: 4 },
     },
     {
       type: 'text',
