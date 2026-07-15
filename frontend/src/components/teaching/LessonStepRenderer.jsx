@@ -36,6 +36,8 @@ import MixedNumberLine from '../fractions/MixedNumberLine.jsx'
 import CustomMixedNumber from '../fractions/CustomMixedNumber.jsx'
 import InputProcessOutputAnimation from '../computer/InputProcessOutputAnimation.jsx'
 import HardwareSoftwareSort from '../computer/HardwareSoftwareSort.jsx'
+import ComputerPartsExplorer from '../computer/ComputerPartsExplorer.jsx'
+import IdentifyPortActivity from '../computer/IdentifyPortActivity.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -74,6 +76,8 @@ const visualComponents = {
   CustomMixedNumber,
   InputProcessOutputAnimation,
   HardwareSoftwareSort,
+  ComputerPartsExplorer,
+  IdentifyPortActivity,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
