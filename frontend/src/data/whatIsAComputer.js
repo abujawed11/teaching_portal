@@ -50,6 +50,31 @@ export const whatIsAComputerLesson = {
     },
     {
       type: 'text',
+      title: 'Input Devices',
+      text: 'Input devices send information into the computer. Anything you use to tell the computer something — typing, clicking, speaking, or scanning — is an input device.',
+      images: [
+        { src: '/images/computer/foundations/keyboard.jpg', alt: 'A keyboard', caption: 'Keyboard' },
+        { src: '/images/computer/foundations/microphone.jpg', alt: 'A microphone', caption: 'Microphone' },
+        { src: '/images/computer/foundations/scanner.jpg', alt: 'A scanner', caption: 'Scanner' },
+      ],
+    },
+    {
+      type: 'text',
+      title: 'Output Devices',
+      text: 'Output devices show or give you the result. Anything the computer uses to show, say, or print something back to you is an output device.',
+      images: [
+        { src: '/images/computer/foundations/monitor.jpg', alt: 'A monitor', caption: 'Monitor' },
+        { src: '/images/computer/foundations/speaker.jpg', alt: 'A speaker', caption: 'Speaker' },
+        { src: '/images/computer/foundations/printer.jpg', alt: 'A printer', caption: 'Printer' },
+      ],
+    },
+    {
+      type: 'visual',
+      component: 'InputOutputSort',
+      title: 'Sort It: Input or Output?',
+    },
+    {
+      type: 'text',
       title: 'Meet the Hardware',
       text: 'Hardware is every part of the computer you can actually touch — the keyboard, the mouse, the screen, and the parts working inside the box.',
       image: {
@@ -92,11 +117,25 @@ export const whatIsAComputerLesson = {
       explanation: 'Typing gives the computer information — that is the Input stage.',
     },
     {
+      type: 'question',
+      question: 'Is a microphone an input device or an output device?',
+      answer: 'Input device',
+      explanation: 'A microphone sends your voice into the computer — that makes it an input device.',
+    },
+    {
+      type: 'question',
+      question: 'Is a printer an input device or an output device?',
+      answer: 'Output device',
+      explanation: 'A printer gives you a result (a printed page) — that makes it an output device.',
+    },
+    {
       type: 'summary',
       title: 'Summary',
       points: [
         'A computer takes Input, Processes it, gives Output, and can Store it',
         'Computers are used everywhere — school labs, phones, ATMs, smart TVs',
+        'Input devices (keyboard, microphone, scanner) send information in',
+        'Output devices (monitor, speaker, printer) give the result back',
         'Hardware = physical parts you can touch',
         'Software = programs and apps that run on the hardware',
       ],

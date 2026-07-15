@@ -38,6 +38,7 @@ import InputProcessOutputAnimation from '../computer/InputProcessOutputAnimation
 import HardwareSoftwareSort from '../computer/HardwareSoftwareSort.jsx'
 import ComputerPartsExplorer from '../computer/ComputerPartsExplorer.jsx'
 import IdentifyPortActivity from '../computer/IdentifyPortActivity.jsx'
+import InputOutputSort from '../computer/InputOutputSort.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -78,6 +79,7 @@ const visualComponents = {
   HardwareSoftwareSort,
   ComputerPartsExplorer,
   IdentifyPortActivity,
+  InputOutputSort,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

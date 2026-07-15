@@ -78,6 +78,20 @@ export const quizzes = {
       correctAnswer: 'Input',
       explanation: 'Typing gives the computer information — that is Input.',
     },
+    {
+      type: 'mcq',
+      question: 'Which of these is an input device?',
+      options: ['Speaker', 'Printer', 'Monitor', 'Microphone'],
+      correctAnswer: 'Microphone',
+      explanation: 'A microphone sends sound into the computer — that makes it an input device.',
+    },
+    {
+      type: 'mcq',
+      question: 'Which of these is an output device?',
+      options: ['Scanner', 'Keyboard', 'Printer', 'Microphone'],
+      correctAnswer: 'Printer',
+      explanation: 'A printer gives you a result on paper — that makes it an output device.',
+    },
   ],
   'computer-hardware': [
     {
