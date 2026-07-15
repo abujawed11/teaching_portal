@@ -12,6 +12,7 @@ import { roundingNumbersLesson } from '../data/roundingNumbers.js'
 import { numberLineLesson } from '../data/numberLine.js'
 import { chapterPracticeLesson } from '../data/chapterPractice.js'
 import { whatIsAFractionLesson } from '../data/whatIsAFraction.js'
+import { equivalentFractionsLesson } from '../data/equivalentFractions.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
@@ -26,6 +27,7 @@ const lessonsByTopic = {
   'number-line': numberLineLesson,
   'chapter-practice': chapterPracticeLesson,
   'what-is-a-fraction': whatIsAFractionLesson,
+  'equivalent-fractions': equivalentFractionsLesson,
 }
 
 function LessonPage() {

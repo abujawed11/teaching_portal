@@ -27,6 +27,8 @@ import CustomNumberLineJump from '../numbers/CustomNumberLineJump.jsx'
 import FractionVisual from '../fractions/FractionVisual.jsx'
 import CustomFractionVisual from '../fractions/CustomFractionVisual.jsx'
 import PizzaFractionIllustration from '../fractions/PizzaFractionIllustration.jsx'
+import EquivalentFractionsReveal from '../fractions/EquivalentFractionsReveal.jsx'
+import CustomEquivalentFractions from '../fractions/CustomEquivalentFractions.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -56,6 +58,8 @@ const visualComponents = {
   CustomNumberLineJump,
   FractionVisual,
   CustomFractionVisual,
+  EquivalentFractionsReveal,
+  CustomEquivalentFractions,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
