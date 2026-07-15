@@ -63,6 +63,22 @@ export const comparingFractionsLesson = {
     },
     {
       type: 'text',
+      title: 'What About Fractions Like 2/3 and 3/4?',
+      text: 'Sometimes none of the shortcuts above apply — different denominators, different numerators, and both fractions are on the same side of 1 and of 1/2. When that happens, go back to Strategy 1: make both fractions share the same denominator, then compare the numerators.',
+    },
+    {
+      type: 'example',
+      title: 'Worked Example: Making Denominators Match',
+      problem: 'Compare 2/3 and 3/4.',
+      solution: 'Give both a denominator of 3 × 4 = 12: 2/3 = 8/12, and 3/4 = 9/12. Now they share a denominator, so just compare numerators (Strategy 1): 8 < 9, so 2/3 < 3/4.',
+    },
+    {
+      type: 'text',
+      title: 'Trick: Cross-Multiplication is the Same Shortcut',
+      text: 'Cross-multiplying isn\'t a separate rule — it\'s the same "same denominator" idea, without writing the common denominator out. For a/b vs c/d: multiply a × d and b × c. This is exactly the numerators you\'d get after giving both fractions the denominator b × d. So for 2/3 vs 3/4: 2 × 4 = 8 and 3 × 3 = 9 — the same 8 vs 9 as above.',
+    },
+    {
+      type: 'text',
       title: 'Trick: Pick the Fastest Strategy',
       text: 'Before comparing digit by digit or cross-multiplying, check for shortcuts first: same denominator? same numerator? one fraction obviously over 1 and the other under? one obviously over half and the other under? Only cross-multiply if none of these shortcuts apply.',
     },
@@ -82,6 +98,12 @@ export const comparingFractionsLesson = {
       question: 'Is 3/8 more than, less than, or equal to 1/2?',
       answer: 'Less than 1/2',
       explanation: 'Double the numerator: 3 × 2 = 6, which is less than the denominator (8), so 3/8 is less than half.',
+    },
+    {
+      type: 'question',
+      question: 'Compare 3/5 and 4/7 by first making their denominators match.',
+      answer: '3/5 > 4/7',
+      explanation: 'Common denominator 5 × 7 = 35: 3/5 = 21/35, and 4/7 = 20/35. Comparing numerators, 21 > 20, so 3/5 > 4/7.',
     },
     {
       type: 'question',
