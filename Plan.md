@@ -10,7 +10,8 @@
 | Phase 3 — Class 5 Chapter 1: Numbers (Module 3.1 Place Value) | ✅ Done |
 | Phase 3 — Module 3.2 Indian Number System | ✅ Done |
 | Phase 3 — Module 3.3 International Number System | ✅ Done |
-| Phase 3 — Modules 3.4–3.7 (remaining Numbers topics) | Not started |
+| Phase 3 — Module 3.4 Comparing Numbers | 🔶 In progress |
+| Phase 3 — Modules 3.5–3.7 (remaining Numbers topics) | Not started |
 
 ### Decision: Styling approach
 
@@ -136,6 +137,23 @@ Mirrors Module 3.2's structure, per Plan.md §Module 3.3:
 - `src/data/internationalNumberSystem.js` — full lesson: intro → chart → comma theory + reveal → number-name theory + reveal → Indian vs. International comparison → converter → 4 practice questions (including cross-system conversion) → summary
 - `quizzes['international-number-system']` — 10-question quiz, same engine as the other modules' quizzes
 - `topics.js` — "International Number System" marked active
+
+### Phase 3, Module 3.4 — Comparing Numbers (🔶 in progress)
+
+Per Plan.md §Module 3.4. Done so far:
+
+- `src/components/numbers/NumberComparisonReveal.jsx` — teacher-controlled, staged comparison of two numbers: (1) compare digit count first — if unequal, jumps straight to the result; (2) if equal length, reveals place-by-place and highlights the first differing digit; (3) shows the final `>`/`<`/`=` symbol with a plain-English explanation. Buttons: Compare Digit Count → Compare Place by Place → Show Result, plus Reset.
+- `src/data/comparingNumbers.js` — lesson started (intro + the comparison demo using 45,672 vs 45,267), not finished
+- `topics.js` — "Comparing Numbers" marked active
+- Registered in `LessonStepRenderer`'s `visualComponents` map and `LessonPage`'s `lessonsByTopic` registry
+
+**Still to do for this module:**
+- Teacher-generated custom comparison (two number inputs + validation, similar to `CustomNumberChart`/`IndianNumberConverter` pattern) — reuse `NumberComparisonReveal` underneath
+- 4 practice questions (choose correct symbol, select greater number, arrange two numbers) + summary step
+- 10-question quiz in `quizzes.js` keyed `'comparing-numbers'`
+- Optional: the plan mentions an "alligator-mouth visual" for younger students — skipped so far, not essential for Class 5
+
+**Resume point:** continue from "teacher-generated custom comparison" above.
 
 ---
 
