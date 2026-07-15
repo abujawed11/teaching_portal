@@ -14,7 +14,7 @@ export const topics = {
   'computer-foundations': [
     { id: 'what-is-a-computer', label: 'What Is a Computer?', active: true },
     { id: 'computer-hardware', label: 'Computer Hardware Deep-Dive', active: true },
-    { id: 'types-of-computers-os', label: 'Types of Computers & Operating Systems', active: false },
+    { id: 'types-of-computers-os', label: 'Types of Computers & Operating Systems', active: true },
     { id: 'foundations-practice', label: 'Level 1 Practice', active: false },
     { id: 'foundations-quiz', label: 'Level 1 Quiz', active: false, quizOnly: true },
   ],

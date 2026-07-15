@@ -17,6 +17,7 @@ import { comparingFractionsLesson } from '../data/comparingFractions.js'
 import { fractionsGreaterThanOneLesson } from '../data/fractionsGreaterThanOne.js'
 import { whatIsAComputerLesson } from '../data/whatIsAComputer.js'
 import { computerHardwareLesson } from '../data/computerHardware.js'
+import { typesOfComputersOSLesson } from '../data/typesOfComputersOS.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
@@ -37,6 +38,7 @@ const lessonsByTopic = {
   'fractions-greater-than-one': fractionsGreaterThanOneLesson,
   'what-is-a-computer': whatIsAComputerLesson,
   'computer-hardware': computerHardwareLesson,
+  'types-of-computers-os': typesOfComputersOSLesson,
 }
 
 function LessonPage() {

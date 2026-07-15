@@ -357,7 +357,7 @@ The **full detailed plan** — 14 course levels (Computer Foundations through Be
 
 **See `Computer.md` in the project root for the complete Digital Skills & Computer Fundamentals plan.**
 
-Status: planning only, not yet reviewed/approved for implementation. No code has been written for this course. Mathematics (Phase 3 onward, above) remains the active focus until this course is picked up.
+Status: Phase C0 (navigation) done. Phase C3 (Computer Foundations module) in progress — 3 of its lessons built, wrap-up (Level 1 Practice + Quiz) not started yet. See below.
 
 ### Phase C0 — Integration into portal navigation (✅ Done)
 
@@ -371,6 +371,30 @@ Digital Skills is reached the same way Mathematics is, without inventing a paral
 
 No new pages or routes were created — Level = Chapter, Lesson = Topic, reusing the exact same `ChapterSelectionPage`/`TopicSelectionPage`/`LessonPage`/`QuizPage` components Mathematics uses.
 
+### Phase C3 — Computer Foundations module (in progress: 3 of 5 topics done)
+
+`topics['computer-foundations']` has 5 entries; 3 lesson topics are built and active, the 2 wrap-up topics are not started:
+
+**Lesson: What Is a Computer? (`what-is-a-computer`, ✅ done)** — `src/data/whatIsAComputer.js`. Steps: intro (hero photo) → "Where Do We See Computers?" (4-photo grid: school lab, ATM, smartphone, smart TV) → "What Does a Computer Do?" theory → `InputProcessOutputAnimation` (click-through Input→Process→Output→Storage demo using lucide icons, no photos needed — abstract flow) → "Input Devices" / "Output Devices" theory (photo grids) → `InputOutputSort` activity (click-and-sort: keyboard/microphone/scanner vs. monitor/speaker/printer) → "Meet the Hardware" (photo) → "Hardware vs. Software" theory → `HardwareSoftwareSort` activity (photos for hardware items, lucide icons for software items — deliberately no software logos, to avoid trademark issues) → 6 practice questions → summary. Quiz: `quizzes['what-is-a-computer']`, 12 questions.
+
+**Lesson: Computer Hardware Deep-Dive (`computer-hardware`, ✅ done)** — `src/data/computerHardware.js`. Steps: intro (open-case hero photo) → `ComputerPartsExplorer` (click CPU/RAM/Motherboard/GPU/Ports card to reveal its role — reusable click-to-reveal grid pattern) → "Storage: HDD vs. SSD" (2-photo comparison) → ports theory → `IdentifyPortActivity` (shown a port close-up photo, pick its name from 4 options: USB/HDMI/Ethernet/Audio Jack) → 4 practice questions → summary. Quiz: `quizzes['computer-hardware']`, 10 questions.
+
+**Lesson: Types of Computers & Operating Systems (`types-of-computers-os`, ✅ done)** — `src/data/typesOfComputersOS.js`. Steps: intro (4-photo grid: desktop/laptop/tablet/smartphone) → Desktop vs. Laptop theory → Tablet vs. Smartphone theory → `DeviceCategoryMatch` activity (same click-and-sort pattern, guess the device category from a photo) → "What Is an Operating System?" theory (Windows/macOS/Linux/Android/iOS mentioned by name only — no logos, trademark risk) → `TerminologyList` (new reusable term/definition list component — Desktop, Icon, Window, Menu, Cursor, App, File, Folder; built generically so future levels needing a glossary can reuse it via `step.props.terms`) → 4 practice questions → summary. Quiz: `quizzes['types-of-computers-os']`, 10 questions.
+
+**Not yet built**: `foundations-practice` (mixed review across all 3 lessons) and `foundations-quiz` (scored wrap-up quiz) — same pattern as Math's Chapter Practice/Chapter Quiz. Both topic entries exist in `topics.js` but are still `active: false`.
+
+**Reusable interaction patterns established this phase** (for reuse in later levels):
+- Click-and-sort activity (`HardwareSoftwareSort`, `InputOutputSort`, `IdentifyPortActivity`, `DeviceCategoryMatch`): show one item/photo, teacher picks a category from buttons, instant correct/wrong feedback with explanation, "Next Item", running score at the end, "Try Again" to reset. Same shape every time — worth building a shared `SortActivity` component if a 5th instance comes up (not done yet — three near-identical copies exist today: `HardwareSoftwareSort`, `InputOutputSort`, and the differently-shaped `IdentifyPortActivity`/`DeviceCategoryMatch` pair).
+- Click-to-reveal grid (`ComputerPartsExplorer`): grid of photo cards, click one to reveal a detail panel below — same shape as Math's `PlaceValueChart` digit-click pattern, adapted for photos instead of digits.
+- `TerminologyList`: generic term/definition list, reusable anywhere a lesson needs a glossary step.
+
+**ExplanationPanel (`src/components/teaching/ExplanationPanel.jsx`) extended for photos** — this is shared by every lesson (Math included), not Digital-Skills-only:
+- `step.image` → single hero photo (`object-contain`, no cropping).
+- `step.images` → an array of captioned photos in a centered, wrapping row (`flex flex-wrap justify-center`, not a fixed-column grid — fixes photos left-aligning instead of centering when there are fewer than a full row).
+- Photo tiles are forced square via `aspect-square` (not a fixed height, which looked square only at one screen width).
+- Multi-photo rows get their own `max-w-5xl` wrapper, separate from the `max-w-3xl` text wrapper — needed so 4 photos can sit on one row without being squeezed by the narrower text column.
+- `LessonLayout.jsx`'s content card widened from `max-w-4xl` to `max-w-6xl` globally (affects Math too) to give photo grids more room.
+
 ### Working agreement: images in Digital Skills lessons
 
 Per user request: this course should use real images in its animations/steps wherever they'd make a concept clearer or more attractive (unlike Mathematics, where content is abstract enough that animations/SVGs suffice). Agreed workflow, to remember across sessions:
@@ -379,6 +403,10 @@ Per user request: this course should use real images in its animations/steps whe
 - **Copyright constraint** (same rule as the NCERT-images note above): never use NCERT/textbook images or ad-hoc Google Image results. Only openly-licensed sources (Unsplash, Pexels, Wikimedia Commons) or the user's own photos of real hardware.
 - **File location**: `frontend/public/images/computer/<level-or-lesson-folder>/<filename>`, referenced with a plain `<img src="/images/computer/...">` tag (not imported through `src/assets`) — matches how a growing, teacher-supplied image library should work, and keeps them out of the JS bundle.
 - **Process**: whenever an `<img>` tag is added while building a Digital Skills lesson, the exact recommended pixel size (based on where it sits in the layout) and the exact file path to save it to will be stated at that point, so the user knows exactly what to bring and where to paste it. Not a one-time upfront image list — decided lesson by lesson, same as the rest of this course's content.
+
+In practice (Phase C3): all Level 1 images share one folder, `frontend/public/images/computer/foundations/`, rather than a separate folder per lesson — simpler since all 3 Level 1 lessons' photos are reused across each other (e.g. `keyboard.jpg` and `monitor.jpg` are used in both the "What Is a Computer?" and later activities). Revisit this convention (per-level folder, not per-lesson) once Level 2 starts.
+
+**Known issue, not yet fixed**: the first batch of user-supplied photos came in quite large (1.5–8MB each, straight from source with no compression) — functionally fine, but bad for the "offline-first, fast on a classroom laptop" goal (§4). Recommend compressing every photo to well under 500KB (e.g. via squoosh.app) before/after adding it. Not blocking, but worth a cleanup pass before this course goes near a real classroom.
 
 ---
 

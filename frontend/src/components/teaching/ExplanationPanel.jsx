@@ -1,6 +1,6 @@
 function ExplanationPanel({ title, text, illustration, image, images }) {
   return (
-    <div className="max-w-3xl flex flex-col items-center gap-6 text-center">
+    <div className="flex flex-col items-center gap-6 text-center w-full">
       {illustration}
 
       {image && (
@@ -12,7 +12,7 @@ function ExplanationPanel({ title, text, illustration, image, images }) {
       )}
 
       {images && images.length > 0 && (
-        <div className="flex flex-wrap justify-center gap-5 w-full">
+        <div className="flex flex-wrap justify-center gap-5 w-full max-w-5xl">
           {images.map((img) => (
             <figure key={img.src} className="flex flex-col items-center gap-2 w-48 sm:w-56">
               <img
@@ -28,8 +28,10 @@ function ExplanationPanel({ title, text, illustration, image, images }) {
         </div>
       )}
 
-      {title && <h2 className="text-projector-md font-extrabold text-primary">{title}</h2>}
-      {text && <p className="text-projector-sm text-ink leading-relaxed">{text}</p>}
+      <div className="max-w-3xl flex flex-col items-center gap-6">
+        {title && <h2 className="text-projector-md font-extrabold text-primary">{title}</h2>}
+        {text && <p className="text-projector-sm text-ink leading-relaxed">{text}</p>}
+      </div>
     </div>
   )
 }
