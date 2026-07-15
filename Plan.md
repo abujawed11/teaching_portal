@@ -102,6 +102,15 @@ Per user instruction: don't follow Plan.md rigidly — if an improvement is spot
 - Added a "What is Face Value?" theory step (previously only Place Value had an intro, even though Face Value was tested in practice/quiz)
 - Added a "What is Expanded Form?" theory step, which also introduces Standard Form as its counterpart, before the expanded-form reveal demo
 
+### Working agreement: tricks and shortcuts
+
+Per user instruction: wherever it fits naturally, add tricks to make lessons more attractive and memorable for students — not just memory/mnemonic tricks (e.g. the alligator-mouth trick for `>`/`<`, comma-grouping rhymes) but also genuine **math shortcut tricks** for solving problems faster (e.g. quick divisibility checks, fast multiplication tricks, estimation shortcuts). These should be added as small enhancements to existing steps, not separate heavyweight screens, and only where they don't get in the way of the core understand-first teaching flow. Not started yet — apply opportunistically module by module, and proactively suggest one when a natural fit is spotted (per the working agreement above), rather than treating it as a checklist to complete all at once.
+
+Ideas already discussed, not yet built:
+- Comparing Numbers: alligator/crocodile-mouth visual for `>`/`<` (mouth opens toward the bigger number)
+- Indian vs. International systems: a "3-3-2 vs 3-3-3" comma-grouping rhyme
+- Place Value: a "move left, multiply by 10" chant for reading the chart
+
 ### Phase 3, Module 3.2 — Indian Number System (what was built)
 
 Mirrors the Place Value module's structure, per Plan.md §Module 3.2:
