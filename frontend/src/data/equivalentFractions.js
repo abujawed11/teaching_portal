@@ -10,13 +10,24 @@ export const equivalentFractionsLesson = {
     {
       type: 'text',
       title: 'Fitting Smaller Pieces Into Bigger Ones',
-      text: 'Imagine breaking 1/3 of a bar into sixths. How many 1/6 pieces fit exactly into 1/3? Since 1/3 = 2/6, it takes exactly 2 pieces of 1/6 to make up 1/3.',
+      text: 'Imagine breaking 1/3 of a bar into sixths. How many 1/6 pieces fit exactly into 1/3? Watch what happens when we split each part in half.',
     },
     {
-      type: 'example',
-      title: 'Worked Example',
-      problem: 'How many 1/8 pieces fit into 1/4?',
-      solution: '1/4 = 2/8, so it takes exactly 2 pieces of 1/8 to make up 1/4.',
+      type: 'visual',
+      component: 'EquivalentFractionsReveal',
+      title: 'How Many 1/6 Pieces Fit Into 1/3?',
+      props: { numerator: 1, denominator: 3, maxK: 2 },
+    },
+    {
+      type: 'text',
+      title: 'One More Example',
+      text: 'Now let\'s try it with fourths and eighths — how many 1/8 pieces fit into 1/4?',
+    },
+    {
+      type: 'visual',
+      component: 'EquivalentFractionsReveal',
+      title: 'How Many 1/8 Pieces Fit Into 1/4?',
+      props: { numerator: 1, denominator: 4, maxK: 2 },
     },
     {
       type: 'text',
