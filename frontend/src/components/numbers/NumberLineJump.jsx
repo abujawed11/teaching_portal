@@ -19,7 +19,7 @@ function NumberLineJump({ start = 5, amount = 4, operation = 'add' }) {
 
   return (
     <div className="flex flex-col items-center gap-8 w-full">
-      <div className="w-[42rem] max-w-full px-4">
+      <div className="w-[42rem] max-w-full px-4 pt-16 pb-16">
         <div className="relative h-2 bg-slate-200 rounded-full">
           {ticks.map((t) => (
             <div key={t} className="absolute top-1/2 -translate-y-1/2 flex flex-col items-center" style={{ left: `${pct(t)}%` }}>
@@ -29,11 +29,11 @@ function NumberLineJump({ start = 5, amount = 4, operation = 'add' }) {
           ))}
 
           <div
-            className="absolute flex flex-col items-center -translate-x-1/2 -top-14"
+            className="absolute flex flex-col items-center -translate-x-1/2 top-9"
             style={{ left: `${pct(start)}%` }}
           >
+            <div className="w-2 h-2 rounded-full bg-slate-400 mb-1" />
             <span className="text-xs font-semibold text-slate-500">Start</span>
-            <div className="w-2 h-2 rounded-full bg-slate-400 mt-1" />
           </div>
 
           <motion.div
