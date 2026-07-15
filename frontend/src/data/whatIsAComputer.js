@@ -48,5 +48,24 @@ export const whatIsAComputerLesson = {
       component: 'InputProcessOutputAnimation',
       title: 'Input → Process → Output → Storage',
     },
+    {
+      type: 'text',
+      title: 'Meet the Hardware',
+      text: 'Hardware is every part of the computer you can actually touch — the keyboard, the mouse, the screen, and the parts working inside the box.',
+      image: {
+        src: '/images/computer/foundations/hardware-parts-flatlay.jpg',
+        alt: 'Computer hardware parts laid out — keyboard, mouse, monitor, and internal components',
+      },
+    },
+    {
+      type: 'text',
+      title: 'Hardware vs. Software',
+      text: 'Hardware is the physical machine. Software is the set of programs and apps that tell the hardware what to do — you can see and touch hardware, but you can only see software running on a screen.',
+    },
+    {
+      type: 'visual',
+      component: 'HardwareSoftwareSort',
+      title: 'Sort It: Hardware or Software?',
+    },
   ],
 }
