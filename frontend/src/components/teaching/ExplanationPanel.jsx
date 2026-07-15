@@ -12,13 +12,13 @@ function ExplanationPanel({ title, text, illustration, image, images }) {
       )}
 
       {images && images.length > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 w-full">
+        <div className="flex flex-wrap justify-center gap-5 w-full">
           {images.map((img) => (
-            <figure key={img.src} className="flex flex-col items-center gap-2">
+            <figure key={img.src} className="flex flex-col items-center gap-2 w-48 sm:w-56">
               <img
                 src={img.src}
                 alt={img.alt}
-                className="rounded-xl shadow-md shadow-slate-300/50 w-full aspect-square object-cover"
+                className="rounded-xl shadow-md shadow-slate-300/50 w-full aspect-square object-contain bg-white"
               />
               {img.caption && (
                 <figcaption className="text-sm sm:text-base text-slate-500">{img.caption}</figcaption>
