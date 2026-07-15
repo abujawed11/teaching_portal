@@ -19,6 +19,8 @@
 | Phase 3 — Module 3.10 Number Tricks & Puzzles | Not started |
 | Phase 3 — Chapter 1 Practice (mixed review) | ✅ Done |
 | Phase 3 — Chapter 1 Quiz (mixed, chapter-wide) | ✅ Done |
+| Phase 3 — Class 5 Chapter 2: Fractions (Module 4.1 What is a Fraction?) | ✅ Done |
+| Phase 3 — Modules 4.2–4.5 (remaining Fractions topics) | Not started |
 
 ### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
 
@@ -245,6 +247,35 @@ Per user instruction: build the chapter-wide wrap-up items, skip Roman Numerals 
 Verified with `npm run build` — no errors.
 
 Remaining for full Chapter 1 topic-list parity per the original Plan.md (not from the actual book, this was in the pre-existing topic list): Module 3.7 (Roman Numerals) — explicitly deferred per user instruction. Module 3.9 (Addition & Subtraction of Large Numbers) and 3.10 (Number Tricks & Puzzles) are new modules identified from the actual Chapter 4 review, not yet started.
+
+### Phase 3, Class 5 Chapter 2 — Fractions (planning; not started)
+
+Chapter 1 is closed out (per user decision, Roman Numerals deferred). Moving on to the actual book's Chapter 2 ("Fractions", `eemm102.pdf`), reviewed earlier — see the "Chapters 2, 3, 5, 6, 7 reviewed" notes above for the source summary. Module breakdown, in the order the actual book introduces things, plus one Beyond-NCERT foundation module added first:
+
+- **Module 4.1 — What is a Fraction? (Beyond-NCERT foundation)**: numerator/denominator, "parts of a whole" using fraction bars/circles. The actual book's Chapter 2 jumps straight into equivalent fractions assuming this is already known from earlier grades — per the equal-priority Beyond-NCERT approach ([[Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)]] above), a quick refresher is added first so no student is lost before the real chapter content starts.
+- **Module 4.2 — Equivalent Fractions**: fraction-kit pieces, grids, and number patterns showing why e.g. 1/2 = 2/4 = 3/6 (core NCERT content).
+- **Module 4.3 — Comparing Fractions**: same-denominator, same-numerator, using 1 as a reference point, and using 1/2 as a reference point (core NCERT content — four distinct comparison strategies, each worth its own demo).
+- **Module 4.4 — Fractions Greater Than 1 (Mixed Numbers)**: introduced via a "parathas" real-world context and number lines (core NCERT content).
+- **Module 4.5 — Fraction Tricks & Practice (Beyond-NCERT enrichment)**: quick comparison/simplification shortcuts, feeding the same [[Working agreement: tricks and shortcuts]] used throughout Chapter 1.
+- **Chapter 2 Practice + Chapter 2 Quiz**: same mixed-review/scored-quiz pattern used to close out Chapter 1.
+
+Note (per the Chapter 2 review): the actual book's Chapter 2 does **not** cover fraction addition/subtraction/multiplication — it stays comparison-focused. That arithmetic likely appears in a later chapter, not assumed here.
+
+`chapters.js` updated: "Chapter 2: Fractions" added (active), old placeholder chapters (Addition and Subtraction, Multiplication, Division) renumbered to 3/4/5 so labels don't collide. `topics.js` given a new `fractions` topic list.
+
+**Gotcha caught and fixed while wiring this up**: `LessonPage`'s lesson registry and `quizzes.js` are both keyed by a flat `topicId` string, not scoped per chapter — so reusing `chapter-practice`/`chapter-quiz` as ids for Chapter 2 (as Chapter 1 already does) would have silently collided once built. Used `fractions-chapter-practice` / `fractions-chapter-quiz` instead. Worth remembering for every future chapter: topic ids must be globally unique across the whole app, not just unique within one chapter's topic list.
+
+### Phase 3, Module 4.1 — What is a Fraction? (✅ Done)
+
+- `src/components/fractions/FractionVisual.jsx` — a bar divided into `denominator` equal clickable segments; teacher clicks segments to shade them, with the fraction display (numerator/denominator, stacked) and explanation text updating live as shading changes.
+- `src/components/fractions/CustomFractionVisual.jsx` — teacher picks how many equal parts to divide the whole into (2–12, validated), reuses `FractionVisual` underneath.
+- `src/data/whatIsAFraction.js` — intro → numerator/denominator theory → `FractionVisual` demo → "why equal parts matter" theory → custom tool → 4 practice questions → summary.
+- `quizzes['what-is-a-fraction']` — 10-question quiz.
+- `topics.js` — "What is a Fraction?" marked active under the `fractions` chapter.
+
+Verified with `npm run build` — no errors.
+
+Next step: Module 4.2 (Equivalent Fractions).
 
 ---
 

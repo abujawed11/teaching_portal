@@ -24,6 +24,8 @@ import CustomRounding from '../numbers/CustomRounding.jsx'
 import NumberLinePosition from '../numbers/NumberLinePosition.jsx'
 import NumberLineJump from '../numbers/NumberLineJump.jsx'
 import CustomNumberLineJump from '../numbers/CustomNumberLineJump.jsx'
+import FractionVisual from '../fractions/FractionVisual.jsx'
+import CustomFractionVisual from '../fractions/CustomFractionVisual.jsx'
 
 const visualComponents = {
   PlaceValueChart,
@@ -47,6 +49,8 @@ const visualComponents = {
   NumberLinePosition,
   NumberLineJump,
   CustomNumberLineJump,
+  FractionVisual,
+  CustomFractionVisual,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

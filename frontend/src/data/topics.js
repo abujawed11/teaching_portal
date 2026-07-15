@@ -11,4 +11,13 @@ export const topics = {
     { id: 'chapter-practice', label: 'Chapter Practice', active: true },
     { id: 'chapter-quiz', label: 'Chapter Quiz', active: true, quizOnly: true },
   ],
+  fractions: [
+    { id: 'what-is-a-fraction', label: 'What is a Fraction?', active: true },
+    { id: 'equivalent-fractions', label: 'Equivalent Fractions', active: false },
+    { id: 'comparing-fractions', label: 'Comparing Fractions', active: false },
+    { id: 'fractions-greater-than-one', label: 'Fractions Greater Than 1', active: false },
+    { id: 'fraction-tricks', label: 'Fraction Tricks & Practice', active: false },
+    { id: 'fractions-chapter-practice', label: 'Chapter Practice', active: false },
+    { id: 'fractions-chapter-quiz', label: 'Chapter Quiz', active: false, quizOnly: true },
+  ],
 }
