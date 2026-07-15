@@ -15,6 +15,7 @@ import { whatIsAFractionLesson } from '../data/whatIsAFraction.js'
 import { equivalentFractionsLesson } from '../data/equivalentFractions.js'
 import { comparingFractionsLesson } from '../data/comparingFractions.js'
 import { fractionsGreaterThanOneLesson } from '../data/fractionsGreaterThanOne.js'
+import { whatIsAComputerLesson } from '../data/whatIsAComputer.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
@@ -33,6 +34,7 @@ const lessonsByTopic = {
   'equivalent-fractions': equivalentFractionsLesson,
   'comparing-fractions': comparingFractionsLesson,
   'fractions-greater-than-one': fractionsGreaterThanOneLesson,
+  'what-is-a-computer': whatIsAComputerLesson,
 }
 
 function LessonPage() {

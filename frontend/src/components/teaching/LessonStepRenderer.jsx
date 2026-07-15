@@ -34,6 +34,7 @@ import CustomFractionCompare from '../fractions/CustomFractionCompare.jsx'
 import MixedNumberReveal from '../fractions/MixedNumberReveal.jsx'
 import MixedNumberLine from '../fractions/MixedNumberLine.jsx'
 import CustomMixedNumber from '../fractions/CustomMixedNumber.jsx'
+import InputProcessOutputAnimation from '../computer/InputProcessOutputAnimation.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -70,6 +71,7 @@ const visualComponents = {
   MixedNumberReveal,
   MixedNumberLine,
   CustomMixedNumber,
+  InputProcessOutputAnimation,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
@@ -89,6 +91,8 @@ function LessonStepRenderer({ step }) {
           title={step.title}
           text={step.text}
           illustration={IllustrationComponent ? <IllustrationComponent {...step.illustrationProps} /> : null}
+          image={step.image}
+          images={step.images}
         />
       )
     }

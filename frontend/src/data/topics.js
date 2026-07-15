@@ -12,7 +12,7 @@ export const topics = {
     { id: 'chapter-quiz', label: 'Chapter Quiz', active: true, quizOnly: true },
   ],
   'computer-foundations': [
-    { id: 'what-is-a-computer', label: 'What Is a Computer?', active: false },
+    { id: 'what-is-a-computer', label: 'What Is a Computer?', active: true },
     { id: 'computer-hardware', label: 'Computer Hardware Deep-Dive', active: false },
     { id: 'types-of-computers-os', label: 'Types of Computers & Operating Systems', active: false },
     { id: 'foundations-practice', label: 'Level 1 Practice', active: false },
