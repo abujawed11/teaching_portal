@@ -31,6 +31,9 @@ import EquivalentFractionsReveal from '../fractions/EquivalentFractionsReveal.js
 import CustomEquivalentFractions from '../fractions/CustomEquivalentFractions.jsx'
 import FractionCompareVisual from '../fractions/FractionCompareVisual.jsx'
 import CustomFractionCompare from '../fractions/CustomFractionCompare.jsx'
+import MixedNumberReveal from '../fractions/MixedNumberReveal.jsx'
+import MixedNumberLine from '../fractions/MixedNumberLine.jsx'
+import CustomMixedNumber from '../fractions/CustomMixedNumber.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -64,6 +67,9 @@ const visualComponents = {
   CustomEquivalentFractions,
   FractionCompareVisual,
   CustomFractionCompare,
+  MixedNumberReveal,
+  MixedNumberLine,
+  CustomMixedNumber,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

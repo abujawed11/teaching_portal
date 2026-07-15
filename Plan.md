@@ -23,6 +23,7 @@
 | Phase 3 — Module 4.2 Equivalent Fractions | ✅ Done |
 | Phase 3 — Module 4.3 Comparing Fractions | ✅ Done |
 | Phase 3 — Modules 4.4–4.5 (remaining Fractions topics) | Not started |
+| Digital Skills & Computer Fundamentals course (see [[1a. Digital Skills & Computer Fundamentals]] and `Computer.md`) | Planning only, not started |
 
 ### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
 
@@ -343,6 +344,20 @@ The website should make concepts easier to understand through:
 - Full-screen projector mode
 
 This is not initially meant to be a complete school-management system. The first goal is to build an excellent interactive teaching experience.
+
+---
+
+## 1a. Digital Skills & Computer Fundamentals (future course)
+
+The portal is planned to eventually support multiple subjects/courses under the same architecture — Mathematics, Science, and a new **Digital Skills & Computer Fundamentals** course for Classes 6–10.
+
+This course teaches practical computer literacy before any programming language: digital literacy → confident computer usage → internet and productivity tools → AI awareness → cyber safety → programming logic → Python or web development later. It reuses the existing portal architecture (Home, Class/Subject selection, lesson player, animation controls, practice system, quiz system, projector mode, worksheet system, shared UI components) rather than building a parallel system.
+
+The **full detailed plan** — 14 course levels (Computer Foundations through Beginner Web Development), reusable component list, lesson structure, assessment system, phases C0–C12, and the recommended first MVP — is kept in a separate file to avoid bloating this document:
+
+**See `Computer.md` in the project root for the complete Digital Skills & Computer Fundamentals plan.**
+
+Status: planning only, not yet reviewed/approved for implementation. No code has been written for this course. Mathematics (Phase 3 onward, above) remains the active focus until this course is picked up.
 
 ---
 
