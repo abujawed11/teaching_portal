@@ -597,6 +597,17 @@ export const quizzes = {
   'what-is-a-fraction': [
     {
       type: 'mcq',
+      question: 'Why can 1/3 of a large chocolate bar be bigger than 1/2 of a small chocolate bar?',
+      options: [
+        'Because the two wholes (chocolate bars) are different sizes',
+        'Because 1/3 is always bigger than 1/2',
+        'This can never happen',
+      ],
+      correctAnswer: 'Because the two wholes (chocolate bars) are different sizes',
+      explanation: 'Fractions only compare fairly when they come from the same-sized whole. Different-sized wholes can make a "smaller" fraction represent a bigger actual amount.',
+    },
+    {
+      type: 'mcq',
       question: 'In the fraction 3/5, what is the denominator?',
       options: ['3', '5', '8'],
       correctAnswer: '5',
@@ -671,6 +682,18 @@ export const quizzes = {
     },
   ],
   'equivalent-fractions': [
+    {
+      type: 'fill',
+      question: 'How many 1/8 pieces fit into 1/2?',
+      correctAnswer: '4',
+      explanation: '1/2 = 4/8, so it takes exactly 4 pieces of 1/8 to make up 1/2.',
+    },
+    {
+      type: 'fill',
+      question: 'How many 1/9 pieces fit into 1/3?',
+      correctAnswer: '3',
+      explanation: '1/3 = 3/9, so it takes exactly 3 pieces of 1/9 to make up 1/3.',
+    },
     {
       type: 'mcq',
       question: 'What does it mean for two fractions to be equivalent?',

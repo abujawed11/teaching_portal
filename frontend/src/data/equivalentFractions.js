@@ -9,6 +9,17 @@ export const equivalentFractionsLesson = {
     },
     {
       type: 'text',
+      title: 'Fitting Smaller Pieces Into Bigger Ones',
+      text: 'Imagine breaking 1/3 of a bar into sixths. How many 1/6 pieces fit exactly into 1/3? Since 1/3 = 2/6, it takes exactly 2 pieces of 1/6 to make up 1/3.',
+    },
+    {
+      type: 'example',
+      title: 'Worked Example',
+      problem: 'How many 1/8 pieces fit into 1/4?',
+      solution: '1/4 = 2/8, so it takes exactly 2 pieces of 1/8 to make up 1/4.',
+    },
+    {
+      type: 'text',
       title: 'The Rule: Multiply Top and Bottom by the Same Number',
       text: 'If you multiply both the numerator and the denominator by the same number, the fraction\'s value does not change — you are just splitting each part into more, smaller equal pieces.',
     },
@@ -32,6 +43,18 @@ export const equivalentFractionsLesson = {
       type: 'visual',
       component: 'CustomEquivalentFractions',
       title: 'Try Your Own Fraction',
+    },
+    {
+      type: 'question',
+      question: 'How many 1/12 pieces fit into 1/3?',
+      answer: '4',
+      explanation: '1/3 = 4/12, so it takes exactly 4 pieces of 1/12 to make up 1/3.',
+    },
+    {
+      type: 'question',
+      question: 'How many 1/6 pieces fit into 1/2?',
+      answer: '3',
+      explanation: '1/2 = 3/6, so it takes exactly 3 pieces of 1/6 to make up 1/2.',
     },
     {
       type: 'question',

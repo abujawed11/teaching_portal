@@ -30,6 +30,17 @@ export const whatIsAFractionLesson = {
       title: 'Try Your Own Fraction',
     },
     {
+      type: 'text',
+      title: 'Important: The Whole Must Be the Same',
+      text: 'A fraction only makes sense compared to its own whole. 1/3 of a big chocolate bar can be bigger than 1/2 of a small chocolate bar — because the two "wholes" are different sizes. To compare fractions fairly, they must come from the same-sized whole.',
+    },
+    {
+      type: 'question',
+      question: 'Tamanna has two chocolates of different sizes. She says 1/3 of the bigger chocolate is more than 1/2 of the smaller chocolate. Can this be true?',
+      answer: 'Yes, if the bigger chocolate is big enough',
+      explanation: 'Fractions only compare fairly when the wholes are the same size. Since the chocolates are different sizes, 1/3 of a much bigger one really can be more than 1/2 of a much smaller one.',
+    },
+    {
       type: 'question',
       question: 'A pizza is cut into 4 equal slices. You eat 3 slices. What fraction of the pizza did you eat?',
       answer: '3/4',
