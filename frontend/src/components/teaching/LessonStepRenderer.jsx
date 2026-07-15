@@ -17,6 +17,10 @@ import IndianVsInternationalComparison from '../numbers/IndianVsInternationalCom
 import InternationalNumberConverter from '../numbers/InternationalNumberConverter.jsx'
 import NumberComparisonReveal from '../numbers/NumberComparisonReveal.jsx'
 import CustomNumberComparison from '../numbers/CustomNumberComparison.jsx'
+import NumberOrderReveal from '../numbers/NumberOrderReveal.jsx'
+import CustomNumberOrder from '../numbers/CustomNumberOrder.jsx'
+import RoundingNumberLine from '../numbers/RoundingNumberLine.jsx'
+import CustomRounding from '../numbers/CustomRounding.jsx'
 
 const visualComponents = {
   PlaceValueChart,
@@ -33,6 +37,10 @@ const visualComponents = {
   InternationalNumberConverter,
   NumberComparisonReveal,
   CustomNumberComparison,
+  NumberOrderReveal,
+  CustomNumberOrder,
+  RoundingNumberLine,
+  CustomRounding,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

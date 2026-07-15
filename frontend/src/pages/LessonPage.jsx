@@ -7,6 +7,8 @@ import { placeValueLesson } from '../data/class5Numbers.js'
 import { indianNumberSystemLesson } from '../data/indianNumberSystem.js'
 import { internationalNumberSystemLesson } from '../data/internationalNumberSystem.js'
 import { comparingNumbersLesson } from '../data/comparingNumbers.js'
+import { ascendingDescendingOrderLesson } from '../data/ascendingDescendingOrder.js'
+import { roundingNumbersLesson } from '../data/roundingNumbers.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
@@ -16,6 +18,8 @@ const lessonsByTopic = {
   'indian-number-system': indianNumberSystemLesson,
   'international-number-system': internationalNumberSystemLesson,
   'comparing-numbers': comparingNumbersLesson,
+  'ascending-descending-order': ascendingDescendingOrderLesson,
+  'rounding-numbers': roundingNumbersLesson,
 }
 
 function LessonPage() {

@@ -10,9 +10,10 @@
 | Phase 3 — Class 5 Chapter 1: Numbers (Module 3.1 Place Value) | ✅ Done |
 | Phase 3 — Module 3.2 Indian Number System | ✅ Done |
 | Phase 3 — Module 3.3 International Number System | ✅ Done |
-| Phase 3 — Module 3.4 Comparing Numbers | 🔶 In progress |
-| Phase 3 — Modules 3.5–3.7 (remaining Numbers topics) | Not started |
-| Phase 3 — Module 3.8 Rounding Numbers (nearest 10/100/1,000) | Not started |
+| Phase 3 — Module 3.4 Comparing Numbers | ✅ Done |
+| Phase 3 — Module 3.5 Ascending and Descending Order | ✅ Done |
+| Phase 3 — Modules 3.6–3.7 (Number Line, Roman Numerals) | Not started |
+| Phase 3 — Module 3.8 Rounding Numbers (nearest 10/100/1,000) | ✅ Done |
 | Phase 3 — Module 3.9 Addition & Subtraction of Large Numbers | Not started |
 | Phase 3 — Module 3.10 Number Tricks & Puzzles | Not started |
 
@@ -179,22 +180,44 @@ Mirrors Module 3.2's structure, per Plan.md §Module 3.3:
 - `quizzes['international-number-system']` — 10-question quiz, same engine as the other modules' quizzes
 - `topics.js` — "International Number System" marked active
 
-### Phase 3, Module 3.4 — Comparing Numbers (🔶 in progress)
+### Phase 3, Module 3.4 — Comparing Numbers (✅ Done)
 
-Per Plan.md §Module 3.4. Done so far:
+Per Plan.md §Module 3.4:
 
-- `src/components/numbers/NumberComparisonReveal.jsx` — teacher-controlled, staged comparison of two numbers: (1) compare digit count first — if unequal, jumps straight to the result; (2) if equal length, reveals place-by-place and highlights the first differing digit; (3) shows the final `>`/`<`/`=` symbol with a plain-English explanation. Buttons: Compare Digit Count → Compare Place by Place → Show Result, plus Reset.
-- `src/data/comparingNumbers.js` — lesson started (intro + the comparison demo using 45,672 vs 45,267), not finished
+- `src/components/numbers/NumberComparisonReveal.jsx` — teacher-controlled, staged comparison of two numbers: (1) compare digit count first — if unequal, jumps straight to the result; (2) if equal length, walks place-by-place **one place at a time from the leftmost (highest) place**, showing a checkmark on each matching digit and naming the place ("Thousands place: 5 = 5, same — move to the next place") until it reaches the first differing digit; (3) shows the final `>`/`<`/`=` symbol with a plain-English explanation. Buttons: Compare Digit Count → step through each place → Show Result, plus Reset.
+- Fixed per user feedback: the place-by-place walk originally jumped straight to the differing digit instead of visibly stepping through each place from the start — this was confusing, so it now animates one place at a time, from the beginning.
+- `src/data/comparingNumbers.js` — full lesson: intro → "Step 1: Compare the Number of Digits" theory → "Step 2: same digit count" theory → the staged comparison demo → a **"Trick: Spot the Bigger Number Fast"** step (count digits first, don't even look at the digit values if counts differ) → `CustomNumberComparison` (teacher-entered two-number comparison) → 4 practice questions → summary
+- `src/components/numbers/CustomNumberComparison.jsx` — two number inputs (0–999,999,999, validated), reuses `NumberComparisonReveal` underneath, same pattern as `CustomNumberChart`/`IndianNumberConverter`
+- `quizzes['comparing-numbers']` — 10-question quiz, same engine as the other modules
 - `topics.js` — "Comparing Numbers" marked active
 - Registered in `LessonStepRenderer`'s `visualComponents` map and `LessonPage`'s `lessonsByTopic` registry
 
-**Still to do for this module:**
-- Teacher-generated custom comparison (two number inputs + validation, similar to `CustomNumberChart`/`IndianNumberConverter` pattern) — reuse `NumberComparisonReveal` underneath
-- 4 practice questions (choose correct symbol, select greater number, arrange two numbers) + summary step
-- 10-question quiz in `quizzes.js` keyed `'comparing-numbers'`
-- Optional: the plan mentions an "alligator-mouth visual" for younger students — skipped so far, not essential for Class 5
+Optional/skipped: the plan mentions an "alligator-mouth visual" for younger students — not built, not essential for Class 5, still listed as a future "tricks" idea above.
 
-**Resume point:** continue from "teacher-generated custom comparison" above.
+### Phase 3, Module 3.5 — Ascending and Descending Order (✅ Done)
+
+Built to close the gap identified in the NCERT alignment check above (this topic is genuinely taught in the actual Chapter 1):
+
+- `src/utils/compareNumbers.js` — extracted the digit-count/place-by-place comparison logic (`compareNumbers`, `placeNameAt`) out of `NumberComparisonReveal.jsx` into a shared utility, since Module 3.5 needed the same reasoning to explain *why* one number is picked over another. `NumberComparisonReveal.jsx` was refactored to import from here instead of duplicating the logic.
+- `src/components/numbers/NumberOrderReveal.jsx` — teacher picks Ascending or Descending, then clicks "Place Next Number" repeatedly; each click finds the smallest/largest remaining number (via `compareNumbers`), animates it moving into a "sorted so far" row (via Framer Motion `layout` + `AnimatePresence`), and explains why that number won using the same digit-count/place-value reasoning as Module 3.4 — deliberately ties the two topics together.
+- `src/components/numbers/CustomNumberOrder.jsx` — teacher enters 2–6 comma-separated numbers (validated: whole numbers, 0–999,999,999, no duplicates), reuses `NumberOrderReveal` underneath.
+- `src/data/ascendingDescendingOrder.js` — intro → theory → the staged sort demo → a "Trick: Sort in One Pass" step (repeatedly picking the extreme value is enough — no need to compare every pair) → custom tool → 4 practice questions → summary.
+- `quizzes['ascending-descending-order']` — 10-question quiz.
+- `topics.js` — "Ascending and Descending Order" marked active.
+
+### Phase 3, Module 3.8 — Rounding Numbers (✅ Done)
+
+Built to close the other gap identified in the NCERT alignment check (rounding to nearest 10/100/1,000 is a full topic in the actual Chapter 1, but wasn't in the original Plan.md topic list at all):
+
+- `src/components/numbers/RoundingNumberLine.jsx` — teacher picks a rounding place (nearest 10, 100, or 1,000), then sees a number line with the lower/upper "friendly" numbers and a marker showing the number's position, then clicks through to compare distances (highlighting whichever is closer) and finally reveal the rounded result, plus the "look at one digit" shortcut explanation.
+- `src/components/numbers/CustomRounding.jsx` — teacher enters any number (0–999,999, validated), reuses `RoundingNumberLine` underneath.
+- `src/data/roundingNumbers.js` — intro → theory → the staged number-line demo → a "Trick: Just Look at One Digit" step (check the digit right after the rounding place: 5+ rounds up, less rounds down) → custom tool → 4 practice questions → summary.
+- `quizzes['rounding-numbers']` — 10-question quiz, including the halfway/tie-breaking convention (round up).
+- `topics.js` — new topic entry added (wasn't in the original 9-topic list), placed between Comparing Numbers and Ascending/Descending Order to match the actual book's teaching order, marked active.
+
+This closes both gaps identified against the actual NCERT textbook — Chapter 1 ("We the Travellers—I") is now fully covered by our lessons (place value, expanded form, comparing, rounding, ascending/descending order), plus the Beyond-NCERT enrichment (Indian/International number systems). Verified with `npm run build` — no errors.
+
+Remaining for full Chapter 1 topic-list parity per the original Plan.md (not from the actual book, these were in the pre-existing topic list): Modules 3.6 (Number Line) and 3.7 (Roman Numerals). Module 3.9 (Addition & Subtraction of Large Numbers) and 3.10 (Number Tricks & Puzzles) are new modules identified from the actual Chapter 4 review, not yet started.
 
 ---
 
