@@ -5,6 +5,7 @@ import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
 import { topics } from '../data/topics.js'
+import { buildBreadcrumb } from '../utils/navBreadcrumb.js'
 import QuizQuestion from '../components/teaching/QuizQuestion.jsx'
 import Button from '../components/common/Button.jsx'
 import BackButton from '../components/common/BackButton.jsx'
@@ -23,10 +24,7 @@ function QuizPage() {
   const topicListPath = `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic`
 
   const breadcrumb = [
-    { label: 'Home', to: '/' },
-    { label: `Class ${classId}`, to: '/class' },
-    { label: subjectLabel, to: `/class/${classId}/subject` },
-    { label: chapterLabel, to: `/class/${classId}/subject/${subjectId}/chapter` },
+    ...buildBreadcrumb({ classId, subjectId, subjectLabel, chapterLabel }),
     { label: topicLabel, to: topicListPath },
     { label: 'Quiz' },
   ]

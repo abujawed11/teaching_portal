@@ -11,6 +11,13 @@ export const topics = {
     { id: 'chapter-practice', label: 'Chapter Practice', active: true },
     { id: 'chapter-quiz', label: 'Chapter Quiz', active: true, quizOnly: true },
   ],
+  'computer-foundations': [
+    { id: 'what-is-a-computer', label: 'What Is a Computer?', active: false },
+    { id: 'computer-hardware', label: 'Computer Hardware Deep-Dive', active: false },
+    { id: 'types-of-computers-os', label: 'Types of Computers & Operating Systems', active: false },
+    { id: 'foundations-practice', label: 'Level 1 Practice', active: false },
+    { id: 'foundations-quiz', label: 'Level 1 Quiz', active: false, quizOnly: true },
+  ],
   fractions: [
     { id: 'what-is-a-fraction', label: 'What is a Fraction?', active: true },
     { id: 'equivalent-fractions', label: 'Equivalent Fractions', active: true },

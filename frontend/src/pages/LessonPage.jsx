@@ -18,6 +18,7 @@ import { fractionsGreaterThanOneLesson } from '../data/fractionsGreaterThanOne.j
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
+import { buildBreadcrumb } from '../utils/navBreadcrumb.js'
 
 const lessonsByTopic = {
   'place-value': placeValueLesson,
@@ -51,13 +52,13 @@ function LessonPage() {
     (chapters[subjectId] ?? []).find((c) => c.id === chapterId)?.label ?? chapterId
   const topicListPath = `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic`
 
-  const breadcrumb = [
-    { label: 'Home', to: '/' },
-    { label: `Class ${classId}`, to: '/class' },
-    { label: subjectLabel, to: `/class/${classId}/subject` },
-    { label: chapterLabel, to: `/class/${classId}/subject/${subjectId}/chapter` },
-    { label: lesson?.title ?? topicId },
-  ]
+  const breadcrumb = buildBreadcrumb({
+    classId,
+    subjectId,
+    subjectLabel,
+    chapterLabel,
+    topicLabel: lesson?.title ?? topicId,
+  })
 
   if (!lesson) {
     return (

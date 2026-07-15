@@ -6,4 +6,10 @@ export const classes = [
   { id: 8, label: 'Class 8', active: false },
   { id: 9, label: 'Class 9', active: false },
   { id: 10, label: 'Class 10', active: false },
+  {
+    id: 'digital-skills',
+    label: 'Digital Skills & Computer Fundamentals',
+    active: true,
+    isCourse: true,
+  },
 ]

@@ -20,7 +20,11 @@ function ClassSelectionPage() {
             key={c.id}
             label={c.label}
             active={c.active}
-            onClick={() => navigate(`/class/${c.id}/subject`)}
+            onClick={() =>
+              navigate(
+                c.isCourse ? `/class/${c.id}/subject/${c.id}/chapter` : `/class/${c.id}/subject`,
+              )
+            }
           />
         ))}
       </div>

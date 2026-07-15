@@ -4,6 +4,7 @@ import { chapters } from '../data/chapters.js'
 import { subjects } from '../data/subjects.js'
 import SelectionCard from '../components/common/SelectionCard.jsx'
 import PageHeader from '../components/common/PageHeader.jsx'
+import { buildBreadcrumb } from '../utils/navBreadcrumb.js'
 
 function TopicSelectionPage() {
   const navigate = useNavigate()
@@ -17,13 +18,8 @@ function TopicSelectionPage() {
     <div className="min-h-screen flex flex-col items-center gap-10 p-8">
       <PageHeader
         backTo={`/class/${classId}/subject/${subjectId}/chapter`}
-        breadcrumb={[
-          { label: 'Home', to: '/' },
-          { label: `Class ${classId}`, to: '/class' },
-          { label: subjectLabel, to: `/class/${classId}/subject` },
-          { label: chapterLabel, to: `/class/${classId}/subject/${subjectId}/chapter` },
-        ]}
-        title="Select a Topic"
+        breadcrumb={buildBreadcrumb({ classId, subjectId, subjectLabel, chapterLabel })}
+        title={subjectId === 'digital-skills' ? 'Select a Lesson' : 'Select a Topic'}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
