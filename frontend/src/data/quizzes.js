@@ -1,4 +1,84 @@
 export const quizzes = {
+  'what-is-a-computer': [
+    {
+      type: 'mcq',
+      question: 'What does a computer do first when you use it?',
+      options: ['Input', 'Process', 'Output', 'Storage'],
+      correctAnswer: 'Input',
+      explanation: 'A computer must first receive information (Input) before it can do anything with it.',
+    },
+    {
+      type: 'mcq',
+      question: 'Which stage happens right after Input?',
+      options: ['Process', 'Output', 'Storage', 'Nothing'],
+      correctAnswer: 'Process',
+      explanation: 'After receiving Input, the computer Processes it to work out a result.',
+    },
+    {
+      type: 'mcq',
+      question: 'The CPU is often called the ______ of the computer.',
+      options: ['Heart', 'Brain', 'Skin', 'Voice'],
+      correctAnswer: 'Brain',
+      explanation: 'The CPU thinks and works out answers, so it is called the "brain" of the computer.',
+    },
+    {
+      type: 'fill',
+      question: 'Fill in the missing stage: Input → Process → Output → ______',
+      correctAnswer: 'Storage',
+      explanation: 'The last stage is Storage — saving the result so it can be used again later.',
+    },
+    {
+      type: 'mcq',
+      question: 'Which of these is hardware?',
+      options: ['Web Browser', 'Keyboard', 'Calculator App', 'Game App'],
+      correctAnswer: 'Keyboard',
+      explanation: 'A keyboard is a physical part you can touch — that makes it hardware.',
+    },
+    {
+      type: 'mcq',
+      question: 'Which of these is software?',
+      options: ['Monitor', 'Mouse', 'Web Browser', 'Keyboard'],
+      correctAnswer: 'Web Browser',
+      explanation: 'A web browser is a program that runs on the hardware — that makes it software.',
+    },
+    {
+      type: 'mcq',
+      question: 'Where might you find a computer working?',
+      options: [
+        'Only in school labs',
+        'Only in offices',
+        'In ATMs, phones, and TVs too',
+        'Only in banks',
+      ],
+      correctAnswer: 'In ATMs, phones, and TVs too',
+      explanation: 'Computers are built into many everyday devices, not just desktop computers.',
+    },
+    {
+      type: 'fill',
+      question: 'You can touch hardware, but you can only see ______ running on a screen.',
+      correctAnswer: 'software',
+      explanation: 'Software is a set of programs — you see it working, but you cannot physically touch it.',
+    },
+    {
+      type: 'mcq',
+      question: "What happens during the 'Process' stage?",
+      options: [
+        'The computer receives information',
+        'The computer works out the answer',
+        'The computer shows the result',
+        'The computer saves a file',
+      ],
+      correctAnswer: 'The computer works out the answer',
+      explanation: 'Processing is when the CPU works on the Input to produce a result.',
+    },
+    {
+      type: 'mcq',
+      question: 'Typing your name on a keyboard is an example of:',
+      options: ['Output', 'Storage', 'Input', 'Process'],
+      correctAnswer: 'Input',
+      explanation: 'Typing gives the computer information — that is Input.',
+    },
+  ],
   'place-value': [
     {
       type: 'mcq',

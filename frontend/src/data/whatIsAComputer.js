@@ -67,5 +67,39 @@ export const whatIsAComputerLesson = {
       component: 'HardwareSoftwareSort',
       title: 'Sort It: Hardware or Software?',
     },
+    {
+      type: 'question',
+      question: 'Name the four things every computer does, in order.',
+      answer: 'Input, Process, Output, Storage',
+      explanation: 'A computer takes Input, Processes it, shows the Output, and can Store it for later.',
+    },
+    {
+      type: 'question',
+      question: 'Is a keyboard hardware or software?',
+      answer: 'Hardware',
+      explanation: 'You can touch a keyboard — that makes it hardware.',
+    },
+    {
+      type: 'question',
+      question: 'Is a calculator app hardware or software?',
+      answer: 'Software',
+      explanation: 'A calculator app is a program that runs on the hardware — you can only see it, not touch it.',
+    },
+    {
+      type: 'question',
+      question: 'When you press keys to type a message, is that Input, Process, or Output?',
+      answer: 'Input',
+      explanation: 'Typing gives the computer information — that is the Input stage.',
+    },
+    {
+      type: 'summary',
+      title: 'Summary',
+      points: [
+        'A computer takes Input, Processes it, gives Output, and can Store it',
+        'Computers are used everywhere — school labs, phones, ATMs, smart TVs',
+        'Hardware = physical parts you can touch',
+        'Software = programs and apps that run on the hardware',
+      ],
+    },
   ],
 }
