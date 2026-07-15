@@ -307,11 +307,15 @@ Verified with `npm run build` — no errors.
 - `src/utils/compareFractions.js` — shared `compareFractions` (cross-multiplication comparison) and `detectStrategy` (auto-picks same-denominator / same-numerator / reference-to-1 / reference-to-half / cross-multiply, in that priority order) utilities.
 - `src/components/fractions/FractionCompareVisual.jsx` — shows two fractions as proportionally-filled bars; teacher clicks "Compare" to reveal both bars filling in and a reasoning sentence tailored to whichever strategy is passed in as a prop.
 - `src/components/fractions/CustomFractionCompare.jsx` — teacher enters any two fractions (validated), auto-detects the best strategy via `detectStrategy`, reuses `FractionCompareVisual`.
-- `src/data/comparingFractions.js` — intro (restating the same-whole caveat) → all 4 strategies, each with its own theory step + a guided demo using the book's own examples (Sevi/Shami's chikki, parathas, Sevi/Shami again, a reference-to-half example) → a "pick the fastest strategy" trick step → custom tool → 4 practice questions (one per strategy) → summary.
-- `quizzes['comparing-fractions']` — 10-question quiz covering all 4 strategies plus the same-whole concept.
+- `src/data/comparingFractions.js` — intro (restating the same-whole caveat) → all 4 strategies, each with its own theory step + a guided demo using the book's own examples (Sevi/Shami's chikki, parathas, Sevi/Shami again, a reference-to-half example) → custom tool → 6 practice questions (one per strategy, plus two isolating the sub-skills below) → summary.
+- `quizzes['comparing-fractions']` — 12-question quiz covering all 4 strategies plus the same-whole concept.
 - `topics.js` — "Comparing Fractions" marked active.
 
-Verified with `npm run build` — no errors.
+**Gap caught by user, fixed**: Strategies 3 and 4 (reference to 1, reference to 1/2) originally jumped straight to comparing "is it over or under 1/1-half" without ever teaching *how* to tell — this worked in the book only because its "Fractions Greater Than 1" section comes *before* the reference-to-1 comparison strategy, teaching the prerequisite first. We built our modules in the reverse order (comparing before fractions-greater-than-1), so the explanation had to be added directly into Module 4.3 rather than deferred: numerator vs. denominator tells you >1/<1/=1; double-the-numerator vs. denominator tells you >1/2/<1/2/=1/2. Added as explicit theory steps plus two isolated practice/quiz questions testing just this sub-skill.
+
+**Second gap caught by user, fixed**: the "cross-multiply" fallback strategy (used by `CustomFractionCompare` when a fraction pair like 2/3 vs 3/4 fits none of the 4 named strategies) was presented with no explanation of *why* it works — worth noting NCERT itself doesn't teach cross-multiplication as a comparison method at this level; it's a Beyond-NCERT addition, so explaining it honestly mattered even more. Added a worked example showing cross-multiplication is really just Strategy 1 (same denominator) with the common denominator (b × d) computed implicitly rather than written out — ties the "advanced" trick back to a concept already taught instead of presenting it as a disconnected rule.
+
+Verified with `npm run build` — no errors. (New build warning: main JS chunk has crossed 500kB; not an error, no action needed yet, but worth revisiting with code-splitting if the app keeps growing.)
 
 Next step: Module 4.4 (Fractions Greater Than 1).
 
