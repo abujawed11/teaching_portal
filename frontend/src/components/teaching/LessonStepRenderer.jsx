@@ -21,6 +21,9 @@ import NumberOrderReveal from '../numbers/NumberOrderReveal.jsx'
 import CustomNumberOrder from '../numbers/CustomNumberOrder.jsx'
 import RoundingNumberLine from '../numbers/RoundingNumberLine.jsx'
 import CustomRounding from '../numbers/CustomRounding.jsx'
+import NumberLinePosition from '../numbers/NumberLinePosition.jsx'
+import NumberLineJump from '../numbers/NumberLineJump.jsx'
+import CustomNumberLineJump from '../numbers/CustomNumberLineJump.jsx'
 
 const visualComponents = {
   PlaceValueChart,
@@ -41,6 +44,9 @@ const visualComponents = {
   CustomNumberOrder,
   RoundingNumberLine,
   CustomRounding,
+  NumberLinePosition,
+  NumberLineJump,
+  CustomNumberLineJump,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

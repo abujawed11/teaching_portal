@@ -12,7 +12,8 @@
 | Phase 3 — Module 3.3 International Number System | ✅ Done |
 | Phase 3 — Module 3.4 Comparing Numbers | ✅ Done |
 | Phase 3 — Module 3.5 Ascending and Descending Order | ✅ Done |
-| Phase 3 — Modules 3.6–3.7 (Number Line, Roman Numerals) | Not started |
+| Phase 3 — Module 3.6 Number Line | ✅ Done |
+| Phase 3 — Module 3.7 Roman Numerals | Not started |
 | Phase 3 — Module 3.8 Rounding Numbers (nearest 10/100/1,000) | ✅ Done |
 | Phase 3 — Module 3.9 Addition & Subtraction of Large Numbers | Not started |
 | Phase 3 — Module 3.10 Number Tricks & Puzzles | Not started |
@@ -217,7 +218,20 @@ Built to close the other gap identified in the NCERT alignment check (rounding t
 
 This closes both gaps identified against the actual NCERT textbook — Chapter 1 ("We the Travellers—I") is now fully covered by our lessons (place value, expanded form, comparing, rounding, ascending/descending order), plus the Beyond-NCERT enrichment (Indian/International number systems). Verified with `npm run build` — no errors.
 
-Remaining for full Chapter 1 topic-list parity per the original Plan.md (not from the actual book, these were in the pre-existing topic list): Modules 3.6 (Number Line) and 3.7 (Roman Numerals). Module 3.9 (Addition & Subtraction of Large Numbers) and 3.10 (Number Tricks & Puzzles) are new modules identified from the actual Chapter 4 review, not yet started.
+### Phase 3, Module 3.6 — Number Line (✅ Done)
+
+Per Plan.md §Module 3.6 (from the original pre-existing topic list, not confirmed to be a dedicated chapter in the current Maths Mela book, but valuable number-sense content in its own right):
+
+- `src/components/numbers/NumberLinePosition.jsx` — teacher clicks "Show Next Number" to reveal numbers one at a time on a 0–15 number line, each explained relative to the previously revealed number ("12 is to the right of 7, so 12 is greater than 7") — ties position directly back to the comparing-numbers concept.
+- `src/components/numbers/NumberLineJump.jsx` — animates addition as forward jumps and subtraction as backward jumps along a number line; teacher clicks "Jump Forward/Backward" once per step, watching the pointer move and the running total update, then sees the final result stated in full ("Starting at 5, moving 4 steps forward, we reach 9").
+- `src/components/numbers/CustomNumberLineJump.jsx` — teacher enters a start number (0–100), chooses Add or Subtract, and a step count (1–20), validated to never go below zero; reuses `NumberLineJump` underneath.
+- `src/data/numberLine.js` — intro → theory (position = size, left/right) → `NumberLinePosition` demo → theory (addition/subtraction = movement) → `NumberLineJump` demo → a "Trick: Count the Gaps, Not the Ticks" step (avoids the common off-by-one counting mistake) → custom tool → 4 practice questions → summary.
+- `quizzes['number-line']` — 10-question quiz.
+- `topics.js` — "Number Line" marked active.
+
+Verified with `npm run build` — no errors.
+
+Remaining for full Chapter 1 topic-list parity per the original Plan.md (not from the actual book, this was in the pre-existing topic list): Module 3.7 (Roman Numerals). Module 3.9 (Addition & Subtraction of Large Numbers) and 3.10 (Number Tricks & Puzzles) are new modules identified from the actual Chapter 4 review, not yet started.
 
 ---
 
