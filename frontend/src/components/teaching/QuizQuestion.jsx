@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+const OPTION_LETTERS = ['a', 'b', 'c', 'd', 'e', 'f']
+
 function normalize(value) {
   return value.trim().toLowerCase().replace(/\s+/g, '')
 }
@@ -31,7 +33,7 @@ function QuizQuestion({ questionData, onAnswered }) {
 
       {questionData.type === 'mcq' ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-          {questionData.options.map((option) => {
+          {questionData.options.map((option, index) => {
             const isSelected = selected === option
             const showCorrect = submitted && normalize(option) === normalize(questionData.correctAnswer)
             const showWrong = submitted && isSelected && !showCorrect
@@ -41,7 +43,7 @@ function QuizQuestion({ questionData, onAnswered }) {
                 key={option}
                 onClick={() => handleMcqSelect(option)}
                 disabled={submitted}
-                className={`px-5 py-4 rounded-xl text-projector-sm font-semibold border-2 transition-colors
+                className={`flex items-center gap-3 px-5 py-4 rounded-xl text-projector-sm font-semibold border-2 transition-colors text-left
                   ${showCorrect ? 'bg-success text-white border-success' : ''}
                   ${showWrong ? 'bg-danger text-white border-danger' : ''}
                   ${
@@ -52,7 +54,13 @@ function QuizQuestion({ questionData, onAnswered }) {
                         : ''
                   }`}
               >
-                {option}
+                <span
+                  className={`flex items-center justify-center shrink-0 w-8 h-8 rounded-full border-2 font-extrabold
+                    ${showCorrect ? 'border-white text-white' : showWrong ? 'border-white text-white' : 'border-current'}`}
+                >
+                  {OPTION_LETTERS[index]}
+                </span>
+                <span>{option}</span>
               </button>
             )
           })}

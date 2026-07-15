@@ -10,6 +10,7 @@ import { comparingNumbersLesson } from '../data/comparingNumbers.js'
 import { ascendingDescendingOrderLesson } from '../data/ascendingDescendingOrder.js'
 import { roundingNumbersLesson } from '../data/roundingNumbers.js'
 import { numberLineLesson } from '../data/numberLine.js'
+import { chapterPracticeLesson } from '../data/chapterPractice.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
@@ -22,6 +23,7 @@ const lessonsByTopic = {
   'ascending-descending-order': ascendingDescendingOrderLesson,
   'rounding-numbers': roundingNumbersLesson,
   'number-line': numberLineLesson,
+  'chapter-practice': chapterPracticeLesson,
 }
 
 function LessonPage() {

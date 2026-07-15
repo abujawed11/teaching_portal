@@ -17,6 +17,8 @@
 | Phase 3 — Module 3.8 Rounding Numbers (nearest 10/100/1,000) | ✅ Done |
 | Phase 3 — Module 3.9 Addition & Subtraction of Large Numbers | Not started |
 | Phase 3 — Module 3.10 Number Tricks & Puzzles | Not started |
+| Phase 3 — Chapter 1 Practice (mixed review) | ✅ Done |
+| Phase 3 — Chapter 1 Quiz (mixed, chapter-wide) | ✅ Done |
 
 ### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
 
@@ -231,7 +233,18 @@ Per Plan.md §Module 3.6 (from the original pre-existing topic list, not confirm
 
 Verified with `npm run build` — no errors.
 
-Remaining for full Chapter 1 topic-list parity per the original Plan.md (not from the actual book, this was in the pre-existing topic list): Module 3.7 (Roman Numerals). Module 3.9 (Addition & Subtraction of Large Numbers) and 3.10 (Number Tricks & Puzzles) are new modules identified from the actual Chapter 4 review, not yet started.
+### Phase 3, Chapter 1 Practice and Chapter Quiz (✅ Done)
+
+Per user instruction: build the chapter-wide wrap-up items, skip Roman Numerals (Module 3.7) for now.
+
+- `src/data/chapterPractice.js` — a mixed-review lesson (`chapter-practice` topic) with an intro plus 10 practice questions ("Reveal Answer" style, not scored) drawn across every completed Chapter 1 topic: place value, expanded form, Indian system, International system, comparing, ascending/descending order, rounding, and the number line — including two deliberately cross-topic questions (e.g. round a number, then compare the result) to reinforce that these are one connected skill set, not isolated topics. Ends with a summary listing all topics covered.
+- `quizzes['chapter-quiz']` — a 14-question scored quiz spanning all 7 completed topics (2 questions each), reusing the existing `QuizPage`/quiz engine.
+- `topics.js` — "Chapter Practice" and "Chapter Quiz" both marked active. "Chapter Quiz" also gets a new `quizOnly: true` flag.
+- `TopicSelectionPage.jsx` — updated to check `quizOnly`: if set, clicking the topic card navigates straight to `.../topic/:topicId/quiz` instead of the lesson page, since Chapter Quiz has no lesson steps of its own, only the scored quiz.
+
+Verified with `npm run build` — no errors.
+
+Remaining for full Chapter 1 topic-list parity per the original Plan.md (not from the actual book, this was in the pre-existing topic list): Module 3.7 (Roman Numerals) — explicitly deferred per user instruction. Module 3.9 (Addition & Subtraction of Large Numbers) and 3.10 (Number Tricks & Puzzles) are new modules identified from the actual Chapter 4 review, not yet started.
 
 ---
 

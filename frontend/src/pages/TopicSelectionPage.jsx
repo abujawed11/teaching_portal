@@ -34,7 +34,7 @@ function TopicSelectionPage() {
             active={t.active}
             onClick={() =>
               navigate(
-                `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic/${t.id}`,
+                `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic/${t.id}${t.quizOnly ? '/quiz' : ''}`,
               )
             }
           />
