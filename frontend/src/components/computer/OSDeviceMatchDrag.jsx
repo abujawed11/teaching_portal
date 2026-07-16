@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Monitor, Laptop, Server, Smartphone, RefreshCw } from 'lucide-react'
 
 const leftItems = [
@@ -39,25 +39,6 @@ function OSDeviceMatchDrag() {
   const isDone = attemptedIds.size === leftItems.length
   const correctCount = lines.filter((l) => l.correct).length
 
-  const endDrag = useCallback((clientX, clientY) => {
-    setDragFrom((fromId) => {
-      if (fromId && clientX != null) {
-        const el = document.elementFromPoint(clientX, clientY)
-        const targetEl = el?.closest('[data-target-id]')
-        if (targetEl) {
-          const targetId = targetEl.getAttribute('data-target-id')
-          const item = leftItems.find((i) => i.id === fromId)
-          setLines((prev) => [
-            ...prev,
-            { fromId, toId: targetId, correct: item.target === targetId },
-          ])
-        }
-      }
-      return null
-    })
-    setDragPos(null)
-  }, [])
-
   useEffect(() => {
     if (!dragFrom) return undefined
 
@@ -65,7 +46,20 @@ function OSDeviceMatchDrag() {
       const c = containerRef.current.getBoundingClientRect()
       setDragPos({ x: e.clientX - c.left, y: e.clientY - c.top })
     }
-    const onUp = (e) => endDrag(e.clientX, e.clientY)
+    const onUp = (e) => {
+      const el = document.elementFromPoint(e.clientX, e.clientY)
+      const targetEl = el?.closest('[data-target-id]')
+      if (targetEl) {
+        const targetId = targetEl.getAttribute('data-target-id')
+        const item = leftItems.find((i) => i.id === dragFrom)
+        setLines((prev) => [
+          ...prev,
+          { fromId: dragFrom, toId: targetId, correct: item.target === targetId },
+        ])
+      }
+      setDragFrom(null)
+      setDragPos(null)
+    }
 
     window.addEventListener('pointermove', onMove)
     window.addEventListener('pointerup', onUp)
@@ -73,7 +67,7 @@ function OSDeviceMatchDrag() {
       window.removeEventListener('pointermove', onMove)
       window.removeEventListener('pointerup', onUp)
     }
-  }, [dragFrom, endDrag])
+  }, [dragFrom])
 
   const startDrag = (e, itemId) => {
     if (attemptedIds.has(itemId)) return
@@ -156,7 +150,7 @@ function OSDeviceMatchDrag() {
             })}
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-start gap-4">
             {rightItems.map((item) => {
               const Icon = item.icon
               return (
@@ -164,7 +158,7 @@ function OSDeviceMatchDrag() {
                   key={item.id}
                   ref={(el) => (rightRefs.current[item.id] = el)}
                   data-target-id={item.id}
-                  className="flex items-center gap-2 px-5 py-4 rounded-lg border-2 border-slate-300 bg-slate-50 font-semibold text-ink w-48"
+                  className="flex items-center gap-2 px-5 py-3 rounded-lg border-2 border-slate-300 bg-slate-50 font-semibold text-ink whitespace-nowrap"
                 >
                   <Icon size={22} className="text-primary shrink-0" />
                   {item.label}
