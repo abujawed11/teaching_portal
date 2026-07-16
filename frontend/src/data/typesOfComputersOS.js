@@ -71,6 +71,11 @@ export const typesOfComputersOSLesson = {
     },
     {
       type: 'visual',
+      component: 'OSDeviceMatchDrag',
+      title: 'Match the Operating System',
+    },
+    {
+      type: 'visual',
       component: 'TerminologyList',
       title: 'Basic Computer Terminology',
       props: {
