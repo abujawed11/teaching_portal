@@ -10,7 +10,7 @@ function ComparisonTable({ itemA, itemB, rows = [] }) {
                 <img
                   src={itemA.image}
                   alt={itemA.label}
-                  className="w-16 h-16 object-cover rounded-xl mx-auto mb-2 shadow"
+                  className="w-16 h-16 object-contain rounded-xl mx-auto mb-2 shadow bg-white"
                 />
               )}
               <p className="text-projector-sm font-bold text-violet-700">{itemA.label}</p>
@@ -20,7 +20,7 @@ function ComparisonTable({ itemA, itemB, rows = [] }) {
                 <img
                   src={itemB.image}
                   alt={itemB.label}
-                  className="w-16 h-16 object-cover rounded-xl mx-auto mb-2 shadow"
+                  className="w-16 h-16 object-contain rounded-xl mx-auto mb-2 shadow bg-white"
                 />
               )}
               <p className="text-projector-sm font-bold text-emerald-700">{itemB.label}</p>
