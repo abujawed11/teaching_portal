@@ -66,6 +66,8 @@ export const typesOfComputersOSLesson = {
       type: 'text',
       title: 'What Is an Operating System?',
       text: 'An Operating System (OS) is the main software that manages the whole computer — it lets you open apps, save files, and use the hardware. Every computer, tablet, and smartphone needs one to work. Common examples: Windows, macOS, and Linux for computers; Android and iOS for phones and tablets.',
+      analogy:
+        "An Operating System is like the principal of a school. The principal doesn't teach every class, but manages all the teachers and classrooms so everything runs smoothly. In the same way, the OS doesn't do every task itself, but manages the hardware and lets all your apps run properly.",
     },
     {
       type: 'visual',

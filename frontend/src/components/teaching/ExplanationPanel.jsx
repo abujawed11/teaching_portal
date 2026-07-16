@@ -1,4 +1,6 @@
-function ExplanationPanel({ title, text, illustration, image, images }) {
+import { Lightbulb } from 'lucide-react'
+
+function ExplanationPanel({ title, text, illustration, image, images, analogy }) {
   return (
     <div className="flex flex-col items-center gap-6 text-center w-full">
       {illustration}
@@ -31,6 +33,16 @@ function ExplanationPanel({ title, text, illustration, image, images }) {
       <div className="max-w-3xl flex flex-col items-center gap-6">
         {title && <h2 className="text-projector-md font-extrabold text-primary">{title}</h2>}
         {text && <p className="text-projector-sm text-ink leading-relaxed">{text}</p>}
+
+        {analogy && (
+          <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4 text-left">
+            <Lightbulb size={24} className="text-amber-500 shrink-0 mt-0.5" />
+            <p className="text-base sm:text-lg text-ink leading-relaxed">
+              <span className="font-bold text-amber-700">Think of it like this: </span>
+              {analogy}
+            </p>
+          </div>
+        )}
       </div>
     </div>
   )

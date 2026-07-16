@@ -107,6 +107,7 @@ function LessonStepRenderer({ step }) {
           illustration={IllustrationComponent ? <IllustrationComponent {...step.illustrationProps} /> : null}
           image={step.image}
           images={step.images}
+          analogy={step.analogy}
         />
       )
     }
