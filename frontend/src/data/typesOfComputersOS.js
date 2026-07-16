@@ -23,9 +23,39 @@ export const typesOfComputersOSLesson = {
       text: 'A desktop computer stays in one place and usually has separate parts — a tower, a monitor, a keyboard, and a mouse. A laptop packs all of that into one portable case you can carry and use anywhere.',
     },
     {
+      type: 'visual',
+      component: 'ComparisonTable',
+      title: 'Desktop vs. Laptop — Side by Side',
+      props: {
+        itemA: { label: 'Desktop', image: '/images/computer/foundations/desktop-1.jpg' },
+        itemB: { label: 'Laptop', image: '/images/computer/foundations/laptop.jpg' },
+        rows: [
+          { label: 'Portability', a: 'Stays in one place', b: 'Carry it anywhere' },
+          { label: 'Parts', a: 'Separate tower, monitor, keyboard, mouse', b: 'All-in-one case' },
+          { label: 'Power', a: 'Plugged into the wall', b: 'Battery or plugged in' },
+          { label: 'Best for', a: 'A permanent desk setup', b: 'Working on the go' },
+        ],
+      },
+    },
+    {
       type: 'text',
       title: 'Tablet vs. Smartphone',
       text: 'A tablet is a touchscreen computer — you tap and swipe instead of using a keyboard and mouse. A smartphone works the same way but is small enough to fit in your pocket, and can also make calls.',
+    },
+    {
+      type: 'visual',
+      component: 'ComparisonTable',
+      title: 'Tablet vs. Smartphone — Side by Side',
+      props: {
+        itemA: { label: 'Tablet', image: '/images/computer/foundations/tablet.jpg' },
+        itemB: { label: 'Smartphone', image: '/images/computer/foundations/smartphone-device.jpg' },
+        rows: [
+          { label: 'Screen size', a: 'Larger screen', b: 'Small, pocket-sized' },
+          { label: 'Input', a: 'Touchscreen (tap & swipe)', b: 'Touchscreen (tap & swipe)' },
+          { label: 'Phone calls', a: 'Usually no', b: 'Yes' },
+          { label: 'Best for', a: 'Reading, watching, drawing', b: 'Calls, texts, apps on the go' },
+        ],
+      },
     },
     {
       type: 'visual',

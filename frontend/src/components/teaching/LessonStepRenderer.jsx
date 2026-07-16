@@ -41,6 +41,7 @@ import IdentifyPortActivity from '../computer/IdentifyPortActivity.jsx'
 import InputOutputSort from '../computer/InputOutputSort.jsx'
 import DeviceCategoryMatch from '../computer/DeviceCategoryMatch.jsx'
 import TerminologyList from '../computer/TerminologyList.jsx'
+import ComparisonTable from '../computer/ComparisonTable.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -84,6 +85,7 @@ const visualComponents = {
   InputOutputSort,
   DeviceCategoryMatch,
   TerminologyList,
+  ComparisonTable,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

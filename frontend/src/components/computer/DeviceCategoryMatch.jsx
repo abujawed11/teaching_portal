@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { RefreshCw, Check, X } from 'lucide-react'
 
 const items = [
-  { id: 'desktop', label: 'Desktop Computer', image: '/images/computer/foundations/desktop.jpg' },
+  { id: 'desktop', label: 'Desktop Computer', image: '/images/computer/foundations/desktop-1.jpg' },
   { id: 'laptop', label: 'Laptop', image: '/images/computer/foundations/laptop.jpg' },
   { id: 'tablet', label: 'Tablet', image: '/images/computer/foundations/tablet.jpg' },
   {
