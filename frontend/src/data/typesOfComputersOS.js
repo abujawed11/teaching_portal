@@ -7,7 +7,7 @@ export const typesOfComputersOSLesson = {
       title: 'Types of Computers',
       text: 'Computers come in different shapes and sizes — desktops, laptops, tablets, and smartphones — but they all do the same basic job: Input, Process, Output, Storage.',
       images: [
-        { src: '/images/computer/foundations/desktop.jpg', alt: 'A desktop computer', caption: 'Desktop' },
+        { src: '/images/computer/foundations/desktop-1.jpg', alt: 'A desktop computer', caption: 'Desktop' },
         { src: '/images/computer/foundations/laptop.jpg', alt: 'A laptop computer', caption: 'Laptop' },
         { src: '/images/computer/foundations/tablet.jpg', alt: 'A tablet', caption: 'Tablet' },
         {
