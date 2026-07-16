@@ -59,7 +59,7 @@ function DeviceCategoryMatch() {
       <img
         src={item.image}
         alt="Identify this device"
-        className="w-64 h-64 object-cover rounded-2xl shadow-lg shadow-slate-300/50"
+        className="w-64 h-64 object-contain rounded-2xl shadow-lg shadow-slate-300/50 bg-white"
       />
 
       {result && (
