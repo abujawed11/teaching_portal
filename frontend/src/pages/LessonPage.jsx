@@ -18,6 +18,7 @@ import { fractionsGreaterThanOneLesson } from '../data/fractionsGreaterThanOne.j
 import { whatIsAComputerLesson } from '../data/whatIsAComputer.js'
 import { computerHardwareLesson } from '../data/computerHardware.js'
 import { typesOfComputersOSLesson } from '../data/typesOfComputersOS.js'
+import { foundationsPracticeLesson } from '../data/foundationsPractice.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { chapters } from '../data/chapters.js'
@@ -39,6 +40,7 @@ const lessonsByTopic = {
   'what-is-a-computer': whatIsAComputerLesson,
   'computer-hardware': computerHardwareLesson,
   'types-of-computers-os': typesOfComputersOSLesson,
+  'foundations-practice': foundationsPracticeLesson,
 }
 
 function LessonPage() {

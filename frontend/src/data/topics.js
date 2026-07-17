@@ -15,8 +15,8 @@ export const topics = {
     { id: 'what-is-a-computer', label: 'What Is a Computer?', active: true },
     { id: 'computer-hardware', label: 'Computer Hardware Deep-Dive', active: true },
     { id: 'types-of-computers-os', label: 'Types of Computers & Operating Systems', active: true },
-    { id: 'foundations-practice', label: 'Level 1 Practice', active: false },
-    { id: 'foundations-quiz', label: 'Level 1 Quiz', active: false, quizOnly: true },
+    { id: 'foundations-practice', label: 'Level 1 Practice', active: true },
+    { id: 'foundations-quiz', label: 'Level 1 Quiz', active: true, quizOnly: true },
   ],
   fractions: [
     { id: 'what-is-a-fraction', label: 'What is a Fraction?', active: true },

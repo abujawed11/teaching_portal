@@ -22,7 +22,8 @@
 | Phase 3 — Class 5 Chapter 2: Fractions (Module 4.1 What is a Fraction?) | ✅ Done |
 | Phase 3 — Module 4.2 Equivalent Fractions | ✅ Done |
 | Phase 3 — Module 4.3 Comparing Fractions | ✅ Done |
-| Phase 3 — Modules 4.4–4.5 (remaining Fractions topics) | Not started |
+| Phase 3 — Module 4.4 Fractions Greater Than 1 (Mixed Numbers) | ✅ Done |
+| Phase 3 — Module 4.5 Fraction Tricks & Practice | Not started |
 | Digital Skills & Computer Fundamentals course (see [[1a. Digital Skills & Computer Fundamentals]] and `Computer.md`) | Planning only, not started |
 
 ### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
@@ -318,7 +319,16 @@ Verified with `npm run build` — no errors.
 
 Verified with `npm run build` — no errors. (New build warning: main JS chunk has crossed 500kB; not an error, no action needed yet, but worth revisiting with code-splitting if the app keeps growing.)
 
-Next step: Module 4.4 (Fractions Greater Than 1).
+### Phase 3, Module 4.4 — Fractions Greater Than 1 / Mixed Numbers (✅ Done)
+
+- `src/components/fractions/MixedNumberReveal.jsx` — "Maa's Parathas" style demo: given a numerator/denominator (e.g. 5 pieces of 1/2), reveals pieces grouping into whole units, showing the leftover as the fraction part, building up to the mixed-number reading.
+- `src/components/fractions/MixedNumberLine.jsx` — places the same improper fraction on a number line spanning whole numbers, showing where it lands between two wholes.
+- `src/components/fractions/CustomMixedNumber.jsx` — teacher enters their own numerator/denominator, reuses `MixedNumberReveal`/`MixedNumberLine` underneath.
+- `src/data/fractionsGreaterThanOne.js` — intro (parathas context) → "building up wholes" theory → `MixedNumberReveal` demo → mixed-number-reading theory → `MixedNumberLine` demo → worked example (Dadaji's 9 pieces of 1/4) → "Trick: Divide to Convert Quickly" (numerator ÷ denominator) → reverse trick (mixed number → improper fraction) → custom tool → 6 practice questions → summary.
+- `quizzes['fractions-greater-than-one']` — quiz registered, same engine as other modules.
+- `topics.js` — "Fractions Greater Than 1" marked active.
+
+Next step: Module 4.5 (Fraction Tricks & Practice), then Chapter 2 Practice + Chapter 2 Quiz to close out Fractions.
 
 ---
 
@@ -357,7 +367,7 @@ The **full detailed plan** — 14 course levels (Computer Foundations through Be
 
 **See `Computer.md` in the project root for the complete Digital Skills & Computer Fundamentals plan.**
 
-Status: Phase C0 (navigation) done. Phase C3 (Computer Foundations module) in progress — 3 of its lessons built, wrap-up (Level 1 Practice + Quiz) not started yet. See below.
+Status: Phase C0 (navigation) done. Phase C3 (Computer Foundations module) ✅ Done — all 3 lessons plus the Level 1 Practice + Quiz wrap-up are built. See below. Next: Phase C4 (Windows and File Management module).
 
 ### Phase C0 — Integration into portal navigation (✅ Done)
 
@@ -371,7 +381,7 @@ Digital Skills is reached the same way Mathematics is, without inventing a paral
 
 No new pages or routes were created — Level = Chapter, Lesson = Topic, reusing the exact same `ChapterSelectionPage`/`TopicSelectionPage`/`LessonPage`/`QuizPage` components Mathematics uses.
 
-### Phase C3 — Computer Foundations module (in progress: 3 of 5 topics done)
+### Phase C3 — Computer Foundations module (✅ Done)
 
 `topics['computer-foundations']` has 5 entries; 3 lesson topics are built and active, the 2 wrap-up topics are not started:
 
@@ -381,7 +391,13 @@ No new pages or routes were created — Level = Chapter, Lesson = Topic, reusing
 
 **Lesson: Types of Computers & Operating Systems (`types-of-computers-os`, ✅ done)** — `src/data/typesOfComputersOS.js`. Steps: intro (4-photo grid: desktop/laptop/tablet/smartphone) → Desktop vs. Laptop theory → Tablet vs. Smartphone theory → `DeviceCategoryMatch` activity (same click-and-sort pattern, guess the device category from a photo) → "What Is an Operating System?" theory (Windows/macOS/Linux/Android/iOS mentioned by name only — no logos, trademark risk) → `TerminologyList` (new reusable term/definition list component — Desktop, Icon, Window, Menu, Cursor, App, File, Folder; built generically so future levels needing a glossary can reuse it via `step.props.terms`) → 4 practice questions → summary. Quiz: `quizzes['types-of-computers-os']`, 10 questions.
 
-**Not yet built**: `foundations-practice` (mixed review across all 3 lessons) and `foundations-quiz` (scored wrap-up quiz) — same pattern as Math's Chapter Practice/Chapter Quiz. Both topic entries exist in `topics.js` but are still `active: false`.
+**Level 1 Practice and Quiz (✅ Done)** — same pattern as Math's Chapter Practice/Chapter Quiz:
+- `src/data/foundationsPractice.js` (`foundations-practice` topic) — a mixed-review lesson (10 "Reveal Answer" style questions, not scored) drawn across all 3 Level 1 lessons: Input/Process/Output/Storage, input vs. output devices, hardware vs. software, CPU/RAM/storage/ports, desktop vs. laptop, operating systems and terminology — including two cross-lesson questions (e.g. "should you look for a port on the hardware, or open software?") to tie the three lessons together as one connected level rather than isolated topics.
+- `quizzes['foundations-quiz']` — a 12-question scored quiz spanning all 3 lessons, reusing the existing `QuizPage`/quiz engine.
+- `topics.js` — "Level 1 Practice" and "Level 1 Quiz" both marked `active: true`; "Level 1 Quiz" also has `quizOnly: true` (same flag Math's Chapter Quiz uses, so clicking it goes straight to the quiz, skipping the lesson player).
+- Registered in `LessonPage.jsx`'s `lessonsByTopic` registry.
+
+This closes out Level 1 — Computer Foundations in full. Next: Phase C4, Level 2 — Windows and File Management.
 
 **Reusable interaction patterns established this phase** (for reuse in later levels):
 - Click-and-sort activity (`HardwareSoftwareSort`, `InputOutputSort`, `IdentifyPortActivity`, `DeviceCategoryMatch`): show one item/photo, teacher picks a category from buttons, instant correct/wrong feedback with explanation, "Next Item", running score at the end, "Try Again" to reset. Same shape every time — worth building a shared `SortActivity` component if a 5th instance comes up (not done yet — three near-identical copies exist today: `HardwareSoftwareSort`, `InputOutputSort`, and the differently-shaped `IdentifyPortActivity`/`DeviceCategoryMatch` pair).
