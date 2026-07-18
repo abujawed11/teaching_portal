@@ -20,7 +20,7 @@ export const topics = {
   ],
   'patterns-in-mathematics': [
     { id: 'what-is-mathematics', label: 'What is Mathematics?', active: true },
-    { id: 'number-sequences', label: 'Number Sequences', active: false },
+    { id: 'number-sequences', label: 'Number Sequences', active: true },
     { id: 'sequence-relations', label: 'Relations Among Sequences', active: true },
     { id: 'shape-sequences', label: 'Patterns in Shapes', active: false },
     { id: 'patterns-chapter-practice', label: 'Chapter Practice', active: false },
