@@ -23,8 +23,8 @@ export const topics = {
     { id: 'number-sequences', label: 'Number Sequences', active: true },
     { id: 'sequence-relations', label: 'Relations Among Sequences', active: true },
     { id: 'shape-sequences', label: 'Patterns in Shapes', active: true },
-    { id: 'patterns-chapter-practice', label: 'Chapter Practice', active: false },
-    { id: 'patterns-chapter-quiz', label: 'Chapter Quiz', active: false, quizOnly: true },
+    { id: 'patterns-chapter-practice', label: 'Chapter Practice', active: true },
+    { id: 'patterns-chapter-quiz', label: 'Chapter Quiz', active: true, quizOnly: true },
   ],
   fractions: [
     { id: 'what-is-a-fraction', label: 'What is a Fraction?', active: true },
