@@ -19,9 +19,10 @@ import { whatIsAComputerLesson } from '../data/whatIsAComputer.js'
 import { computerHardwareLesson } from '../data/computerHardware.js'
 import { typesOfComputersOSLesson } from '../data/typesOfComputersOS.js'
 import { foundationsPracticeLesson } from '../data/foundationsPractice.js'
+import { whatIsMathematicsLesson } from '../data/whatIsMathematics.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
-import { chapters } from '../data/chapters.js'
+import { getChapterLabel } from '../data/chapters.js'
 import { buildBreadcrumb } from '../utils/navBreadcrumb.js'
 
 const lessonsByTopic = {
@@ -41,6 +42,7 @@ const lessonsByTopic = {
   'computer-hardware': computerHardwareLesson,
   'types-of-computers-os': typesOfComputersOSLesson,
   'foundations-practice': foundationsPracticeLesson,
+  'what-is-mathematics': whatIsMathematicsLesson,
 }
 
 function LessonPage() {
@@ -56,8 +58,7 @@ function LessonPage() {
   const hasQuiz = Boolean(quizzes[topicId])
 
   const subjectLabel = subjects.find((s) => s.id === subjectId)?.label ?? subjectId
-  const chapterLabel =
-    (chapters[subjectId] ?? []).find((c) => c.id === chapterId)?.label ?? chapterId
+  const chapterLabel = getChapterLabel(classId, subjectId, chapterId)
   const topicListPath = `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic`
 
   const breadcrumb = buildBreadcrumb({

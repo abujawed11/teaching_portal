@@ -18,6 +18,14 @@ export const topics = {
     { id: 'foundations-practice', label: 'Level 1 Practice', active: true },
     { id: 'foundations-quiz', label: 'Level 1 Quiz', active: true, quizOnly: true },
   ],
+  'patterns-in-mathematics': [
+    { id: 'what-is-mathematics', label: 'What is Mathematics?', active: true },
+    { id: 'number-sequences', label: 'Number Sequences', active: false },
+    { id: 'sequence-relations', label: 'Relations Among Sequences', active: false },
+    { id: 'shape-sequences', label: 'Patterns in Shapes', active: false },
+    { id: 'patterns-chapter-practice', label: 'Chapter Practice', active: false },
+    { id: 'patterns-chapter-quiz', label: 'Chapter Quiz', active: false, quizOnly: true },
+  ],
   fractions: [
     { id: 'what-is-a-fraction', label: 'What is a Fraction?', active: true },
     { id: 'equivalent-fractions', label: 'Equivalent Fractions', active: true },

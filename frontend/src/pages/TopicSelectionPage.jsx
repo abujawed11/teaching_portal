@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { topics } from '../data/topics.js'
-import { chapters } from '../data/chapters.js'
+import { getChapterLabel } from '../data/chapters.js'
 import { subjects } from '../data/subjects.js'
 import SelectionCard from '../components/common/SelectionCard.jsx'
 import PageHeader from '../components/common/PageHeader.jsx'
@@ -11,8 +11,7 @@ function TopicSelectionPage() {
   const { classId, subjectId, chapterId } = useParams()
   const topicList = topics[chapterId] ?? []
   const subjectLabel = subjects.find((s) => s.id === subjectId)?.label ?? subjectId
-  const chapterLabel =
-    (chapters[subjectId] ?? []).find((c) => c.id === chapterId)?.label ?? chapterId
+  const chapterLabel = getChapterLabel(classId, subjectId, chapterId)
 
   return (
     <div className="min-h-screen flex flex-col items-center gap-10 p-8">

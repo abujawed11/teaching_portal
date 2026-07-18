@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { chapters } from '../data/chapters.js'
+import { getChapterList } from '../data/chapters.js'
 import { subjects } from '../data/subjects.js'
 import SelectionCard from '../components/common/SelectionCard.jsx'
 import PageHeader from '../components/common/PageHeader.jsx'
@@ -8,7 +8,7 @@ import { buildBreadcrumb, isCourseMode } from '../utils/navBreadcrumb.js'
 function ChapterSelectionPage() {
   const navigate = useNavigate()
   const { classId, subjectId } = useParams()
-  const chapterList = chapters[subjectId] ?? []
+  const chapterList = getChapterList(classId, subjectId)
   const subjectLabel = subjects.find((s) => s.id === subjectId)?.label ?? subjectId
   const course = isCourseMode(classId, subjectId)
 

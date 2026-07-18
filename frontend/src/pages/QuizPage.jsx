@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { X, Maximize, Minimize } from 'lucide-react'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
-import { chapters } from '../data/chapters.js'
+import { getChapterLabel } from '../data/chapters.js'
 import { topics } from '../data/topics.js'
 import { buildBreadcrumb } from '../utils/navBreadcrumb.js'
 import QuizQuestion from '../components/teaching/QuizQuestion.jsx'
@@ -18,8 +18,7 @@ function QuizPage() {
   const { isFullscreen, toggleFullscreen } = useFullscreen()
 
   const subjectLabel = subjects.find((s) => s.id === subjectId)?.label ?? subjectId
-  const chapterLabel =
-    (chapters[subjectId] ?? []).find((c) => c.id === chapterId)?.label ?? chapterId
+  const chapterLabel = getChapterLabel(classId, subjectId, chapterId)
   const topicLabel = (topics[chapterId] ?? []).find((t) => t.id === topicId)?.label ?? topicId
   const topicListPath = `/class/${classId}/subject/${subjectId}/chapter/${chapterId}/topic`
 

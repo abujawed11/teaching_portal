@@ -43,6 +43,7 @@ import DeviceCategoryMatch from '../computer/DeviceCategoryMatch.jsx'
 import TerminologyList from '../computer/TerminologyList.jsx'
 import ComparisonTable from '../computer/ComparisonTable.jsx'
 import OSDeviceMatchDrag from '../computer/OSDeviceMatchDrag.jsx'
+import PatternsEverywhereShowcase from '../patterns/PatternsEverywhereShowcase.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -88,6 +89,7 @@ const visualComponents = {
   TerminologyList,
   ComparisonTable,
   OSDeviceMatchDrag,
+  PatternsEverywhereShowcase,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
