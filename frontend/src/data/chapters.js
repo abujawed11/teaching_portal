@@ -11,6 +11,7 @@ export const chapters = {
   6: {
     mathematics: [
       { id: 'patterns-in-mathematics', label: 'Chapter 1: Patterns in Mathematics', active: true },
+      { id: 'lines-and-angles', label: 'Chapter 2: Lines and Angles', active: true },
     ],
   },
   'digital-skills': {

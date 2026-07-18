@@ -26,6 +26,15 @@ export const topics = {
     { id: 'patterns-chapter-practice', label: 'Chapter Practice', active: true },
     { id: 'patterns-chapter-quiz', label: 'Chapter Quiz', active: true, quizOnly: true },
   ],
+  'lines-and-angles': [
+    { id: 'points-lines-rays', label: 'Points, Lines and Rays', active: true },
+    { id: 'what-is-an-angle', label: 'What is an Angle?', active: false },
+    { id: 'special-angles-bisectors', label: 'Special Angles and Bisectors', active: false },
+    { id: 'measuring-angles', label: 'Measuring Angles', active: false },
+    { id: 'angle-types-real-world', label: 'Angle Types in Real Life', active: false },
+    { id: 'angles-chapter-practice', label: 'Chapter Practice', active: false },
+    { id: 'angles-chapter-quiz', label: 'Chapter Quiz', active: false, quizOnly: true },
+  ],
   fractions: [
     { id: 'what-is-a-fraction', label: 'What is a Fraction?', active: true },
     { id: 'equivalent-fractions', label: 'Equivalent Fractions', active: true },

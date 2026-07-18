@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from '../common/Button.jsx'
 
-function PracticeQuestion({ question, answer, explanation }) {
+function PracticeQuestion({ question, answer, explanation, visual }) {
   const [showAnswer, setShowAnswer] = useState(false)
 
   return (
@@ -24,6 +24,7 @@ function PracticeQuestion({ question, answer, explanation }) {
           >
             <p className="text-projector-sm font-bold text-success">{answer}</p>
             {explanation && <p className="text-base text-slate-500 max-w-xl">{explanation}</p>}
+            {visual && <div className="w-full mt-2">{visual}</div>}
           </motion.div>
         )}
       </AnimatePresence>

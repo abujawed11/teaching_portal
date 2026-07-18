@@ -52,6 +52,9 @@ import CompleteGraphBuilder from '../patterns/CompleteGraphBuilder.jsx'
 import KochSnowflake from '../patterns/KochSnowflake.jsx'
 import StackedTriangleGrid from '../patterns/StackedTriangleGrid.jsx'
 import SpeedBumpDemo from '../patterns/SpeedBumpDemo.jsx'
+import ProtractorTool from '../angles/ProtractorTool.jsx'
+import SegmentRayLineToggle from '../angles/SegmentRayLineToggle.jsx'
+import RayNamingDiagram from '../angles/RayNamingDiagram.jsx'
 import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
 
 const illustrationComponents = {
@@ -107,6 +110,9 @@ const visualComponents = {
   KochSnowflake,
   StackedTriangleGrid,
   SpeedBumpDemo,
+  ProtractorTool,
+  SegmentRayLineToggle,
+  RayNamingDiagram,
   UpDownDiamondBuilder,
 }
 
@@ -148,14 +154,17 @@ function LessonStepRenderer({ step }) {
       return <ExampleCard title={step.title} problem={step.problem} solution={step.solution} />
 
     case 'activity':
-    case 'question':
+    case 'question': {
+      const VisualComponent = visualComponents[step.visual]
       return (
         <PracticeQuestion
           question={step.question}
           answer={step.answer}
           explanation={step.explanation}
+          visual={VisualComponent ? <VisualComponent {...step.visualProps} /> : null}
         />
       )
+    }
 
     case 'answer':
       return placeholder('Answer reveal')

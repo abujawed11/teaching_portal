@@ -24,6 +24,7 @@ import { sequenceRelationsLesson } from '../data/sequenceRelations.js'
 import { numberSequencesLesson } from '../data/numberSequences.js'
 import { shapeSequencesLesson } from '../data/shapeSequences.js'
 import { patternsChapterPracticeLesson } from '../data/patternsChapterPractice.js'
+import { pointsLinesRaysLesson } from '../data/pointsLinesRays.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -51,6 +52,7 @@ const lessonsByTopic = {
   'number-sequences': numberSequencesLesson,
   'shape-sequences': shapeSequencesLesson,
   'patterns-chapter-practice': patternsChapterPracticeLesson,
+  'points-lines-rays': pointsLinesRaysLesson,
 }
 
 function LessonPage() {
