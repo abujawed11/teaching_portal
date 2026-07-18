@@ -166,6 +166,16 @@ Per user instruction (raised while reviewing Class 6 Chapter 1's `sequence-relat
 
 Applied retroactively to `sequence-relations`' "Why It Works" step (previously one dense algebraic paragraph, now a concrete 3×3→4×4 worked example with bullets, followed by a short plain-language takeaway).
 
+### Working agreement: full Figure-it-Out coverage
+
+Per user decision: every official NCERT "Figure it Out" / "Math Talk" / "Try This" question in a chapter must show up in the lesson somewhere, not just the ones that make for a good demo. Tiered by effort, not by importance:
+
+- Questions with a genuine new "aha" visual worth building get a full interactive component (e.g. `OddSquareBuilder`, `UpDownDiamondBuilder`, `KochSnowflake`).
+- Questions that are simple arithmetic corollaries of something already built get a lightweight `text`/`example`/`question` step reusing existing language or a callback to an earlier visual, not a new component (e.g. "counting numbers stack into triangular numbers" just references the `SequenceExplorer` triangular view already shown).
+- Fully open-ended questions with no fixed answer (e.g. "find your own pattern") are included as a `question` step framed explicitly as a discussion prompt, not a graded fact.
+
+Retrofitted into Class 6 Chapter 1's `sequence-relations` (added ~8 missing 1.4 items: up-and-down diamond proof, All 1's up/up-down, counting→triangular, triangular pairs→squares, powers-of-2 sum+1, triangular×6+1→hexagonal, hexagonal sum→cubes, open pattern-finding) and `number-sequences` (added the missing Powers-of-3 real-world analogy from 1.3). Apply this same audit — cross-check the built module against every numbered question in the source chapter — before considering any future module "done."
+
 **Addendum — show the single-unit rule before the full-scale effect.** Caught twice while building `shape-sequences`: (1) claiming "stacked triangles = same up-and-down trick" without ever showing why (turned out to be a *different* proof — odd-numbers-sum-to-squares wearing a triangle costume — fixed by building `StackedTriangleGrid`); (2) introducing the Koch Snowflake's "speed bump" applied to a whole triangle (already at 3/12/48 segments) before ever showing what the bump does to *one single line*. Fix pattern: always demo the atomic transformation in isolation first (one line → one bump, via `SpeedBumpDemo`), *then* show it scaled up to the whole shape. Don't assume a rule is obvious just because the picture is on screen — walk through one instance of it concretely before generalizing.
 
 ### Phase 3, Module 3.2 — Indian Number System (what was built)

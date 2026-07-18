@@ -52,6 +52,7 @@ import CompleteGraphBuilder from '../patterns/CompleteGraphBuilder.jsx'
 import KochSnowflake from '../patterns/KochSnowflake.jsx'
 import StackedTriangleGrid from '../patterns/StackedTriangleGrid.jsx'
 import SpeedBumpDemo from '../patterns/SpeedBumpDemo.jsx'
+import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -106,6 +107,7 @@ const visualComponents = {
   KochSnowflake,
   StackedTriangleGrid,
   SpeedBumpDemo,
+  UpDownDiamondBuilder,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

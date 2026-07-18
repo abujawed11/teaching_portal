@@ -32,6 +32,12 @@ export const numberSequencesLesson = {
       analogy: 'Doubling feels slow at first — but it explodes fast. That is the power of Powers of 2!',
     },
     {
+      type: 'text',
+      title: 'Powers of 3: The Tripling Sequence',
+      text: '• 1, 3, 9, 27, 81, 243 — every term is triple the one before\n• A rumour spreads: 1 person tells 3 friends, those 3 each tell 3 more (9 people), those 9 each tell 3 more (27 people)...',
+      analogy: 'Powers of 2 double — Powers of 3 triple. Same doubling idea, just one extra friend joining each round!',
+    },
+    {
       type: 'visual',
       component: 'TriangleSquareMorph',
       title: '36: One Number, Two Shapes',
