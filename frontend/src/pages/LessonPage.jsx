@@ -20,6 +20,7 @@ import { computerHardwareLesson } from '../data/computerHardware.js'
 import { typesOfComputersOSLesson } from '../data/typesOfComputersOS.js'
 import { foundationsPracticeLesson } from '../data/foundationsPractice.js'
 import { whatIsMathematicsLesson } from '../data/whatIsMathematics.js'
+import { sequenceRelationsLesson } from '../data/sequenceRelations.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -43,6 +44,7 @@ const lessonsByTopic = {
   'types-of-computers-os': typesOfComputersOSLesson,
   'foundations-practice': foundationsPracticeLesson,
   'what-is-mathematics': whatIsMathematicsLesson,
+  'sequence-relations': sequenceRelationsLesson,
 }
 
 function LessonPage() {
