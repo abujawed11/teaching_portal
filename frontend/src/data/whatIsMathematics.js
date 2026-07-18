@@ -12,7 +12,7 @@ export const whatIsMathematicsLesson = {
     {
       type: 'text',
       title: 'Patterns Are All Around Us',
-      text: 'Patterns exist everywhere — in nature, in our homes and schools, and in the motion of the sun, moon, and stars. They show up in everything we do and see: shopping, cooking, throwing a ball, playing games, reading the weather, and using technology.',
+      text: 'Patterns are hiding in plain sight:\n\n• In nature — leaves, shells, stripes\n• At home and school — timetables, tiled floors\n• In the sky — day/night, seasons, moon phases\n• In games and sports — scores, turns, the path of a ball\n• In shopping, cooking, weather, and technology',
     },
     {
       type: 'visual',
@@ -26,8 +26,10 @@ export const whatIsMathematicsLesson = {
     },
     {
       type: 'text',
-      title: "Finding a Pattern Isn't Enough",
-      text: "Mathematics doesn't stop at noticing what patterns exist — it also asks why they exist. Those explanations often turn out to be useful far beyond where they were first discovered, and that is what helps propel humanity forward.",
+      title: "Spotting Isn't Enough — You Have to Ask Why",
+      text: "Noticing a pattern is step one. The real prize is the 'why' — because a good explanation can travel far beyond where it was found.",
+      analogy:
+        "It's like figuring out why a magic trick works. Once you know the secret, you can use the same trick somewhere completely different!",
     },
     {
       type: 'example',

@@ -33,8 +33,9 @@ export const sequenceRelationsLesson = {
     },
     {
       type: 'text',
-      title: 'The Pattern Continues Forever',
-      text: 'No matter how big the square gets, growing it by one more row and one more column always adds a new column, a new row of the same size, and one corner dot. That total is always odd — and it is always the very next odd number in the list. That is why adding up odd numbers, one after another, keeps building perfect squares forever.',
+      title: 'This Never Breaks — Ever',
+      text: 'Every single time the square grows by one step:\n\n• You add one new column\n• One new row (same size as the column)\n• One corner dot\n\nThat combo is always odd, and it is always the very next odd number in the list. Add odd numbers forever, and you build perfect squares forever!',
+      analogy: "It's like a Lego tower — add the right-shaped brick each time, and it never stops being a perfect tower.",
     },
     {
       type: 'question',

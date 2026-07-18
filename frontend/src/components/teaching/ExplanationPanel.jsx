@@ -32,7 +32,9 @@ function ExplanationPanel({ title, text, illustration, image, images, analogy })
 
       <div className="max-w-3xl flex flex-col items-center gap-6">
         {title && <h2 className="text-projector-md font-extrabold text-primary">{title}</h2>}
-        {text && <p className="text-projector-sm text-ink leading-relaxed">{text}</p>}
+        {text && (
+          <p className="text-projector-sm text-ink leading-relaxed whitespace-pre-line">{text}</p>
+        )}
 
         {analogy && (
           <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4 text-left">

@@ -153,6 +153,19 @@ Ideas already discussed, not yet built:
 - Indian vs. International systems: a "3-3-2 vs 3-3-3" comma-grouping rhyme
 - Place Value: a "move left, multiply by 10" chant for reading the chart
 
+### Working agreement: no wall-of-text steps
+
+Per user instruction (raised while reviewing Class 6 Chapter 1's `sequence-relations` module): explanation/`text` steps should never read like a dense textbook paragraph — that's boring on a projector and loses the class. Applies to every lesson going forward, all subjects:
+
+- Break explanations into **bullets, short punchy lines, or a mini-table** instead of one solid paragraph. If a step's `text` is turning into 3+ sentences of dense reasoning, restructure it (e.g. bullets in the `text` string, or split into an `example` card with `whitespace-pre-line` bullets, or multiple smaller steps).
+- Keep language **simple and conversational** — plain words over formal/algebraic phrasing where possible (e.g. prefer a concrete walked example over a variable-based rule like "2k+1").
+- Use an **analogy** wherever a concept has a natural one (the `analogy` prop on `text`/`intro` steps already exists for this — lean on it more).
+- Add a **real-world example** wherever the concept has one, so it's not just abstract math.
+- A little **fun/punchy wording** is welcome where it fits naturally (e.g. "That's it — 3 + 3 + 1 = 7!") — don't force it, but don't be afraid of it either.
+- This is the same spirit as [[Working agreement: content/UX improvements]] and [[Working agreement: tricks and shortcuts]] above — proactively fix a step that's turning into a wall of text rather than waiting to be asked, and flag the fix when made.
+
+Applied retroactively to `sequence-relations`' "Why It Works" step (previously one dense algebraic paragraph, now a concrete 3×3→4×4 worked example with bullets, followed by a short plain-language takeaway).
+
 ### Phase 3, Module 3.2 — Indian Number System (what was built)
 
 Mirrors the Place Value module's structure, per Plan.md §Module 3.2:
