@@ -55,6 +55,13 @@ import SpeedBumpDemo from '../patterns/SpeedBumpDemo.jsx'
 import ProtractorTool from '../angles/ProtractorTool.jsx'
 import SegmentRayLineToggle from '../angles/SegmentRayLineToggle.jsx'
 import RayNamingDiagram from '../angles/RayNamingDiagram.jsx'
+import AngleRotationPlayground from '../angles/AngleRotationPlayground.jsx'
+import AngleSuperimposeCompare from '../angles/AngleSuperimposeCompare.jsx'
+import ArmLengthMythBuster from '../angles/ArmLengthMythBuster.jsx'
+import AmbiguousAngleNamingDiagram from '../angles/AmbiguousAngleNamingDiagram.jsx'
+import RealWorldAngleSpotter from '../angles/RealWorldAngleSpotter.jsx'
+import RayFanDiagram from '../angles/RayFanDiagram.jsx'
+import SharedRayAngleDiagram from '../angles/SharedRayAngleDiagram.jsx'
 import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
 
 const illustrationComponents = {
@@ -113,6 +120,13 @@ const visualComponents = {
   ProtractorTool,
   SegmentRayLineToggle,
   RayNamingDiagram,
+  AngleRotationPlayground,
+  AngleSuperimposeCompare,
+  ArmLengthMythBuster,
+  AmbiguousAngleNamingDiagram,
+  RealWorldAngleSpotter,
+  RayFanDiagram,
+  SharedRayAngleDiagram,
   UpDownDiamondBuilder,
 }
 

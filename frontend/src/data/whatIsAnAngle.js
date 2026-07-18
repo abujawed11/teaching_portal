@@ -1,0 +1,153 @@
+export const whatIsAnAngleLesson = {
+  id: 'what-is-an-angle',
+  title: 'What is an Angle?',
+  steps: [
+    {
+      type: 'intro',
+      title: 'What is an Angle?',
+      text: 'An angle is formed by two rays that share a common starting point.',
+      analogy: 'Think of it like an open scissors — two blades (the rays) joined at one pivot (the shared point).',
+    },
+    {
+      type: 'text',
+      title: 'Naming an Angle',
+      text: '• The shared point is the vertex\n• Each ray is an arm\n• Name it with a point on each arm plus the vertex — e.g. ∠DBE\n• The vertex letter always goes in the middle!',
+    },
+    {
+      type: 'question',
+      question: 'Draw and label an angle with arms ST and SR.',
+      answer: 'The vertex is S — the shared letter in both arm names. The angle is ∠TSR (or ∠RST).',
+      explanation: 'Whenever two arm-names share one letter, that shared letter is always the vertex.',
+      visual: 'RayFanDiagram',
+      visualProps: {
+        vertexLabel: 'S',
+        vertex: { x: 150, y: 240 },
+        rays: [
+          { label: 'T', x: 260, y: 100 },
+          { label: 'R', x: 320, y: 240 },
+        ],
+        pairs: [{ id: 'TSR', label: '∠TSR', i: 0, j: 1 }],
+      },
+    },
+    {
+      type: 'text',
+      title: 'Angles Hide in Rotation',
+      text: '• A compass or divider — vertex is the joint\n• A pair of scissors — vertex is the pivot\n• Opening a book cover, spectacles, a stapler, a laptop lid',
+      analogy: 'Every time something swings open on a hinge, an angle is being born.',
+    },
+    {
+      type: 'question',
+      question: 'Can you spot the angle in each real object below? Where is the vertex, and where are the arms?',
+      answer: 'A bicycle handlebar and a fence lattice both have a hinge-like point (the vertex) with two straight parts (the arms) meeting there.',
+      explanation: 'Once you start looking, hinges and joints like these are everywhere — try spotting a few in your own classroom!',
+      visual: 'RealWorldAngleSpotter',
+    },
+    {
+      type: 'visual',
+      component: 'AngleRotationPlayground',
+      title: 'Angle = Amount of Turn',
+    },
+    {
+      type: 'question',
+      question: 'A point P has rays going out to A, B, and C. Why can\'t we just call the angle at P "∠P"?',
+      answer: 'Because there could be more than one angle at P — ∠APB, ∠BPC, and ∠APC are all different angles, and just saying "∠P" doesn\'t say which one you mean.',
+      explanation: 'That is exactly why the naming rule always includes a point from each arm — it removes the ambiguity.',
+      visual: 'AmbiguousAngleNamingDiagram',
+    },
+    {
+      type: 'question',
+      question: 'At vertex T, three rays go out to P, Q, and R. Two angles are marked: one between R and Q, and one between R and P. What are their names?',
+      answer: '∠RTQ and ∠RTP.',
+      explanation: 'Same rule as always — vertex T sits in the middle of each name.',
+      visual: 'RayFanDiagram',
+      visualProps: {
+        vertexLabel: 'T',
+        vertex: { x: 130, y: 300 },
+        rays: [
+          { label: 'P', x: 220, y: 80 },
+          { label: 'Q', x: 280, y: 160 },
+          { label: 'R', x: 340, y: 300 },
+        ],
+        pairs: [
+          { id: 'RTQ', label: '∠RTQ', i: 2, j: 1 },
+          { id: 'RTP', label: '∠RTP', i: 2, j: 0 },
+        ],
+      },
+    },
+    {
+      type: 'text',
+      title: 'Counting Lines and Angles',
+      text: 'Remember the Complete Graphs from Chapter 1 — connecting every pair of points? Naming angles works the same way.',
+      analogy: 'With 3 points (not all in a line), you get 3 lines and 3 angles. With 4 points, you get 6 lines — and 12 angles, since each pair of lines meeting at a point makes its own angle.',
+    },
+    {
+      type: 'question',
+      question: 'Mark 4 points on paper (no 3 in a line) and connect every pair. How many lines do you get — and how many angles can you name using those 4 points?',
+      answer: '6 lines, and 12 angles.',
+      explanation: 'The 6 lines are AB, BC, CD, DA, AC, BD. Each corner where lines cross creates a pair of angles — count them all and you get 12 in total.',
+    },
+    {
+      type: 'text',
+      title: 'Comparing Two Angles',
+      text: 'The simplest way to compare two angles: trace one, lay it directly on top of the other, and line up the vertices.',
+      analogy: 'This is called superimposition — like stacking two transparent sheets to see which drawing is bigger.',
+    },
+    {
+      type: 'visual',
+      component: 'AngleSuperimposeCompare',
+      title: 'See Which Angle Wins',
+    },
+    {
+      type: 'question',
+      question: 'Is it always easy to compare two angles just by looking at them?',
+      answer: 'No! Angles that are close in size — like 89° and 91° — look almost identical by eye. You need to superimpose them, or measure them, to be sure.',
+      explanation: 'This is exactly why mathematicians eventually needed a way to measure angles precisely, with numbers — which is coming up soon!',
+    },
+    {
+      type: 'text',
+      title: 'Teacher Tip: Try It With Real Paper',
+      text: 'Fold a rectangular sheet of paper any way you like, then draw a line along the crease. The fold always makes an angle with the paper\'s edge — fold a few different ways and compare them by eye or by re-folding on top of each other.',
+    },
+    {
+      type: 'question',
+      question: 'Rays OA, OX, OY all point somewhere between ray OB (a baseline) and the sky, and points B and C both sit along that same baseline ray. Which is greater — ∠AOB or ∠XOY? ∠AOB or ∠XOB? ∠XOB or ∠XOC?',
+      answer: '∠AOB is the biggest of the group — it contains both ∠XOY and ∠XOB inside it. And ∠XOB = ∠XOC exactly, since B and C are just two points on the very same ray.',
+      explanation: 'Whenever one angle\'s arms sit entirely inside another\'s, the outer one is always the bigger angle. And remember: two points on the same ray never make two different angles.',
+      visual: 'SharedRayAngleDiagram',
+    },
+    {
+      type: 'question',
+      question: 'Where else — besides angles — might you compare two things by superimposing them on top of each other?',
+      answer: 'Line segments, squares, circles, even tracing paper over a picture — anywhere you want to check if two shapes are exactly the same size.',
+      explanation: 'There is no single right answer — talk it through with your class and see what everyone comes up with!',
+    },
+    {
+      type: 'text',
+      title: 'The Arm-Length Trap',
+      text: 'A very common mistake: thinking longer arms mean a bigger angle. They don\'t!',
+      analogy: 'Cutting an angle\'s arms shorter is like trimming a pizza slice\'s crust — the slice is still just as "wide" at the point, only shorter.',
+    },
+    {
+      type: 'visual',
+      component: 'ArmLengthMythBuster',
+      title: 'Grow or Shrink the Arms — Watch the Angle',
+    },
+    {
+      type: 'question',
+      question: 'If you cut both arms of an angle shorter, does the angle itself get smaller?',
+      answer: 'No — the angle stays exactly the same.',
+      explanation: 'Angle size only depends on the amount of rotation between the two arms, never on how long the arms are drawn.',
+    },
+    {
+      type: 'summary',
+      title: 'Summary',
+      points: [
+        'An angle = two rays sharing a common vertex; the rays are its arms.',
+        'Name an angle with the vertex letter in the middle, e.g. ∠DBE.',
+        'Angle size = the amount of rotation between the two arms.',
+        'Compare angles by superimposition — lay one on top of the other, vertices matching.',
+        'Arm length never changes an angle\'s size — only rotation does.',
+      ],
+    },
+  ],
+}

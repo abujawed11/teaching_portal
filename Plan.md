@@ -166,6 +166,10 @@ Per user instruction (raised while reviewing Class 6 Chapter 1's `sequence-relat
 
 Applied retroactively to `sequence-relations`' "Why It Works" step (previously one dense algebraic paragraph, now a concrete 3×3→4×4 worked example with bullets, followed by a short plain-language takeaway).
 
+### Working agreement: diagrams in question answers
+
+Per user instruction (raised on Class 6 Chapter 2's ray-naming question): whenever a `question` step's answer is spatial/visual in nature (naming rays, comparing shapes, angle relationships, anything where "picture it" is how you'd actually explain it out loud), the reveal should include a diagram, not just answer + explanation text. The engine already supports this — `question` steps can take a `visual: 'ComponentName'` (+ optional `visualProps`), rendered by `PracticeQuestion` inside the reveal, appearing only after "Reveal Answer" is clicked (so it doesn't spoil the question upfront). Apply proactively: if a question is hard to picture from text alone, build or reuse a small diagram component for its answer rather than trusting words to carry it. First built for `points-lines-rays`' "is ray NB the same as ray TB" question, using `RayNamingDiagram`.
+
 ### Working agreement: full Figure-it-Out coverage
 
 Per user decision: every official NCERT "Figure it Out" / "Math Talk" / "Try This" question in a chapter must show up in the lesson somewhere, not just the ones that make for a good demo. Tiered by effort, not by importance:

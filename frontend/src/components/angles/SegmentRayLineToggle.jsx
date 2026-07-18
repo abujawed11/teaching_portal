@@ -79,15 +79,8 @@ function SegmentRayLineToggle() {
         <circle cx={A.x} cy={A.y} r={6} fill="#1e293b" />
         <text x={A.x - 5} y={A.y - 15} fontSize={16} fontWeight="bold" fill="#1e293b">A</text>
 
-        {mode !== 'line' && (
-          <>
-            <circle cx={B.x} cy={B.y} r={6} fill={mode === 'segment' ? '#1e293b' : 'transparent'} />
-            <text x={B.x - 5} y={B.y - 15} fontSize={16} fontWeight="bold" fill="#1e293b">B</text>
-          </>
-        )}
-        {mode === 'line' && (
-          <text x={B.x - 5} y={B.y - 15} fontSize={16} fontWeight="bold" fill="#1e293b">B</text>
-        )}
+        <circle cx={B.x} cy={B.y} r={6} fill="#1e293b" />
+        <text x={B.x - 5} y={B.y - 15} fontSize={16} fontWeight="bold" fill="#1e293b">B</text>
       </svg>
 
       <p className="text-base sm:text-lg text-slate-500 text-center max-w-md">
