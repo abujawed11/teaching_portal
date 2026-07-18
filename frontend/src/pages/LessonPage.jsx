@@ -22,6 +22,7 @@ import { foundationsPracticeLesson } from '../data/foundationsPractice.js'
 import { whatIsMathematicsLesson } from '../data/whatIsMathematics.js'
 import { sequenceRelationsLesson } from '../data/sequenceRelations.js'
 import { numberSequencesLesson } from '../data/numberSequences.js'
+import { shapeSequencesLesson } from '../data/shapeSequences.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -47,6 +48,7 @@ const lessonsByTopic = {
   'what-is-mathematics': whatIsMathematicsLesson,
   'sequence-relations': sequenceRelationsLesson,
   'number-sequences': numberSequencesLesson,
+  'shape-sequences': shapeSequencesLesson,
 }
 
 function LessonPage() {

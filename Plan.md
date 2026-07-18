@@ -166,6 +166,8 @@ Per user instruction (raised while reviewing Class 6 Chapter 1's `sequence-relat
 
 Applied retroactively to `sequence-relations`' "Why It Works" step (previously one dense algebraic paragraph, now a concrete 3×3→4×4 worked example with bullets, followed by a short plain-language takeaway).
 
+**Addendum — show the single-unit rule before the full-scale effect.** Caught twice while building `shape-sequences`: (1) claiming "stacked triangles = same up-and-down trick" without ever showing why (turned out to be a *different* proof — odd-numbers-sum-to-squares wearing a triangle costume — fixed by building `StackedTriangleGrid`); (2) introducing the Koch Snowflake's "speed bump" applied to a whole triangle (already at 3/12/48 segments) before ever showing what the bump does to *one single line*. Fix pattern: always demo the atomic transformation in isolation first (one line → one bump, via `SpeedBumpDemo`), *then* show it scaled up to the whole shape. Don't assume a rule is obvious just because the picture is on screen — walk through one instance of it concretely before generalizing.
+
 ### Phase 3, Module 3.2 — Indian Number System (what was built)
 
 Mirrors the Place Value module's structure, per Plan.md §Module 3.2:

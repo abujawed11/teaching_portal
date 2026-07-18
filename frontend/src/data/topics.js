@@ -22,7 +22,7 @@ export const topics = {
     { id: 'what-is-mathematics', label: 'What is Mathematics?', active: true },
     { id: 'number-sequences', label: 'Number Sequences', active: true },
     { id: 'sequence-relations', label: 'Relations Among Sequences', active: true },
-    { id: 'shape-sequences', label: 'Patterns in Shapes', active: false },
+    { id: 'shape-sequences', label: 'Patterns in Shapes', active: true },
     { id: 'patterns-chapter-practice', label: 'Chapter Practice', active: false },
     { id: 'patterns-chapter-quiz', label: 'Chapter Quiz', active: false, quizOnly: true },
   ],

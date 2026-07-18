@@ -47,6 +47,11 @@ import PatternsEverywhereShowcase from '../patterns/PatternsEverywhereShowcase.j
 import OddSquareBuilder from '../patterns/OddSquareBuilder.jsx'
 import SequenceExplorer from '../patterns/SequenceExplorer.jsx'
 import TriangleSquareMorph from '../patterns/TriangleSquareMorph.jsx'
+import RegularPolygonBuilder from '../patterns/RegularPolygonBuilder.jsx'
+import CompleteGraphBuilder from '../patterns/CompleteGraphBuilder.jsx'
+import KochSnowflake from '../patterns/KochSnowflake.jsx'
+import StackedTriangleGrid from '../patterns/StackedTriangleGrid.jsx'
+import SpeedBumpDemo from '../patterns/SpeedBumpDemo.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -96,6 +101,11 @@ const visualComponents = {
   OddSquareBuilder,
   SequenceExplorer,
   TriangleSquareMorph,
+  RegularPolygonBuilder,
+  CompleteGraphBuilder,
+  KochSnowflake,
+  StackedTriangleGrid,
+  SpeedBumpDemo,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
