@@ -38,9 +38,9 @@ export const whatIsAnAngleLesson = {
     {
       type: 'question',
       question: 'Can you spot the angle in each real object below? Where is the vertex, and where are the arms?',
-      answer: 'A bicycle handlebar and a fence lattice both have a hinge-like point (the vertex) with two straight parts (the arms) meeting there.',
+      answer: 'A pair of scissors and an open book both have a hinge-like point (the vertex) with two straight parts (the arms) meeting there.',
       explanation: 'Once you start looking, hinges and joints like these are everywhere — try spotting a few in your own classroom!',
-      visual: 'RealWorldAngleSpotter',
+      promptVisual: 'RealWorldAngleSpotter',
     },
     {
       type: 'visual',
@@ -84,7 +84,8 @@ export const whatIsAnAngleLesson = {
       type: 'question',
       question: 'Mark 4 points on paper (no 3 in a line) and connect every pair. How many lines do you get — and how many angles can you name using those 4 points?',
       answer: '6 lines, and 12 angles.',
-      explanation: 'The 6 lines are AB, BC, CD, DA, AC, BD. Each corner where lines cross creates a pair of angles — count them all and you get 12 in total.',
+      explanation: 'The 6 lines are AB, BC, CD, DA, AC, BD. Each of the 4 points has 3 rays meeting at it, so 4 × 3 = 12 angles in total.',
+      visual: 'FourPointLinesAnglesDiagram',
     },
     {
       type: 'text',

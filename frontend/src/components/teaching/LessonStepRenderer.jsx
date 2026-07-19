@@ -62,6 +62,7 @@ import AmbiguousAngleNamingDiagram from '../angles/AmbiguousAngleNamingDiagram.j
 import RealWorldAngleSpotter from '../angles/RealWorldAngleSpotter.jsx'
 import RayFanDiagram from '../angles/RayFanDiagram.jsx'
 import SharedRayAngleDiagram from '../angles/SharedRayAngleDiagram.jsx'
+import FourPointLinesAnglesDiagram from '../angles/FourPointLinesAnglesDiagram.jsx'
 import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
 
 const illustrationComponents = {
@@ -127,6 +128,7 @@ const visualComponents = {
   RealWorldAngleSpotter,
   RayFanDiagram,
   SharedRayAngleDiagram,
+  FourPointLinesAnglesDiagram,
   UpDownDiamondBuilder,
 }
 
@@ -170,12 +172,14 @@ function LessonStepRenderer({ step }) {
     case 'activity':
     case 'question': {
       const VisualComponent = visualComponents[step.visual]
+      const PromptVisualComponent = visualComponents[step.promptVisual]
       return (
         <PracticeQuestion
           question={step.question}
           answer={step.answer}
           explanation={step.explanation}
           visual={VisualComponent ? <VisualComponent {...step.visualProps} /> : null}
+          promptVisual={PromptVisualComponent ? <PromptVisualComponent {...step.promptVisualProps} /> : null}
         />
       )
     }

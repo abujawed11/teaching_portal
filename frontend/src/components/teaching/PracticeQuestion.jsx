@@ -2,12 +2,14 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from '../common/Button.jsx'
 
-function PracticeQuestion({ question, answer, explanation, visual }) {
+function PracticeQuestion({ question, answer, explanation, visual, promptVisual }) {
   const [showAnswer, setShowAnswer] = useState(false)
 
   return (
     <div className="max-w-3xl w-full flex flex-col items-center gap-8 text-center">
       <p className="text-projector-sm font-semibold text-ink">{question}</p>
+
+      {promptVisual && <div className="w-full">{promptVisual}</div>}
 
       <Button onClick={() => setShowAnswer((v) => !v)}>
         {showAnswer ? 'Hide Answer' : 'Reveal Answer'}
