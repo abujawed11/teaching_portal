@@ -24,6 +24,13 @@
 | Phase 3 — Module 4.3 Comparing Fractions | ✅ Done |
 | Phase 3 — Module 4.4 Fractions Greater Than 1 (Mixed Numbers) | ✅ Done |
 | Phase 3 — Module 4.5 Fraction Tricks & Practice | Not started |
+| Class 6 Chapter 1: Patterns in Mathematics (see [[Phase 3b — Class 6]]) | ✅ Done |
+| Class 6 Chapter 2: Lines and Angles — Points, Lines and Rays | ✅ Done |
+| Class 6 Chapter 2 — What is an Angle? | ✅ Done |
+| Class 6 Chapter 2 — Special Angles and Bisectors | Not started |
+| Class 6 Chapter 2 — Measuring Angles | Not started |
+| Class 6 Chapter 2 — Angle Types in Real Life | Not started |
+| Class 6 Chapter 2 — Chapter Practice + Chapter Quiz | Not started |
 | Digital Skills & Computer Fundamentals course (see [[1a. Digital Skills & Computer Fundamentals]] and `Computer.md`) | Planning only, not started |
 
 ### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
@@ -358,6 +365,43 @@ Verified with `npm run build` — no errors. (New build warning: main JS chunk h
 - `topics.js` — "Fractions Greater Than 1" marked active.
 
 Next step: Module 4.5 (Fraction Tricks & Practice), then Chapter 2 Practice + Chapter 2 Quiz to close out Fractions.
+
+### Phase 3b — Class 6
+
+Built in earlier sessions but never documented in this file until now — recorded retroactively so Plan.md stops falling out of sync with the actual codebase (`chapters.js`/`topics.js`).
+
+**Chapter 1: Patterns in Mathematics (✅ Done)** — `chapters.js` id `patterns-in-mathematics`. All 6 topics active: What is Mathematics?, Number Sequences, Relations Among Sequences (`sequence-relations`), Patterns in Shapes (`shape-sequences`), Chapter Practice, Chapter Quiz. See the "Working agreement: no wall-of-text steps" and "full Figure-it-Out coverage" notes above, both raised while building this chapter.
+
+**Chapter 2: Lines and Angles (in progress)** — `chapters.js` id `lines-and-angles`, source book `books/class-6-maths-ncert/fegp102.pdf`. Built so far:
+- **Points, Lines and Rays** (`points-lines-rays`) ✅ Done — includes `RayNamingDiagram` (see "Working agreement: diagrams in question answers" above).
+- **What is an Angle?** (`what-is-an-angle`) ✅ Done — vertex/arm naming, real-world angle examples, superimposition comparison, the arm-length trap. See below for a mid-build fix to how its real-object question is presented.
+
+Remaining topics in `topics.js` (all currently `active: false`): `special-angles-bisectors`, `measuring-angles`, `angle-types-real-world`, `angles-chapter-practice`, `angles-chapter-quiz`.
+
+#### Content audit: rest of `fegp102.pdf`, mapped to the remaining topic placeholders
+
+Read the full remainder of the chapter (§2.6–2.9) to plan these properly instead of guessing from the topic names alone:
+
+- **§2.6 Comparing Angles** — mostly already covered by `what-is-an-angle` (superimposition, equal angles via matching arms, the arm-length trap). One genuinely new bit, not yet built: comparing angles **without** superimposition using a transparent circle marked at the two arm-points (the book's "two arguing cranes" example).
+- **§2.7 Making Rotating Arms** — a hands-on paper-straw-and-paperclip activity, plus an "angle-shaped slit" activity (only the rotating-arm pair whose angle exactly matches the slit passes through). Reinforces "angle = rotation, not arm length" (already covered) — a nice-to-have physical/classroom activity, not new core content worth a dedicated screen.
+- **§2.8 Special Types of Angles** — straight angle (arms in a line) → bisecting a straight angle via paper-folding gives two equal **right angles** → then classification into **acute** (<90°) and **obtuse** (90°–180°). Genuinely new content, not yet built.
+- **§2.9 Measuring Angles** — degree as "1/360th of a full turn," protractor use (unlabelled protractor first, then the labelled one — explains *why* it has two number scales, inner and outer), a "make your own protractor by folding" activity (builds up 90° → 45°/135° → 22.5° etc.), the formal **angle bisector** definition (the fold-in-half process, tied back to §2.8's bisecting), then **reflex angles** (180°–360°) as the last category, a "Mind the Mistake" protractor-misreading exercise, and a "sum of a triangle's angles" teaser that the book itself explicitly defers to a later year (skip it here too, for the same reason).
+
+**Module breakdown decided from this audit** (per user decision, before starting the next build):
+- **Special Angles and Bisectors** (`special-angles-bisectors`) → straight/right/acute/obtuse via paper-folding, plus the angle bisector concept — draws from §2.8 and the bisector part of §2.9.
+- **Measuring Angles** (`measuring-angles`) → degrees, protractor reading (inner/outer scale, why two scales), reflex angles, the "Mind the Mistake" protractor-error exercise — draws from §2.9.
+- **Angle Types in Real Life** (`angle-types-real-world`) → doesn't map to one distinct book section; this is a synthesis/practice topic (classifying real objects' angles as acute/right/obtuse/reflex) rather than new book content, so treat it as a lighter practice-style module once the two theory modules above are built.
+
+Next: build **Special Angles and Bisectors**.
+
+#### Fix: `RealWorldAngleSpotter` — photo placement and content
+
+Two issues were caught and fixed after the initial build of `what-is-an-angle`'s real-world-objects question:
+1. **Wrong examples**: the question originally used an invented "bicycle handlebar" and "fence lattice" — neither appears anywhere in `fegp102.pdf` (checked via `pdftotext` across the whole book). Replaced with **scissors** and an **open book**, both directly from the book's own §2.5 real-world angle examples (Vidya's book-cover-opening scenario, the scissors-blades example).
+2. **Wrong reveal timing**: the photos were wired to the `question` step's `visual` prop, which `PracticeQuestion` only renders *after* "Reveal Answer" is clicked — but the question asks students to look at the photos and spot the angle themselves, so hiding the photos defeated the point. Fixed by adding a new `promptVisual` slot (`PracticeQuestion.jsx` + `LessonStepRenderer.jsx`'s `question`/`activity` case) that renders immediately, separate from `visual` which stays gated behind the reveal for answer-only content. `RealWorldAngleSpotter` now uses `promptVisual` and dropped its old internal "Show the Angle" schematic-overlay toggle (redundant once the photos are visible up front and the written answer covers vertex/arms via the normal Reveal Answer flow).
+3. Image display bug: the photo frame originally forced `aspect-square` + `object-cover`, which cropped non-square photos. Changed to a `max-h-64` flexible frame with `object-contain` so the whole photo shows, letterboxed if needed.
+
+Images: `frontend/public/images/angles/scissors.jpg` and `frontend/public/images/angles/open-book.jpg` (same sourcing rule as Digital Skills — openly-licensed or your own photo, never NCERT's own images).
 
 ---
 
