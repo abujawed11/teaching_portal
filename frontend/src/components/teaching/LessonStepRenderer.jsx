@@ -165,10 +165,20 @@ function LessonStepRenderer({ step }) {
     case 'visual':
     case 'animation': {
       const VisualComponent = visualComponents[step.component]
-      return VisualComponent ? (
-        <VisualComponent {...step.props} />
-      ) : (
-        <AnimatedStepDemo label={step.component ?? 'Animated Demo'} />
+      return (
+        <div className="flex flex-col items-center gap-5 w-full">
+          {(step.title || step.text) && (
+            <div className="text-center max-w-2xl">
+              {step.title && <h3 className="text-projector-md font-bold text-ink mb-2">{step.title}</h3>}
+              {step.text && <p className="text-projector-sm text-slate-600 whitespace-pre-line">{step.text}</p>}
+            </div>
+          )}
+          {VisualComponent ? (
+            <VisualComponent {...step.props} />
+          ) : (
+            <AnimatedStepDemo label={step.component ?? 'Animated Demo'} />
+          )}
+        </div>
       )
     }
 
