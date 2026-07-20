@@ -65,6 +65,7 @@ import SharedRayAngleDiagram from '../angles/SharedRayAngleDiagram.jsx'
 import FourPointLinesAnglesDiagram from '../angles/FourPointLinesAnglesDiagram.jsx'
 import AngleBisectorFold from '../angles/AngleBisectorFold.jsx'
 import AngleTypeGallery from '../angles/AngleTypeGallery.jsx'
+import ReflexAngleDemo from '../angles/ReflexAngleDemo.jsx'
 import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
 
 const illustrationComponents = {
@@ -133,6 +134,7 @@ const visualComponents = {
   FourPointLinesAnglesDiagram,
   AngleBisectorFold,
   AngleTypeGallery,
+  ReflexAngleDemo,
   UpDownDiamondBuilder,
 }
 

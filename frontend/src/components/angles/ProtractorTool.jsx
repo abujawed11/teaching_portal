@@ -32,14 +32,16 @@ function arcPath(deg) {
   return `M ${CX} ${CY} L ${start.x} ${start.y} A 50 50 0 ${largeArc} 0 ${end.x} ${end.y} Z`
 }
 
-function ProtractorTool({ mode = 'measure', initialAngle = 60, targetDegrees }) {
+function ProtractorTool({ mode = 'measure', initialAngle = 60, targetDegrees, locked = false, scale = 'both', numbered = true }) {
   const svgRef = useRef(null)
   const [angle, setAngle] = useState(initialAngle)
   const [dragging, setDragging] = useState(false)
   const [revealed, setRevealed] = useState(false)
   const [target] = useState(() => targetDegrees ?? Math.floor(Math.random() * 171) + 5)
 
-  const showNumbers = mode === 'measure' || revealed
+  const showNumbers = numbered && (mode === 'measure' || revealed)
+  const showOuter = scale === 'both' || scale === 'outer'
+  const showInner = scale === 'both' || scale === 'inner'
 
   const handleMove = useCallback((clientX, clientY) => {
     if (!svgRef.current) return
@@ -91,15 +93,28 @@ function ProtractorTool({ mode = 'measure', initialAngle = 60, targetDegrees }) 
         {ticks.map(({ d, inner, outer, isMajor }) => (
           <g key={d}>
             <line x1={inner.x} y1={inner.y} x2={outer.x} y2={outer.y} stroke="#64748b" strokeWidth={isMajor ? 2 : 1} />
-            {showNumbers && isMajor && (
+            {showNumbers && isMajor && showOuter && (
               <text
                 x={pointOnRay(d, R - 40).x}
                 y={pointOnRay(d, R - 40).y}
                 fontSize={13}
                 textAnchor="middle"
-                fill="#475569"
+                fill="#2563eb"
+                fontWeight="bold"
               >
                 {d}°
+              </text>
+            )}
+            {showNumbers && isMajor && showInner && (
+              <text
+                x={pointOnRay(d, R - 58).x}
+                y={pointOnRay(d, R - 58).y}
+                fontSize={13}
+                textAnchor="middle"
+                fill="#d97706"
+                fontWeight="bold"
+              >
+                {180 - d}°
               </text>
             )}
           </g>
@@ -130,8 +145,9 @@ function ProtractorTool({ mode = 'measure', initialAngle = 60, targetDegrees }) 
           cy={tip.y}
           r={14}
           fill="#2563eb"
-          className="cursor-grab active:cursor-grabbing"
+          className={locked ? '' : 'cursor-grab active:cursor-grabbing'}
           onPointerDown={(e) => {
+            if (locked) return
             e.preventDefault()
             setDragging(true)
           }}
@@ -140,7 +156,14 @@ function ProtractorTool({ mode = 'measure', initialAngle = 60, targetDegrees }) 
         <circle cx={CX} cy={CY} r={5} fill="#1e293b" />
       </svg>
 
-      {showNumbers && (
+      {showNumbers && showOuter && showInner && (
+        <p className="text-projector-sm text-slate-500 text-center">
+          <span className="text-primary font-bold">Outer scale (blue)</span>: reads left → right &nbsp;•&nbsp;{' '}
+          <span className="font-bold" style={{ color: '#d97706' }}>Inner scale (amber)</span>: reads right → left
+        </p>
+      )}
+
+      {showNumbers && !locked && (
         <p className="text-projector-sm text-ink text-center">
           Angle: <span className="font-extrabold text-primary">{angle}°</span>
         </p>
@@ -158,23 +181,25 @@ function ProtractorTool({ mode = 'measure', initialAngle = 60, targetDegrees }) 
         </p>
       )}
 
-      <div className="flex items-center gap-3">
-        {mode === 'guess' && !revealed && (
+      {!locked && (
+        <div className="flex items-center gap-3">
+          {mode === 'guess' && !revealed && (
+            <button
+              onClick={() => setRevealed(true)}
+              className="px-5 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-primary-dark"
+            >
+              Reveal
+            </button>
+          )}
           <button
-            onClick={() => setRevealed(true)}
-            className="px-5 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-primary-dark"
+            onClick={reset}
+            aria-label="Reset"
+            className="flex items-center gap-2 px-5 py-3 rounded-lg bg-slate-100 hover:bg-slate-200 font-semibold text-ink"
           >
-            Reveal
+            <RefreshCw size={20} /> Reset
           </button>
-        )}
-        <button
-          onClick={reset}
-          aria-label="Reset"
-          className="flex items-center gap-2 px-5 py-3 rounded-lg bg-slate-100 hover:bg-slate-200 font-semibold text-ink"
-        >
-          <RefreshCw size={20} /> Reset
-        </button>
-      </div>
+        </div>
+      )}
     </div>
   )
 }
