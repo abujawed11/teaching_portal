@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Maximize, Minimize, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useFullscreen } from '../hooks/useFullscreen.js'
@@ -16,6 +17,21 @@ function LessonLayout({
   const navigate = useNavigate()
   const { isFullscreen, toggleFullscreen } = useFullscreen()
   const progress = totalSteps > 0 ? (currentStep / totalSteps) * 100 : 0
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const tag = e.target.tagName
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || e.target.isContentEditable) return
+
+      if (e.key === 'ArrowRight' && currentStep < totalSteps) {
+        onNext?.()
+      } else if (e.key === 'ArrowLeft' && currentStep > 1) {
+        onPrevious?.()
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [currentStep, totalSteps, onNext, onPrevious])
 
   return (
     <div className="min-h-screen flex flex-col">
