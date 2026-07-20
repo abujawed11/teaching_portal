@@ -30,8 +30,10 @@
 | Class 6 Chapter 2 — Special Angles and Bisectors | ✅ Done |
 | Class 6 Chapter 2 — Measuring Angles | ✅ Done |
 | Class 6 Chapter 2 — Angle Types in Real Life | ✅ Done |
-| Class 6 Chapter 2 — Chapter Practice + Chapter Quiz | Not started |
+| Class 6 Chapter 2 — Chapter Practice + Chapter Quiz | ✅ Done |
 | Digital Skills & Computer Fundamentals course (see [[1a. Digital Skills & Computer Fundamentals]] and `Computer.md`) | Planning only, not started |
+
+**Class 6 status: Chapter 1 (Patterns in Mathematics) and Chapter 2 (Lines and Angles) are both fully done** — every topic built, active, and quizzed. Nothing is queued next for Class 6 — no Chapter 3 has been planned or reviewed from the source book yet. Current active work is back on Class 5 (Fractions Module 4.5, next — see row above).
 
 ### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
 

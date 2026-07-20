@@ -35,7 +35,7 @@ export const angleTypesRealWorldLesson = {
     {
       type: 'text',
       title: 'The Angle of a Swing',
-      text: 'Vidya notices: the bigger the angle she swings through, the faster she goes. But where exactly is that angle?',
+      text: 'Vidya is enjoying her time on a swing. She notices something interesting: the bigger the angle she swings through, the faster she goes.',
     },
     {
       type: 'question',
@@ -46,7 +46,7 @@ export const angleTypesRealWorldLesson = {
     {
       type: 'text',
       title: 'The Angle of a Ramp',
-      text: 'A toy with a slanting ramp: the steeper the ramp, the faster a ball rolls down it. Can an angle describe how steep the ramp is?',
+      text: 'A toy with a slanting ramp: the steeper the ramp, the faster a ball rolls down it. An angle can describe exactly how steep it is.',
     },
     {
       type: 'question',
