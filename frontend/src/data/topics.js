@@ -31,7 +31,7 @@ export const topics = {
     { id: 'what-is-an-angle', label: 'What is an Angle?', active: true },
     { id: 'special-angles-bisectors', label: 'Special Angles and Bisectors', active: true },
     { id: 'measuring-angles', label: 'Measuring Angles', active: true },
-    { id: 'angle-types-real-world', label: 'Angle Types in Real Life', active: false },
+    { id: 'angle-types-real-world', label: 'Angle Types in Real Life', active: true },
     { id: 'angles-chapter-practice', label: 'Chapter Practice', active: false },
     { id: 'angles-chapter-quiz', label: 'Chapter Quiz', active: false, quizOnly: true },
   ],

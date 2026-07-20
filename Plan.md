@@ -29,7 +29,7 @@
 | Class 6 Chapter 2 — What is an Angle? | ✅ Done |
 | Class 6 Chapter 2 — Special Angles and Bisectors | ✅ Done |
 | Class 6 Chapter 2 — Measuring Angles | ✅ Done |
-| Class 6 Chapter 2 — Angle Types in Real Life | Not started |
+| Class 6 Chapter 2 — Angle Types in Real Life | ✅ Done |
 | Class 6 Chapter 2 — Chapter Practice + Chapter Quiz | Not started |
 | Digital Skills & Computer Fundamentals course (see [[1a. Digital Skills & Computer Fundamentals]] and `Computer.md`) | Planning only, not started |
 
@@ -424,7 +424,20 @@ Built by reading the full `fegp102.pdf` §2.9–2.11 (not just the earlier chapt
 
 Verified with `npm run build` — no errors.
 
-Next: build **Angle Types in Real Life** (now the natural home for the deferred real-world Figure-it-Out items above), then the chapter Practice + Quiz wrap-up.
+### Phase 3b, Module — Angle Types in Real Life (✅ Done)
+
+Absorbs the real-world "Where are the angles?" Figure-it-Out items (§2.9, pages 32–33) that were deliberately deferred out of Measuring Angles:
+
+- `src/components/angles/ClockAngleDemo.jsx` (new) — SVG clock face, steps through 1/2/4/6 o'clock via a "Next Time" button, shading the angle between hands and reasoning it out (each hour-mark = 30°, hour gap × 30°). Own illustration, not a photo — consistent with the no-NCERT-images rule.
+- `src/data/angleTypesRealWorld.js` — intro → `ClockAngleDemo` + a 9 o'clock reasoning question (crosses 180°, needs the "shorter way round" idea from Measuring Angles' reflex-angle lesson) → door angle (hinge = vertex, frame/door = arms) + right-angle question → swing (open-ended vertex/arms discussion, per the book's own "are you able to see it?" framing) → ramp/toy-slab steepness (open-ended, visible vs. invisible arm) → rotating insect (turn = angle, ties back to the "angle = rotation" idea from `what-is-an-angle`) → real-life classification practice (door states, ramp) → 4 o'clock classification question → summary.
+- `quizzes['angle-types-real-world']` — 10-question quiz.
+- `topics.js` — "Angle Types in Real Life" marked active.
+
+Language check applied before shipping (per the algebra/jargon fix caught on the previous module): plain-word reasoning throughout, no variables, no undefined technical terms.
+
+Verified with `npm run build` — no errors.
+
+Next: **Chapter Practice + Chapter Quiz** to close out Class 6 Chapter 2 (Lines and Angles) — the last remaining item in the chapter.
 
 #### Fix: `RealWorldAngleSpotter` — photo placement and content
 

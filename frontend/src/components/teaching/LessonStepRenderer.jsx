@@ -66,6 +66,7 @@ import FourPointLinesAnglesDiagram from '../angles/FourPointLinesAnglesDiagram.j
 import AngleBisectorFold from '../angles/AngleBisectorFold.jsx'
 import AngleTypeGallery from '../angles/AngleTypeGallery.jsx'
 import ReflexAngleDemo from '../angles/ReflexAngleDemo.jsx'
+import ClockAngleDemo from '../angles/ClockAngleDemo.jsx'
 import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
 
 const illustrationComponents = {
@@ -135,6 +136,7 @@ const visualComponents = {
   AngleBisectorFold,
   AngleTypeGallery,
   ReflexAngleDemo,
+  ClockAngleDemo,
   UpDownDiamondBuilder,
 }
 

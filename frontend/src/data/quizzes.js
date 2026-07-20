@@ -1549,4 +1549,78 @@ export const quizzes = {
       explanation: 'Together, these five categories cover every angle measure from just above 0° up to (but not including) 360°.',
     },
   ],
+
+  'angle-types-real-world': [
+    {
+      type: 'fill',
+      question: 'At 2 o\'clock, the angle between the clock hands is ______°.',
+      correctAnswer: '60',
+      explanation: '2 hour-marks × 30° each = 60°.',
+    },
+    {
+      type: 'mcq',
+      question: 'What type of angle do the clock hands make at 6 o\'clock?',
+      options: ['Straight', 'Right', 'Acute'],
+      correctAnswer: 'Straight',
+      explanation: '6 × 30° = 180° — the hands point in exactly opposite directions.',
+    },
+    {
+      type: 'mcq',
+      question: 'For a door, what is the vertex of the angle it makes as it opens?',
+      options: ['The hinge', 'The door handle', 'The wall'],
+      correctAnswer: 'The hinge',
+      explanation: 'The hinge is the fixed point the door rotates around — exactly like a vertex.',
+    },
+    {
+      type: 'mcq',
+      question: 'A door open just a small crack makes what type of angle?',
+      options: ['Acute', 'Obtuse', 'Straight'],
+      correctAnswer: 'Acute',
+      explanation: 'A small opening means a small angle — less than 90°, so acute.',
+    },
+    {
+      type: 'mcq',
+      question: 'On a swing, where is the vertex of the swinging angle?',
+      options: [
+        'At the top pivot, where the ropes are attached',
+        'At the seat, where you sit',
+        'On the ground below the swing',
+      ],
+      correctAnswer: 'At the top pivot, where the ropes are attached',
+      explanation: 'The rope swings around the fixed point at the top, just like the arms of an angle swing around the vertex.',
+    },
+    {
+      type: 'mcq',
+      question: 'For a ramp, the angle describing its steepness is measured between the sloped surface and...',
+      options: ['The ground', 'The ball rolling on it', 'The top of the ramp'],
+      correctAnswer: 'The ground',
+      explanation: 'Steepness is always compared to the flat ground, even when the ground-arm isn\'t drawn.',
+    },
+    {
+      type: 'fill',
+      question: 'When something rotates in place, the angle it turns through is measured between its before-direction and its ______-direction.',
+      correctAnswer: 'after',
+      explanation: 'The turning angle compares the original direction to the new direction, both from the same fixed point.',
+    },
+    {
+      type: 'mcq',
+      question: 'A door is opened flat back against the wall. What type of angle does it make with the frame?',
+      options: ['Straight', 'Acute', 'Right'],
+      correctAnswer: 'Straight',
+      explanation: 'The door and the frame now point in exactly opposite directions — a 180° straight angle.',
+    },
+    {
+      type: 'mcq',
+      question: 'At 9 o\'clock, what type of angle do the hands make?',
+      options: ['Right', 'Obtuse', 'Acute'],
+      correctAnswer: 'Right',
+      explanation: '9 marks the long way is 270°, but the shorter way round is 360° − 270° = 90° — a right angle.',
+    },
+    {
+      type: 'fill',
+      question: 'At 4 o\'clock, the angle between the hands is ______°.',
+      correctAnswer: '120',
+      explanation: '4 × 30° = 120°, an obtuse angle.',
+    },
+  ],
 }
