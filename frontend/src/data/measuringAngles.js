@@ -86,6 +86,13 @@ export const measuringAnglesLesson = {
       explanation: 'Under 90° is acute, exactly 90° is right, between 90° and 180° is obtuse, and anything over 180° (up to 360°) is reflex.',
     },
     {
+      type: 'visual',
+      component: 'ReflexAngleDemo',
+      title: 'Drawing a Reflex Angle — 195°',
+      text: 'A normal protractor only shows 0°–180°, so you can\'t point straight at a reflex angle. The trick: work out 360° minus the reflex angle you want, and draw that instead — the reflex angle is automatically what\'s left on the other side.',
+      props: { mode: 'guess', targetReflex: 195 },
+    },
+    {
       type: 'text',
       title: 'Trick: The Straight-Line Shortcut',
       text: '• If two angles sit together on a straight line, they always add up to 180°\n• So if you know one of them, you can find the other by subtracting from 180° — no protractor needed!',
@@ -94,8 +101,8 @@ export const measuringAnglesLesson = {
     {
       type: 'example',
       title: 'Worked Example: Straight-Line Shortcut',
-      problem: 'B, E and R lie on a straight line, with T another point such that ∠TER = 80°. What is the measure of ∠BET, without measuring?',
-      solution: '∠BER is a straight angle, so it measures 180°. It is made up of ∠BET and ∠TER together.\nSo ∠BET = 180° − ∠TER = 180° − 80° = 100°.',
+      problem: 'B, E and R lie on a straight line. Two more rays ET and ES also start at E (with T closer to R than S), where ∠TER = 80° and ∠SER = 90° (ES is perpendicular to line BR). Without measuring, find ∠BET and ∠SET.',
+      solution: '∠BER is a straight angle, so it measures 180°.\n∠BET = 180° − ∠TER = 180° − 80° = 100° (∠BET and ∠TER together make up the straight angle ∠BER).\n∠SET = ∠SER − ∠TER = 90° − 80° = 10° (∠SET is just the gap between rays ES and ET, both measured from ER).',
     },
     {
       type: 'question',
@@ -104,6 +111,22 @@ export const measuringAnglesLesson = {
       promptVisualProps: { mode: 'measure', initialAngle: 130, locked: true, numbered: true, scale: 'both' },
       answer: 'No — the correct measure is 130°, not 50°.',
       explanation: 'The base arm sits on the RIGHT-hand 0°, so you must read the blue (outer) scale, which shows 130°. Reading the amber (inner) scale by mistake gives the wrong answer, 50° — always check which 0° your base arm is touching first.',
+    },
+    {
+      type: 'question',
+      question: 'Another student measures this angle and says it\'s 100°. Is that correct?',
+      promptVisual: 'ProtractorTool',
+      promptVisualProps: { mode: 'measure', initialAngle: 70, locked: true, numbered: true, scale: 'both' },
+      answer: 'No — the correct measure is 70°, not 100°.',
+      explanation: 'The base arm sits on the right-hand 0°, so the correct reading is the blue (outer) scale, 70°. 100° is what you\'d get by misreading the amber (inner) scale instead.',
+    },
+    {
+      type: 'question',
+      question: 'A third student measures this angle and says it\'s 25°. Is that correct?',
+      promptVisual: 'ProtractorTool',
+      promptVisualProps: { mode: 'measure', initialAngle: 155, locked: true, numbered: true, scale: 'both' },
+      answer: 'No — the correct measure is 155°, not 25°.',
+      explanation: 'Same mistake again — reading the amber (inner) scale instead of the blue (outer) one. Notice the pattern: the wrong reading is always 180° minus the correct one.',
     },
     {
       type: 'question',
@@ -130,6 +153,23 @@ export const measuringAnglesLesson = {
       explanation: 'That marked point, joined to the vertex, becomes the second arm of your 50° angle.',
     },
     {
+      type: 'text',
+      title: 'Puzzle Corner: Angle Riddles',
+      text: 'Two fun riddles to test everything you\'ve learned about degree measures.',
+    },
+    {
+      type: 'question',
+      question: 'The Ashoka Chakra has 24 spokes, evenly spaced in a full circle. What is the angle between two neighbouring spokes? What is the largest possible acute angle formed between any two spokes?',
+      answer: 'Between neighbouring spokes: 15°. Largest acute angle between any two spokes: 75°.',
+      explanation: 'A full circle is 360°, split evenly by 24 spokes: 360° ÷ 24 = 15° between neighbours. Any two spokes are some multiple of 15° apart (15°, 30°, 45°, 60°, 75°, 90°...) — the largest of these that\'s still under 90° (acute) is 75° (5 gaps of 15°); the next one, 90° (6 gaps), is a right angle, not acute.',
+    },
+    {
+      type: 'question',
+      question: 'Puzzle: I am an acute angle. Double me, and I\'m still acute. Triple me — still acute. Quadruple (×4) me — still acute! But multiply me by 5, and I become obtuse. What could my measure be?',
+      answer: 'Any whole number of degrees from 18° up to (but not including) 22.5° — for example, 18°, 19°, 20°, 21°, or 22°.',
+      explanation: 'Try 20°: ×2=40° (acute ✓), ×3=60° (acute ✓), ×4=80° (acute ✓), ×5=100° (obtuse ✓) — 20° works!\nWhy the limits? ×4 has to stay under 90°, so the angle itself must be under 90° ÷ 4 = 22.5°. But ×5 has to reach 90° or more, so the angle must be at least 90° ÷ 5 = 18°. So it has to sit between 18° and 22.5°.',
+    },
+    {
       type: 'summary',
       title: 'Summary',
       points: [
@@ -138,6 +178,7 @@ export const measuringAnglesLesson = {
         'A protractor has two number scales so you can always read from whichever 0° your base arm touches — no subtraction needed.',
         'To draw an angle: draw the base ray, align the protractor\'s centre and 0° line, mark the target degree, then join with a ruler.',
         'Acute (< 90°), right (= 90°), obtuse (90°–180°), straight (= 180°), and reflex (180°–360°) angles cover every possible measure.',
+        'To draw a reflex angle, work out 360° minus the reflex angle and draw that with a normal protractor instead — the reflex angle is automatically what\'s left on the other side.',
         'Angles on a straight line always add up to 180° — a quick shortcut for finding a missing angle.',
       ],
     },

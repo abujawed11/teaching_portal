@@ -29,11 +29,13 @@ function arcPath(fromDeg, toDeg, radius) {
   return `M ${CX} ${CY} L ${start.x} ${start.y} A ${radius} ${radius} 0 ${largeArc} 0 ${end.x} ${end.y} Z`
 }
 
-function ReflexAngleDemo() {
+function ReflexAngleDemo({ mode = 'explore', targetReflex = 195 }) {
   const svgRef = useRef(null)
-  const [armAngle, setArmAngle] = useState(60)
+  const [armAngle, setArmAngle] = useState(mode === 'guess' ? 90 : 60)
   const [dragging, setDragging] = useState(false)
-  const [showReflex, setShowReflex] = useState(false)
+  const [showReflex, setShowReflex] = useState(mode === 'guess')
+  const [revealed, setRevealed] = useState(false)
+  const targetDirect = 360 - targetReflex
 
   const handleMove = useCallback((clientX, clientY) => {
     if (!svgRef.current) return
@@ -56,6 +58,12 @@ function ReflexAngleDemo() {
   const reflexAngle = 360 - armAngle
   const tip = pointOnRay(armAngle, R)
   const base = pointOnRay(0, R)
+  const score = Math.abs(reflexAngle - targetReflex)
+
+  const reset = () => {
+    setArmAngle(mode === 'guess' ? 90 : 60)
+    setRevealed(false)
+  }
 
   return (
     <div className="flex flex-col items-center gap-6 w-full">
@@ -72,6 +80,16 @@ function ReflexAngleDemo() {
           <path d={arcPath(directAngle, 360, 45)} fill="#f59e0b33" stroke="#d97706" strokeWidth={2} />
         )}
 
+        {mode === 'guess' && (() => {
+          const targetTip = pointOnRay(targetDirect, R + 15)
+          return (
+            <line
+              x1={CX} y1={CY} x2={targetTip.x} y2={targetTip.y}
+              stroke="#dc2626" strokeWidth={3} strokeDasharray="6 5"
+            />
+          )
+        })()}
+
         <line x1={CX} y1={CY} x2={base.x} y2={base.y} stroke="#1e293b" strokeWidth={4} />
         <line x1={CX} y1={CY} x2={tip.x} y2={tip.y} stroke="#1e293b" strokeWidth={4} />
 
@@ -83,31 +101,70 @@ function ReflexAngleDemo() {
         <circle cx={CX} cy={CY} r={6} fill="#1e293b" />
       </svg>
 
-      <p className="text-projector-sm text-ink text-center">
-        {!showReflex ? (
-          <>The angle you can see directly: <span className="font-extrabold text-primary">{directAngle}°</span></>
-        ) : (
-          <>Going the <span className="font-bold" style={{ color: '#d97706' }}>other way round</span> — the reflex angle: <span className="font-extrabold" style={{ color: '#d97706' }}>{reflexAngle}°</span></>
-        )}
-      </p>
-      <p className="text-sm text-slate-500 text-center">
-        Same two arms, same vertex — {directAngle}° + {reflexAngle}° = 360° (one full turn).
-      </p>
+      {mode === 'explore' ? (
+        <>
+          <p className="text-projector-sm text-ink text-center">
+            {!showReflex ? (
+              <>The angle you can see directly: <span className="font-extrabold text-primary">{directAngle}°</span></>
+            ) : (
+              <>Going the <span className="font-bold" style={{ color: '#d97706' }}>other way round</span> — the reflex angle: <span className="font-extrabold" style={{ color: '#d97706' }}>{reflexAngle}°</span></>
+            )}
+          </p>
+          <p className="text-sm text-slate-500 text-center">
+            Same two arms, same vertex — {directAngle}° + {reflexAngle}° = 360° (one full turn).
+          </p>
+        </>
+      ) : (
+        <>
+          <p className="text-projector-sm text-ink text-center">
+            Target reflex angle: <span className="font-extrabold" style={{ color: '#d97706' }}>{targetReflex}°</span>
+            {' — '}a normal protractor only goes up to 180°, so drag the black arm to the
+            red dashed line at <span className="font-bold text-primary">{targetDirect}°</span> (that's 360° − {targetReflex}°),
+            and the reflex angle on the other side will automatically be {targetReflex}°.
+          </p>
+          {revealed && (
+            <p className="text-projector-sm font-bold text-center" style={{ color: '#d97706' }}>
+              Your reflex angle: {reflexAngle}° — target was {targetReflex}°. Score: {score} (lower is better!)
+            </p>
+          )}
+        </>
+      )}
 
       <div className="flex items-center gap-3">
-        <button
-          onClick={() => setShowReflex(false)}
-          className={`px-5 py-3 rounded-lg font-semibold ${!showReflex ? 'bg-primary text-white' : 'bg-slate-100 text-ink hover:bg-slate-200'}`}
-        >
-          Show Small Angle
-        </button>
-        <button
-          onClick={() => setShowReflex(true)}
-          className={`px-5 py-3 rounded-lg font-semibold ${showReflex ? 'text-white' : 'bg-slate-100 text-ink hover:bg-slate-200'}`}
-          style={showReflex ? { backgroundColor: '#d97706' } : undefined}
-        >
-          Show Reflex Angle
-        </button>
+        {mode === 'explore' && (
+          <>
+            <button
+              onClick={() => setShowReflex(false)}
+              className={`px-5 py-3 rounded-lg font-semibold ${!showReflex ? 'bg-primary text-white' : 'bg-slate-100 text-ink hover:bg-slate-200'}`}
+            >
+              Show Small Angle
+            </button>
+            <button
+              onClick={() => setShowReflex(true)}
+              className={`px-5 py-3 rounded-lg font-semibold ${showReflex ? 'text-white' : 'bg-slate-100 text-ink hover:bg-slate-200'}`}
+              style={showReflex ? { backgroundColor: '#d97706' } : undefined}
+            >
+              Show Reflex Angle
+            </button>
+          </>
+        )}
+        {mode === 'guess' && !revealed && (
+          <button
+            onClick={() => setRevealed(true)}
+            className="px-5 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-primary-dark"
+          >
+            Reveal
+          </button>
+        )}
+        {mode === 'guess' && (
+          <button
+            onClick={reset}
+            aria-label="Reset"
+            className="flex items-center gap-2 px-5 py-3 rounded-lg bg-slate-100 hover:bg-slate-200 font-semibold text-ink"
+          >
+            Reset
+          </button>
+        )}
       </div>
     </div>
   )

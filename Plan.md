@@ -28,7 +28,7 @@
 | Class 6 Chapter 2: Lines and Angles — Points, Lines and Rays | ✅ Done |
 | Class 6 Chapter 2 — What is an Angle? | ✅ Done |
 | Class 6 Chapter 2 — Special Angles and Bisectors | ✅ Done |
-| Class 6 Chapter 2 — Measuring Angles | Not started |
+| Class 6 Chapter 2 — Measuring Angles | ✅ Done |
 | Class 6 Chapter 2 — Angle Types in Real Life | Not started |
 | Class 6 Chapter 2 — Chapter Practice + Chapter Quiz | Not started |
 | Digital Skills & Computer Fundamentals course (see [[1a. Digital Skills & Computer Fundamentals]] and `Computer.md`) | Planning only, not started |
@@ -406,7 +406,25 @@ Not built (per the audit above, judged not worth a dedicated screen): §2.6's tr
 
 **Gap noted, not yet fixed**: `points-lines-rays` and `what-is-an-angle` still have no registered quiz in `quizzes.js` (confirmed while adding this module's quiz — `LessonPage.jsx`'s `hasQuiz` check hides the "Take Quiz" button gracefully when missing, so nothing is broken, but both lessons are quiz-less right now). Worth building both quizzes before this chapter's own Chapter Quiz, so there's per-lesson practice to draw from.
 
-Next: build **Measuring Angles**.
+### Phase 3b, Module — Measuring Angles (✅ Done)
+
+Built by reading the full `fegp102.pdf` §2.9–2.11 (not just the earlier chapter-level audit) — content is richer than the original module-breakdown summary assumed, so the whole section was read properly before building:
+
+- `src/components/angles/ProtractorTool.jsx` — extended (was already partially built, unused, from an earlier session): added a second inner scale (`scale: 'both' | 'outer' | 'inner'` prop, outer=blue reads left→right physically i.e. 0 at right increasing to 180 at left, inner=amber the mirror), a `locked` prop (freezes the arm, hides controls, for fixed worked-example diagrams), and a `numbered` prop (hides all scale numbers, for the "unlabelled protractor — count the units" demo). Still supports its original `measure` (free drag) and `guess` (match a dashed target, score = |guess − target|) modes.
+- `src/components/angles/ReflexAngleDemo.jsx` (new) — full-circle drag demo. Default `explore` mode: one draggable pair of arms, toggle between showing the direct angle (blue) and its reflex partner (amber), both labelled, reinforcing direct + reflex = 360°. New `guess` mode (`targetReflex` prop): since a half-circle protractor can't point past 180°, teaches the real technique — compute the explement (360° − target) and drag to match that on the direct side instead; reveal shows the resulting reflex angle and a score.
+- `src/data/measuringAngles.js` — intro → degree-unit theory → straight/right/full-turn recap → "pinch of history" (why 360) fun fact → unlabelled-protractor demo (∠KAL = 30° from the book) → labelled dual-scale demo + which-scale-to-read theory → free-practice protractor → paper-protractor/angle-bisector tie-back (reuses `AngleBisectorFold` at 90°) → drawing-an-angle worked example (∠TIN = 30°, the book's own 4 steps) → drawing practice (`guess` mode, 40°) → acute/obtuse/straight recap → reflex angle theory + `ReflexAngleDemo` → classify-by-measure practice → reflex-angle **drawing** practice (195°, via the explement trick) → straight-line-shortcut trick + worked example (∠BET = 100°, ∠SET = 10°, the book's own "Let's Explore" with S/T/perpendicular-ES figure) → 3 "Mind the Mistake" questions (wrong-scale misreads, matching the book's 4-angle exercise in spirit) → 4 more practice questions → a "Puzzle Corner" (Ashoka Chakra 24-spoke angle puzzle, and the acute-angle ×2/×3/×4/×5 logic puzzle, both straight from the book's Figure-it-Out) → summary.
+- `quizzes['measuring-angles']` — 12-question quiz.
+- `topics.js` — "Measuring Angles" marked active.
+
+**Full Figure-it-Out audit against `fegp102.pdf` pages 19–41** (per the [[Working agreement: full Figure-it-Out coverage]] policy) — what's covered vs. deliberately deferred:
+- Covered: degree/protractor/two-scale theory, drawing steps, acute/obtuse/straight/reflex definitions, reflex-angle drawing via the explement trick, the full "Let's Explore" (both ∠BET and ∠SET), a 3-angle Mind-the-Mistake set, the Ashoka Chakra puzzle, and the acute-multiplier puzzle.
+- Deliberately deferred to the still-unbuilt **Angle Types in Real Life** module (per the existing module-split decision — these are real-world "spot the angle" prompts, not measuring-technique content): the clock-hands, door, swing, toy-slab-slope, and rotating-insect Figure-it-Out questions from §2.9.
+- Skipped as physical/classroom-only, not screen content (consistent with earlier §2.7 call): the two angle-guessing/drawing classroom games, and the various book-image-specific "measure this exact figure" and "draw the letter M/Y with these angles" tasks that depend on the book's own diagrams (which can't be reproduced — copyright) or are open-ended physical constructions.
+- The triangle-angle-sum activity (page 30) is explicitly deferred by the book itself ("we will come back to why this happens in a later year") — skipped here too, consistent with the same call made earlier in the chapter audit.
+
+Verified with `npm run build` — no errors.
+
+Next: build **Angle Types in Real Life** (now the natural home for the deferred real-world Figure-it-Out items above), then the chapter Practice + Quiz wrap-up.
 
 #### Fix: `RealWorldAngleSpotter` — photo placement and content
 
