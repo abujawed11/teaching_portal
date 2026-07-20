@@ -29,7 +29,7 @@ export const topics = {
   'lines-and-angles': [
     { id: 'points-lines-rays', label: 'Points, Lines and Rays', active: true },
     { id: 'what-is-an-angle', label: 'What is an Angle?', active: true },
-    { id: 'special-angles-bisectors', label: 'Special Angles and Bisectors', active: false },
+    { id: 'special-angles-bisectors', label: 'Special Angles and Bisectors', active: true },
     { id: 'measuring-angles', label: 'Measuring Angles', active: false },
     { id: 'angle-types-real-world', label: 'Angle Types in Real Life', active: false },
     { id: 'angles-chapter-practice', label: 'Chapter Practice', active: false },

@@ -63,6 +63,8 @@ import RealWorldAngleSpotter from '../angles/RealWorldAngleSpotter.jsx'
 import RayFanDiagram from '../angles/RayFanDiagram.jsx'
 import SharedRayAngleDiagram from '../angles/SharedRayAngleDiagram.jsx'
 import FourPointLinesAnglesDiagram from '../angles/FourPointLinesAnglesDiagram.jsx'
+import AngleBisectorFold from '../angles/AngleBisectorFold.jsx'
+import AngleTypeGallery from '../angles/AngleTypeGallery.jsx'
 import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
 
 const illustrationComponents = {
@@ -129,6 +131,8 @@ const visualComponents = {
   RayFanDiagram,
   SharedRayAngleDiagram,
   FourPointLinesAnglesDiagram,
+  AngleBisectorFold,
+  AngleTypeGallery,
   UpDownDiamondBuilder,
 }
 

@@ -26,6 +26,7 @@ import { shapeSequencesLesson } from '../data/shapeSequences.js'
 import { patternsChapterPracticeLesson } from '../data/patternsChapterPractice.js'
 import { pointsLinesRaysLesson } from '../data/pointsLinesRays.js'
 import { whatIsAnAngleLesson } from '../data/whatIsAnAngle.js'
+import { specialAnglesBisectorsLesson } from '../data/specialAnglesBisectors.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -55,6 +56,7 @@ const lessonsByTopic = {
   'patterns-chapter-practice': patternsChapterPracticeLesson,
   'points-lines-rays': pointsLinesRaysLesson,
   'what-is-an-angle': whatIsAnAngleLesson,
+  'special-angles-bisectors': specialAnglesBisectorsLesson,
 }
 
 function LessonPage() {

@@ -27,7 +27,7 @@
 | Class 6 Chapter 1: Patterns in Mathematics (see [[Phase 3b — Class 6]]) | ✅ Done |
 | Class 6 Chapter 2: Lines and Angles — Points, Lines and Rays | ✅ Done |
 | Class 6 Chapter 2 — What is an Angle? | ✅ Done |
-| Class 6 Chapter 2 — Special Angles and Bisectors | Not started |
+| Class 6 Chapter 2 — Special Angles and Bisectors | ✅ Done |
 | Class 6 Chapter 2 — Measuring Angles | Not started |
 | Class 6 Chapter 2 — Angle Types in Real Life | Not started |
 | Class 6 Chapter 2 — Chapter Practice + Chapter Quiz | Not started |
@@ -392,7 +392,21 @@ Read the full remainder of the chapter (§2.6–2.9) to plan these properly inst
 - **Measuring Angles** (`measuring-angles`) → degrees, protractor reading (inner/outer scale, why two scales), reflex angles, the "Mind the Mistake" protractor-error exercise — draws from §2.9.
 - **Angle Types in Real Life** (`angle-types-real-world`) → doesn't map to one distinct book section; this is a synthesis/practice topic (classifying real objects' angles as acute/right/obtuse/reflex) rather than new book content, so treat it as a lighter practice-style module once the two theory modules above are built.
 
-Next: build **Special Angles and Bisectors**.
+### Phase 3b, Module — Special Angles and Bisectors (✅ Done)
+
+Built per the module breakdown above (§2.8 + the bisector part of §2.9):
+
+- `src/components/angles/AngleBisectorFold.jsx` — the core "aha" visual: shows an angle (default a straight angle, arms in a line) and a "Fold in Half" button that reveals the crease ray plus both resulting equal angles, labelled with their measure. When the fold produces exactly 90° on each side (the straight-angle case), it also draws the small-square right-angle marker instead of relying on the number alone — matches the book's own convention for marking right angles. Reused with a `startAngle` prop for a second, non-90° example (an 80° angle bisected into two 40°s) to show bisecting is a general operation, not something special to straight angles only.
+- `src/components/angles/AngleTypeGallery.jsx` — a button-toggle gallery (straight/right/acute/obtuse), each rendering a representative angle at its own measure with the degree range named, plus the right-angle square marker on the "Right" tab.
+- `src/data/specialAnglesBisectors.js` — intro → straight-angle theory → `AngleBisectorFold` (180° → two right angles) → right-angle/perpendicular-lines theory → acute/obtuse theory → `AngleTypeGallery` → classification practice question → angle-bisector theory → `AngleBisectorFold` (80° → two 40°s, general case) → two practice questions (bisecting 70°, and bisecting a right angle into two acute 45° angles) → worked example (bisecting a straight angle *is* how a right angle gets defined) → summary.
+- `quizzes['special-angles-bisectors']` — 10-question quiz.
+- `topics.js` — "Special Angles and Bisectors" marked active.
+
+Not built (per the audit above, judged not worth a dedicated screen): §2.6's transparent-circle comparison method, and §2.7's rotating-arms/paper-slit physical activity — both are alternate demonstrations of ideas already covered elsewhere in the chapter.
+
+**Gap noted, not yet fixed**: `points-lines-rays` and `what-is-an-angle` still have no registered quiz in `quizzes.js` (confirmed while adding this module's quiz — `LessonPage.jsx`'s `hasQuiz` check hides the "Take Quiz" button gracefully when missing, so nothing is broken, but both lessons are quiz-less right now). Worth building both quizzes before this chapter's own Chapter Quiz, so there's per-lesson practice to draw from.
+
+Next: build **Measuring Angles**.
 
 #### Fix: `RealWorldAngleSpotter` — photo placement and content
 
