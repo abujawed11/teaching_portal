@@ -49,6 +49,27 @@ export const pointsLinesRaysLesson = {
       visual: 'RayNamingDiagram',
     },
     {
+      type: 'question',
+      question: 'Here is ray OA — it starts at O and passes through A and B. Can we also call it ray OB? And can we write ray OA backwards, as ray AO?',
+      answer: 'Yes, it can be called ray OB — same starting point, so it\'s the same ray. But no, it cannot be written as "AO" — that would mean a ray starting at A and heading the opposite way.',
+      explanation: 'A ray\'s name is not reversible, unlike a line segment (where AB = BA). Try each option below and watch what "AO" actually points to.',
+      visual: 'RayReversalDiagram',
+    },
+    {
+      type: 'question',
+      question: 'In the figure below, five points are marked: L, M, P, Q, R. Some points lie on just one line segment; others lie on two. Click each point to find out.',
+      answer: 'L, M and P each lie on exactly one segment. Q and R each lie on two segments.',
+      explanation: 'Q sits where segment LQ meets segment QR, and R sits where segment QR meets segment RP — a point where two segments meet lies on both of them.',
+      visual: 'SegmentIdentificationDiagram',
+    },
+    {
+      type: 'question',
+      question: 'In the figure below (points O, B, C, D, E, with B, O, C all in a straight line), how many points, lines, rays, and line segments can you name?',
+      answer: '5 points (O, B, C, D, E), 1 line (BC, passing through O), 4 rays (OB, OC, OD, OE), and 5 line segments (OB, OC, OD, OE, and DE).',
+      explanation: 'Use the buttons below to switch between viewing the figure as points, a line, rays, or segments — the same drawing hides all four ideas at once!',
+      visual: 'FivePointFigureDiagram',
+    },
+    {
       type: 'summary',
       title: 'Summary',
       points: [

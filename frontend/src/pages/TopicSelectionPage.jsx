@@ -22,9 +22,10 @@ function TopicSelectionPage() {
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
-        {topicList.map((t) => (
+        {topicList.map((t, index) => (
           <SelectionCard
             key={t.id}
+            number={index + 1}
             label={t.label}
             active={t.active}
             onClick={() =>

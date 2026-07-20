@@ -1,6 +1,6 @@
 import { Lock, ArrowRight } from 'lucide-react'
 
-function SelectionCard({ label, active, onClick }) {
+function SelectionCard({ label, active, onClick, number }) {
   return (
     <button
       disabled={!active}
@@ -12,7 +12,12 @@ function SelectionCard({ label, active, onClick }) {
             : 'bg-white/50 text-slate-400 cursor-not-allowed shadow-none'
         }`}
     >
-      <span>{label}</span>
+      <span>
+        {number != null && (
+          <span className={active ? 'text-primary font-bold' : 'text-slate-400 font-bold'}>{number}. </span>
+        )}
+        {label}
+      </span>
       {active ? (
         <ArrowRight
           size={20}

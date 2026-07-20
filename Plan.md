@@ -372,7 +372,7 @@ Built in earlier sessions but never documented in this file until now — record
 
 **Chapter 1: Patterns in Mathematics (✅ Done)** — `chapters.js` id `patterns-in-mathematics`. All 6 topics active: What is Mathematics?, Number Sequences, Relations Among Sequences (`sequence-relations`), Patterns in Shapes (`shape-sequences`), Chapter Practice, Chapter Quiz. See the "Working agreement: no wall-of-text steps" and "full Figure-it-Out coverage" notes above, both raised while building this chapter.
 
-**Chapter 2: Lines and Angles (in progress)** — `chapters.js` id `lines-and-angles`, source book `books/class-6-maths-ncert/fegp102.pdf`. Built so far:
+**Chapter 2: Lines and Angles (✅ Done)** — `chapters.js` id `lines-and-angles`, source book `books/class-6-maths-ncert/fegp102.pdf`. Built:
 - **Points, Lines and Rays** (`points-lines-rays`) ✅ Done — includes `RayNamingDiagram` (see "Working agreement: diagrams in question answers" above).
 - **What is an Angle?** (`what-is-an-angle`) ✅ Done — vertex/arm naming, real-world angle examples, superimposition comparison, the arm-length trap. See below for a mid-build fix to how its real-object question is presented.
 
@@ -437,7 +437,22 @@ Language check applied before shipping (per the algebra/jargon fix caught on the
 
 Verified with `npm run build` — no errors.
 
-Next: **Chapter Practice + Chapter Quiz** to close out Class 6 Chapter 2 (Lines and Angles) — the last remaining item in the chapter.
+### Chapter 2 gap-fill pass + Chapter Practice/Quiz (✅ Done)
+
+Before closing the chapter, `points-lines-rays.js` and `what-is-an-angle.js` were cross-checked against the book's actual Figure-it-Out lists for §2.1–2.7 (not done this rigorously before — only §2.9–2.11 had gotten that treatment). `what-is-an-angle` was already in good shape; `points-lines-rays` had real gaps:
+
+- `src/components/angles/RayReversalDiagram.jsx` (new) — toggle between Ray OA, Ray OB (same ray, valid), and "AO" (shown as a red dashed arrow heading the *opposite* direction) — teaches that ray names, unlike segment names, are not reversible.
+- `src/components/angles/SegmentIdentificationDiagram.jsx` (new) — click-to-reveal figure (5 points, 3 segments forming a zigzag) showing which points sit on one segment vs. two.
+- `src/components/angles/FivePointFigureDiagram.jsx` (new) — one figure (points O, B, C, D, E with B/O/C collinear), toggled between four views (points/line/rays/segments) to teach all four ideas at once, matching the book's "name 5 points, a line, 4 rays, 5 segments" exercise.
+- `pointsLinesRays.js` — 3 new questions added using the diagrams above (OA/AO reversibility, segment identification, the 5-point figure).
+- `quizzes['points-lines-rays']` and `quizzes['what-is-an-angle']` — both built (10 questions each) — these were flagged missing back when Special Angles and Bisectors shipped and never actually fixed until now.
+- `src/data/anglesChapterPractice.js` — mixed-review lesson (not scored), 10 questions across all 5 topics, same pattern as `chapterPractice.js`/`patternsChapterPractice.js`.
+- `quizzes['angles-chapter-quiz']` — 10-question scored quiz, same pattern.
+- `topics.js` — `angles-chapter-practice` and `angles-chapter-quiz` both marked active.
+
+Verified with `npm run build` — no errors. Class 6 Chapter 2 (Lines and Angles) is now fully closed out: all 7 topics built and active, every topic has a quiz, and the chapter Figure-it-Out coverage has been audited section-by-section against `fegp102.pdf` (not just spot-checked).
+
+Next: Class 5 Chapter 2 Module 4.5 (Fraction Tricks & Practice), then Chapter 2 (Fractions) Practice + Quiz — the last items to close out Fractions. See [[Phase 3, Class 5 Chapter 2 — Fractions (planning; not started)]] above.
 
 #### Fix: `RealWorldAngleSpotter` — photo placement and content
 

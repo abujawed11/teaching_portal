@@ -67,6 +67,9 @@ import AngleBisectorFold from '../angles/AngleBisectorFold.jsx'
 import AngleTypeGallery from '../angles/AngleTypeGallery.jsx'
 import ReflexAngleDemo from '../angles/ReflexAngleDemo.jsx'
 import ClockAngleDemo from '../angles/ClockAngleDemo.jsx'
+import RayReversalDiagram from '../angles/RayReversalDiagram.jsx'
+import SegmentIdentificationDiagram from '../angles/SegmentIdentificationDiagram.jsx'
+import FivePointFigureDiagram from '../angles/FivePointFigureDiagram.jsx'
 import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
 
 const illustrationComponents = {
@@ -137,6 +140,9 @@ const visualComponents = {
   AngleTypeGallery,
   ReflexAngleDemo,
   ClockAngleDemo,
+  RayReversalDiagram,
+  SegmentIdentificationDiagram,
+  FivePointFigureDiagram,
   UpDownDiamondBuilder,
 }
 
