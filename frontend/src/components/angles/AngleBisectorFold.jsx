@@ -48,7 +48,7 @@ function AngleBisectorFold({
 
   return (
     <div className="flex flex-col items-center gap-6 w-full">
-      <svg viewBox="0 0 420 260" className="w-full max-w-lg">
+      <svg viewBox="0 0 420 280" className="w-full max-w-lg">
         <AnimatePresence>
           {folded && (
             <>
@@ -96,13 +96,13 @@ function AngleBisectorFold({
         </AnimatePresence>
 
         <circle cx={CX} cy={CY} r={6} fill="#1e293b" />
-        <text x={CX - 8} y={CY + 24} fontSize={16} fontWeight="bold" fill="#1e293b">{vertexLabel}</text>
-        <text x={armA.x - (armA.x < CX ? 24 : -8)} y={armA.y - 8} fontSize={16} fontWeight="bold" fill="#1e293b">{leftLabel}</text>
-        <text x={armB.x - (armB.x < CX ? 24 : -8)} y={armB.y - 8} fontSize={16} fontWeight="bold" fill="#1e293b">{rightLabel}</text>
+        <text x={CX - 9} y={CY + 28} fontSize={22} fontWeight="bold" fill="#1e293b">{vertexLabel}</text>
+        <text x={armA.x - (armA.x < CX ? 28 : -10)} y={armA.y - 10} fontSize={22} fontWeight="bold" fill="#1e293b">{leftLabel}</text>
+        <text x={armB.x - (armB.x < CX ? 28 : -10)} y={armB.y - 10} fontSize={22} fontWeight="bold" fill="#1e293b">{rightLabel}</text>
         {folded && (() => {
           const crease = pointOnRay(half, R)
           return (
-            <text x={crease.x - (crease.x < CX ? 24 : -8)} y={crease.y - 8} fontSize={16} fontWeight="bold" fill="#dc2626">
+            <text x={crease.x - (crease.x < CX ? 28 : -10)} y={crease.y - 10} fontSize={22} fontWeight="bold" fill="#dc2626">
               {creaseLabel}
             </text>
           )
