@@ -14,6 +14,11 @@ export const chapters = {
       { id: 'lines-and-angles', label: 'Chapter 2: Lines and Angles', active: true },
     ],
   },
+  7: {
+    mathematics: [
+      { id: 'large-numbers-around-us', label: 'Chapter 1: Large Numbers Around Us', active: true },
+    ],
+  },
   'digital-skills': {
     'digital-skills': [
       { id: 'computer-foundations', label: 'Level 1: Computer Foundations', active: true },

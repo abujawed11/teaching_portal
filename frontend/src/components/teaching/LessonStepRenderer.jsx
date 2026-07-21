@@ -71,6 +71,8 @@ import RayReversalDiagram from '../angles/RayReversalDiagram.jsx'
 import SegmentIdentificationDiagram from '../angles/SegmentIdentificationDiagram.jsx'
 import FivePointFigureDiagram from '../angles/FivePointFigureDiagram.jsx'
 import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
+import LakhSteppingStones from '../largeNumbers/LakhSteppingStones.jsx'
+import BenchmarkHeightComparator from '../largeNumbers/BenchmarkHeightComparator.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -144,6 +146,8 @@ const visualComponents = {
   SegmentIdentificationDiagram,
   FivePointFigureDiagram,
   UpDownDiamondBuilder,
+  LakhSteppingStones,
+  BenchmarkHeightComparator,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

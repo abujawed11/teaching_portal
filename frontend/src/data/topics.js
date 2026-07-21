@@ -35,6 +35,15 @@ export const topics = {
     { id: 'angles-chapter-practice', label: 'Chapter Practice', active: true },
     { id: 'angles-chapter-quiz', label: 'Chapter Quiz', active: true, quizOnly: true },
   ],
+  'large-numbers-around-us': [
+    { id: 'building-big-numbers', label: 'Building Big Numbers', active: true },
+    { id: 'indian-vs-american-system', label: 'Indian vs American Number Systems', active: true },
+    { id: 'estimation-and-rounding', label: 'Estimation and Rounding', active: true },
+    { id: 'multiplication-shortcuts', label: 'Multiplication Shortcuts and Digit Patterns', active: true },
+    { id: 'big-number-puzzles', label: 'Fermi Puzzles and Fascinating Facts', active: true },
+    { id: 'large-numbers-chapter-practice', label: 'Chapter Practice', active: true },
+    { id: 'large-numbers-chapter-quiz', label: 'Chapter Quiz', active: true, quizOnly: true },
+  ],
   fractions: [
     { id: 'what-is-a-fraction', label: 'What is a Fraction?', active: true },
     { id: 'equivalent-fractions', label: 'Equivalent Fractions', active: true },

@@ -30,6 +30,7 @@ import { specialAnglesBisectorsLesson } from '../data/specialAnglesBisectors.js'
 import { measuringAnglesLesson } from '../data/measuringAngles.js'
 import { angleTypesRealWorldLesson } from '../data/angleTypesRealWorld.js'
 import { anglesChapterPracticeLesson } from '../data/anglesChapterPractice.js'
+import { buildingBigNumbersLesson } from '../data/buildingBigNumbers.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -63,6 +64,7 @@ const lessonsByTopic = {
   'measuring-angles': measuringAnglesLesson,
   'angle-types-real-world': angleTypesRealWorldLesson,
   'angles-chapter-practice': anglesChapterPracticeLesson,
+  'building-big-numbers': buildingBigNumbersLesson,
 }
 
 function LessonPage() {
