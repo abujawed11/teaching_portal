@@ -61,5 +61,64 @@ export const buildingBigNumbersLesson = {
       answer: 'There is no fixed right answer — this is a discussion question.',
       explanation: "A good answer picks a comparison and reasons from it, e.g. 'A lakh people barely fit in one stadium, so compared to a building, it\'s small — but compared to how many rice varieties one person could ever taste, it\'s enormous.'",
     },
+    {
+      type: 'text',
+      title: 'Reading and Writing Big Numbers',
+      text: "We already use a comma for 5-digit numbers like 45,830. As numbers grow past one lakh, we keep placing commas the same way — right between the ten-thousands place and the one-lakh place.\n\n12,78,830 is read as: twelve lakh seventy eight thousand eight hundred thirty.\n15,75,000 is read as: fifteen lakh seventy five thousand.",
+      analogy: 'Read a big number lakh-group first, then thousand-group, then the last three digits — just like reading a sentence one chunk at a time.',
+    },
+    {
+      type: 'visual',
+      component: 'NumberNameReveal',
+      title: 'Reveal the Number Name, Chunk by Chunk',
+      text: 'Tap "Reveal Next Word" to build up the number name one comma-group at a time.',
+      props: { number: 1278830 },
+    },
+    {
+      type: 'visual',
+      component: 'IndianNumberConverter',
+      title: 'Try Your Own Numbers',
+      text: 'Type any number and see it converted into words instantly.',
+    },
+    {
+      type: 'question',
+      question: 'Write 3,00,600 in words.',
+      answer: 'Three lakh six hundred.',
+    },
+    {
+      type: 'question',
+      question: 'Write 5,04,085 in words.',
+      answer: 'Five lakh four thousand eighty five.',
+    },
+    {
+      type: 'question',
+      question: 'Write 27,30,000 in words.',
+      answer: 'Twenty seven lakh thirty thousand.',
+    },
+    {
+      type: 'question',
+      question: 'Write 70,53,138 in words.',
+      answer: 'Seventy lakh fifty three thousand one hundred thirty eight.',
+    },
+    {
+      type: 'question',
+      question: 'Write the number for: "One lakh twenty three thousand four hundred and fifty six."',
+      answer: '1,23,456',
+    },
+    {
+      type: 'question',
+      question: 'Write the number for: "Four lakh seven thousand seven hundred and four."',
+      answer: '4,07,704',
+    },
+    {
+      type: 'question',
+      question: 'Write the number for: "Fifty lakhs five thousand and fifty."',
+      answer: '50,05,050',
+    },
+    {
+      type: 'question',
+      question: 'Write the number for: "Ten lakhs two hundred and thirty five."',
+      answer: '10,00,235',
+    },
   ],
 }
