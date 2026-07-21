@@ -73,6 +73,7 @@ import FivePointFigureDiagram from '../angles/FivePointFigureDiagram.jsx'
 import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
 import LakhSteppingStones from '../largeNumbers/LakhSteppingStones.jsx'
 import BenchmarkHeightComparator from '../largeNumbers/BenchmarkHeightComparator.jsx'
+import ButtonPressCalculator from '../largeNumbers/ButtonPressCalculator.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -148,6 +149,7 @@ const visualComponents = {
   UpDownDiamondBuilder,
   LakhSteppingStones,
   BenchmarkHeightComparator,
+  ButtonPressCalculator,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
