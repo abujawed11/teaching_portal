@@ -37,6 +37,7 @@ export const topics = {
   ],
   'large-numbers-around-us': [
     { id: 'building-big-numbers', label: 'Building Big Numbers', active: true },
+    { id: 'land-of-tens', label: 'Land of Tens', active: true },
     { id: 'indian-vs-american-system', label: 'Indian vs American Number Systems', active: true },
     { id: 'estimation-and-rounding', label: 'Estimation and Rounding', active: true },
     { id: 'multiplication-shortcuts', label: 'Multiplication Shortcuts and Digit Patterns', active: true },

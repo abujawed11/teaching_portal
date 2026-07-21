@@ -31,6 +31,7 @@ import { measuringAnglesLesson } from '../data/measuringAngles.js'
 import { angleTypesRealWorldLesson } from '../data/angleTypesRealWorld.js'
 import { anglesChapterPracticeLesson } from '../data/anglesChapterPractice.js'
 import { buildingBigNumbersLesson } from '../data/buildingBigNumbers.js'
+import { landOfTensLesson } from '../data/landOfTens.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -65,6 +66,7 @@ const lessonsByTopic = {
   'angle-types-real-world': angleTypesRealWorldLesson,
   'angles-chapter-practice': anglesChapterPracticeLesson,
   'building-big-numbers': buildingBigNumbersLesson,
+  'land-of-tens': landOfTensLesson,
 }
 
 function LessonPage() {

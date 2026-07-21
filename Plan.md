@@ -31,9 +31,18 @@
 | Class 6 Chapter 2 — Measuring Angles | ✅ Done |
 | Class 6 Chapter 2 — Angle Types in Real Life | ✅ Done |
 | Class 6 Chapter 2 — Chapter Practice + Chapter Quiz | ✅ Done |
+| Class 7 Chapter 1: Large Numbers Around Us — Building Big Numbers (see [[Phase 3c — Class 7]]) | ✅ Done |
+| Class 7 Chapter 1 — Land of Tens | ✅ Done |
+| Class 7 Chapter 1 — Indian vs American Number Systems | Not started |
+| Class 7 Chapter 1 — Estimation and Rounding | Not started |
+| Class 7 Chapter 1 — Multiplication Shortcuts and Digit Patterns | Not started |
+| Class 7 Chapter 1 — Fermi Puzzles and Fascinating Facts | Not started |
+| Class 7 Chapter 1 — Chapter Practice + Chapter Quiz | Not started |
 | Digital Skills & Computer Fundamentals course (see [[1a. Digital Skills & Computer Fundamentals]] and `Computer.md`) | Planning only, not started |
 
-**Class 6 status: Chapter 1 (Patterns in Mathematics) and Chapter 2 (Lines and Angles) are both fully done** — every topic built, active, and quizzed. Nothing is queued next for Class 6 — no Chapter 3 has been planned or reviewed from the source book yet. Current active work is back on Class 5 (Fractions Module 4.5, next — see row above).
+**Class 6 status: Chapter 1 (Patterns in Mathematics) and Chapter 2 (Lines and Angles) are both fully done** — every topic built, active, and quizzed. Nothing is queued next for Class 6 — no Chapter 3 has been planned or reviewed from the source book yet.
+
+**Class 7 status: Chapter 1 (Large Numbers Around Us) is 2 of 7 topics done** (Building Big Numbers, Land of Tens). Next up: Indian vs American Number Systems — see [[Phase 3c — Class 7]] for details. Class 5 (Fractions Module 4.5) is still the other open thread, see row above.
 
 ### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
 
@@ -464,6 +473,39 @@ Two issues were caught and fixed after the initial build of `what-is-an-angle`'s
 3. Image display bug: the photo frame originally forced `aspect-square` + `object-cover`, which cropped non-square photos. Changed to a `max-h-64` flexible frame with `object-contain` so the whole photo shows, letterboxed if needed.
 
 Images: `frontend/public/images/angles/scissors.jpg` and `frontend/public/images/angles/open-book.jpg` (same sourcing rule as Digital Skills — openly-licensed or your own photo, never NCERT's own images).
+
+### Phase 3c — Class 7
+
+`classes.js` — Class 7 flipped to `active: true`. Chapter 1: Large Numbers Around Us (`chapters.js` id `large-numbers-around-us`, source book `books/class-7-maths-ncert/gegp101.pdf`, NCERT Ganita Prakash). Full section-by-section content summary read from the PDF (chapter text + the official solutions PDF appended at the end of the same file) and saved to `books/class-7-maths-ncert/chapter-1-notes.md`, same format as the Class 6 chapter-notes files.
+
+7 topics registered in `topics.js`, one per book subsection (1.1–1.6) plus practice/quiz — same "1 topic ≈ 1 book subsection" pattern Class 6 used:
+- Building Big Numbers (`building-big-numbers`) — ✅ Done
+- Land of Tens (`land-of-tens`) — ✅ Done
+- Indian vs American Number Systems (`indian-vs-american-system`) — not started
+- Estimation and Rounding (`estimation-and-rounding`) — not started
+- Multiplication Shortcuts and Digit Patterns (`multiplication-shortcuts`) — not started
+- Fermi Puzzles and Fascinating Facts (`big-number-puzzles`) — not started
+- Chapter Practice (`large-numbers-chapter-practice`) — not started
+- Chapter Quiz (`large-numbers-chapter-quiz`, quiz-only) — not started
+
+**Decision: split Building Big Numbers into two topics along the book's 1.1/1.2 boundary.** Originally planned as one topic covering both §1.1 and §1.2, but that combined build reached 42 steps — roughly double the largest Class 6 topic (Measuring Angles, 27 steps) — and was hard to navigate with only Prev/Next + a progress bar. Split into `building-big-numbers` (§1.1 only) and a new `land-of-tens` (§1.2 only), landing at 28 and 23 steps respectively. Considered adding an in-lesson step-jump sidebar instead/as well, but decided against it for now — it's a bigger shared-`LessonLayout` change touching every existing lesson across Class 5/6 too, and treats the symptom rather than the cause. Revisit only if right-sized (one-subsection) topics still feel unwieldy.
+
+#### Building Big Numbers (✅ Done) — §1.1
+
+- `src/components/largeNumbers/LakhSteppingStones.jsx` (new) — click-through reveal of the 999→1,000, 9,999→10,000, 99,999→1,00,000 "digit-family jump" chain, ending in a skip-count into one lakh.
+- `src/components/largeNumbers/BenchmarkHeightComparator.jsx` (new) — click-to-compare bar chart (Somu's 40 m building vs. Statue of Unity 180 m vs. Kunchikal Waterfall 450 m). Bug fixed post-build: bars were misaligned at the base because label text wrapped to a different number of lines per item, and the whole column used a shared `justify-end`, so a taller label pushed its bar upward relative to the others. Fixed by splitting into two separate fixed-height rows (bars row, then labels row) instead of one flex column per bar+label.
+- Reuses `NumberNameReveal` and `IndianNumberConverter` (both originally built for Class 5's Indian Number System module) for the reading/writing-numbers section — no new component needed there.
+- `src/data/buildingBigNumbers.js` — intro (Chintamani rice-varieties story) → lakh stepping-stones → Chintamani population Figure-it-Out → rice-tasting/365×y estimation exercise (1 lakh rice varieties, 1/2/3-per-day, choose-your-own-y) → benchmark height comparison + Statue-of-Unity/waterfall height-difference questions → "Is one lakh big or small?" (Roxie vs. Estu, open discussion, no fixed answer) → reading/writing numbers in words ↔ Indian notation → summary.
+- Audited section-by-section against `gegp101.pdf` pages 1–4 before calling it done (same policy as Class 6's "full Figure-it-Out coverage" rule) — caught two real gaps in the first pass: the rice-tasting/365×y thought experiment was skipped entirely, and the Statue-of-Unity/waterfall height-difference questions were only reachable by tapping the chart, never asked directly. Both fixed.
+
+#### Land of Tens (✅ Done) — §1.2
+
+- `src/components/largeNumbers/ButtonPressCalculator.jsx` (new) — one generic component for the book's whole "calculator with some buttons, click to build a number" device. Takes a `buttons` array (e.g. `[1000]` for a single-button calculator, or `[1,10,100,1000,10000,100000]` for Creative Chitti/Systematic Sippy) and an optional `target`; tracks per-button click counts and running total live, highlights success on reaching the target. Reused across all 5 named calculators (Thoughtful Thousands, Tedious Tens, Handy Hundreds, Creative Chitti, Systematic Sippy) just by varying props — no per-calculator component needed.
+- `src/data/landOfTens.js` — Thoughtful Thousands (+1000) → Tedious Tens (+10) → Handy Hundreds (+100, plus the "can show numbers the others can't" true/false reasoning question) → Creative Chitti (multiple valid decompositions of the same number, incl. the book's 5072 example) → Systematic Sippy (fewest-clicks version, digit-sum insight) → summary.
+- Gap-fill pass after the initial build added one more Creative Chitti number (40,629, two decompositions) and one more Systematic Sippy minimal-click number (56,354).
+- Deliberately NOT built: the full repetitive Figure-it-Out drill lists for the three single-button calculators (e.g. "+1000 pressed how many times for 10,000? for 53,000? for 90,000?"). The calculator itself lets students explore all of these hands-on, and scoring each one as a separate question would push the topic's step count back toward the same bloat the §1.1/§1.2 split was meant to fix.
+
+**Next up: Indian vs American Number Systems (`indian-vs-american-system`, §1.3)** — crore, the Indian/American side-by-side table, comma-grouping pattern (3-2-2-2 vs. 3-3-3), zero counts, Sanskrit word origins (lakṣha/koṭi). Likely reuses `IndianVsInternationalComparison`, `InternationalPlaceValueChart`, and `InternationalCommaReveal` from Class 5 with little new component work.
 
 ---
 
