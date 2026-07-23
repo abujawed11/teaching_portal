@@ -83,6 +83,8 @@ import WaterCycleBagDemo from '../science/WaterCycleBagDemo.jsx'
 import WaterCycleDiagram from '../science/WaterCycleDiagram.jsx'
 import GroundwaterSoakDemo from '../science/GroundwaterSoakDemo.jsx'
 import RechargeSurfaceSort from '../science/RechargeSurfaceSort.jsx'
+import TerrainFlowDemo from '../science/TerrainFlowDemo.jsx'
+import RiverFlowMap from '../science/RiverFlowMap.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -168,6 +170,8 @@ const visualComponents = {
   WaterCycleDiagram,
   GroundwaterSoakDemo,
   RechargeSurfaceSort,
+  TerrainFlowDemo,
+  RiverFlowMap,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

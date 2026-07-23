@@ -383,7 +383,9 @@ Per user decision, kept the same granular one-concept-per-module style used thro
 
 **Module 4 (✅ Done)**: `src/components/science/GroundwaterSoakDemo.jsx` (Activity 4 recreation — rain soaks through soil/rock cross-section into a water table, then drawn up via a well/handpump), `RechargeSurfaceSort.jsx` (Activity 5 — concrete road / green lawn / paved area click-to-reveal, using simple CSS-drawn surface previews rather than photos since these are abstract surface types, not real-world recognition content), `src/data/groundwater.js`, `quizzes['groundwater']` (10 questions). Includes both the groundwater-recharge tip and the Statue of Unity fact as question-style reveals. Verified with `npm run build` — no errors.
 
-Not yet built: Modules 5–6 (Rivers and Land, Life in Freshwater Habitats) + Chapter Practice/Quiz. Continue one module at a time, following the usual step-by-step build-and-check-in pattern.
+**Module 5 (✅ Done)**: `src/components/science/TerrainFlowDemo.jsx` (Activity 6 recreation — a hill shape with water poured from the peak, splitting and following both slopes down to two pools, showing water doesn't move in a straight line), `RiverFlowMap.jsx` (a stylized, not-to-scale India outline with 7 major rivers — Ganga, Brahmaputra, Narmada, Tapti, Godavari, Krishna, Kaveri — clickable to reveal which sea each flows to, covering Activity 7's "Follow the Flow" table), `src/data/riversAndLand.js`, `quizzes['rivers-and-land']` (10 questions). Includes the Luni River and Jal Shakti Museum facts as question-style reveals, and the Arabian-Sea-vs-Bay-of-Bengal Discuss prompt as an open-discussion question. The India map is an original hand-drawn SVG sketch (not copied from NCERT), matching the book's own "map not to scale" framing. Verified with `npm run build` — no errors.
+
+Not yet built: Module 6 (Life in Freshwater Habitats) + Chapter Practice/Quiz. Continue one module at a time, following the usual step-by-step build-and-check-in pattern.
 
 ### Phase 3, Module 4.3 — Comparing Fractions (✅ Done)
 
