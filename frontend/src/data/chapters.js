@@ -7,6 +7,10 @@ export const chapters = {
       { id: 'multiplication', label: 'Chapter 4: Multiplication', active: false },
       { id: 'division', label: 'Chapter 5: Division', active: false },
     ],
+    science: [
+      { id: 'water-essence-of-life', label: 'Chapter 1: Water — The Essence of Life', active: true },
+      { id: 'journey-of-a-river', label: 'Chapter 2: Journey of a River', active: false },
+    ],
   },
   6: {
     mathematics: [

@@ -351,6 +351,22 @@ Per user request, read the entire actual Chapter 2 PDF (not just the earlier sum
 
 Verified with `npm run build` — no errors.
 
+### Class 5 Science — Chapter 1: "Water: The Essence of Life" (planning; not started)
+
+First Science module for the app (Science subject page currently shows "Coming Soon"). Source book: NCERT "Our Wondrous World" (`books/class-5-science-ncert/`). Full chapter notes read and saved at `books/class-5-science-ncert/Class5-Science-Notes.md` — read chapter-by-chapter (1–2 at a time), same working agreement as the Maths book review.
+
+Per user decision, kept the same granular one-concept-per-module style used throughout the Maths lessons rather than combining into fewer/larger modules, for UX consistency. Module breakdown for Chapter 1:
+
+- **Module 1 — Freshwater vs. Saltwater**: how little freshwater there actually is (200ml glass / 5ml teaspoon proportion demo), freshwater sources (Activity 1).
+- **Module 2 — Forms of Water**: ice/water/vapour, condensation-on-a-cold-glass and boiling activities (Activity 2), sets up the water cycle.
+- **Module 3 — The Water Cycle**: the flagship animated diagram (evaporation → condensation → precipitation → collection), based on the "water cycle in a bag" activity (Activity 3).
+- **Module 4 — Groundwater**: rain soaking into soil (Activity 4), recharge vs. cemented surfaces (Activity 5).
+- **Module 5 — Rivers and Land**: how rivers flow/shape land (mustard-seed-on-crumpled-paper activity, Activity 6), India's rivers map, Arabian Sea vs. Bay of Bengal (Activity 7).
+- **Module 6 — Life in Freshwater Habitats**: land vs. water animal traits, the Information Card organisms (dragonfly, water scorpion, pond heron, freshwater turtle, water snake, reeds, lotus/water lily, water hyacinth), the waxy-leaf activity (Activity 9), the food-chain game (Activity 10).
+- **Chapter 1 Practice + Chapter 1 Quiz**: mixed review across all 6 modules, folding in all 7 "Let us reflect" questions (per the [[Working agreement: full Figure-it-Out coverage]] pattern already used for Maths).
+
+Not yet built. Next step: build Module 1, following the usual step-by-step build-and-check-in pattern (one module at a time, not all six at once).
+
 ### Phase 3, Module 4.3 — Comparing Fractions (✅ Done)
 
 - `src/utils/compareFractions.js` — shared `compareFractions` (cross-multiplication comparison) and `detectStrategy` (auto-picks same-denominator / same-numerator / reference-to-1 / reference-to-half / cross-multiply, in that priority order) utilities.

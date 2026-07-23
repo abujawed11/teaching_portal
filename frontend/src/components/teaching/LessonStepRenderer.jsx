@@ -74,9 +74,13 @@ import UpDownDiamondBuilder from '../patterns/UpDownDiamondBuilder.jsx'
 import LakhSteppingStones from '../largeNumbers/LakhSteppingStones.jsx'
 import BenchmarkHeightComparator from '../largeNumbers/BenchmarkHeightComparator.jsx'
 import ButtonPressCalculator from '../largeNumbers/ButtonPressCalculator.jsx'
+import WaterDropIllustration from '../science/WaterDropIllustration.jsx'
+import WaterProportionDemo from '../science/WaterProportionDemo.jsx'
+import FreshwaterSourceSort from '../science/FreshwaterSourceSort.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
+  WaterDropIllustration,
 }
 
 const visualComponents = {
@@ -150,6 +154,8 @@ const visualComponents = {
   LakhSteppingStones,
   BenchmarkHeightComparator,
   ButtonPressCalculator,
+  WaterProportionDemo,
+  FreshwaterSourceSort,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
