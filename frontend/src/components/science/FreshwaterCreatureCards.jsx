@@ -77,7 +77,7 @@ function FreshwaterCreatureCards() {
               onClick={() => toggle(c.id)}
               className="flex flex-col rounded-xl overflow-hidden border-2 border-slate-200 hover:border-primary bg-white text-left transition-colors"
             >
-              <img src={c.image} alt={c.label} className="w-full h-20 sm:h-24 object-cover" />
+              <img src={c.image} alt={c.label} className="w-full h-32 sm:h-36 object-cover" />
               <div className="p-2 flex flex-col gap-1">
                 <span className="font-semibold text-ink text-xs sm:text-sm">{c.label}</span>
                 {isRevealed ? (
