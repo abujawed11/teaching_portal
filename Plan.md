@@ -40,15 +40,21 @@
 | Class 7 Chapter 1 — Chapter Practice + Chapter Quiz | Not started |
 | Digital Skills & Computer Fundamentals course (see [[1a. Digital Skills & Computer Fundamentals]] and `Computer.md`) | Planning only, not started |
 | Class 5 Science Chapter 1: Water — The Essence of Life (6 modules + Chapter Practice + Chapter Quiz, see notes above) | ✅ Done |
-| Class 6 Science Chapter 1 (book not yet read — see below) | Not started (picking up next) |
+| Class 6 Science Chapter 1: The Wonderful World of Science (single module — What is Science? / The Scientific Method) | ✅ Done |
+| Class 6 Science Chapter 2: Diversity in the Living World — Module 1 What is Biodiversity? | ✅ Done |
+| Class 6 Science Chapter 2 — Module 2 Grouping Plants: Herbs, Shrubs & Trees | Not started |
+| Class 6 Science Chapter 2 — Module 3 Leaves, Roots & Seeds | Not started |
+| Class 6 Science Chapter 2 — Module 4 Grouping Animals by Movement | Not started |
+| Class 6 Science Chapter 2 — Module 5 Adaptations & Habitats | Not started |
+| Class 6 Science Chapter 2 — Chapter Practice + Chapter Quiz | Not started |
 
 **Class 6 Maths status: Chapter 1 (Patterns in Mathematics) and Chapter 2 (Lines and Angles) are both fully done** — every topic built, active, and quizzed. Nothing is queued next for Class 6 Maths — no Chapter 3 has been planned or reviewed from the source book yet.
 
 **Class 7 status: Chapter 1 (Large Numbers Around Us) is 2 of 7 topics done** (Building Big Numbers, Land of Tens). Next up: Indian vs American Number Systems — see [[Phase 3c — Class 7]] for details. Class 5 (Fractions Module 4.5) is still the other open thread, see row above.
 
-**Class 5 Science status: Chapter 1 ("Water — The Essence of Life") is fully done** — 6 modules, Chapter Practice, and Chapter Quiz, all built and active. Chapter 2 ("Journey of a River") has not been read yet (only a one-paragraph unit overview exists in `books/class-5-science-ncert/Class5-Science-Notes.md`) — deferred per user decision below, in favour of starting Class 6 Science first.
+**Class 5 Science status: Chapter 1 ("Water — The Essence of Life") is fully done** — 6 modules, Chapter Practice, and Chapter Quiz, all built and active, all photos supplied. Chapter 2 ("Journey of a River") has not been read yet (only a one-paragraph unit overview exists in `books/class-5-science-ncert/Class5-Science-Notes.md`) — deferred in favour of Class 6 Science, per user decision.
 
-**Decision (per user, this session): work on Class 6 Science Chapter 1 next**, before returning to Class 5 Science Chapter 2 or the other open Maths threads.
+**Class 6 Science status (current focus): Chapter 1 is fully done** (single module). **Chapter 2 ("Diversity in the Living World") is in progress** — Module 1 (What is Biodiversity?) is built and active, still needs 7 photos (`grass.jpg`, `tulsi.jpg`, `hibiscus.jpg`, `neem.jpg`, `crow.jpg`, `ant.jpg`, `cow.jpg` under `public/images/science/diversity-in-living-world/`). Modules 2–5 + Chapter Practice/Quiz are planned (see [[Class 6 Science Chapter 2]] section below) but not yet built. Next step: Module 2 — Grouping Plants: Herbs, Shrubs & Trees.
 
 Source book: NCERT "Curiosity" Grade 6 (`books/class-6-science-ncert/`, `fecu101.pdf`–`fecu112.pdf`). Chapter 1 ("The Wonderful World of Science") has been read in full and notes saved to `books/class-6-science-ncert/Class6-Science-Notes.md`. Key finding: **this chapter is structurally very different from Class 5 Science** — it's a short (8-page), purely narrative/motivational introduction with no diagrams, no numeric content, and no multi-section structure to split into several modules. It exists to build curiosity and teach the scientific method (5 steps: Observe → Question → Guess → Test → Analyse) via a relatable "why did my pen stop writing?" example, plus a preview/teaser of topics coming later in the book (life/growth, food, materials, water, hot/cold, space). It has 3 "Let us think and write" prompts (all open-ended discussion, no fixed answers) and no numbered "Let us reflect" section.
 
@@ -70,7 +76,13 @@ Read in full, notes saved to `books/class-6-science-ncert/Class6-Science-Notes.m
 5. **Adaptations & Habitats** (§2.3) — desert/mountain/ocean adaptations (camels, cactus, deodar, rhododendron), habitat/terrestrial/aquatic/amphibians, biodiversity loss & conservation (Project Tiger, Cheetah Reintroduction, Great Indian Bustard), sacred groves.
 6. **Chapter Practice + Chapter Quiz** — covering all 10 "Let us enhance our learning" questions per the full Figure-it-Out coverage agreement.
 
-**Module 1 (✅ Done)**: `src/components/science/PlantFeatureCards.jsx` (4 plant examples matching the book's Table 2.1 exactly — grass, tulsi, hibiscus, neem — click-to-reveal stem/leaves/flowers, **needs 4 photos** added to `public/images/science/diversity-in-living-world/`: `grass.jpg`, `tulsi.jpg`, `hibiscus.jpg`, `neem.jpg`), `AnimalFeatureCards.jsx` (3 animal examples matching Table 2.2 — crow, ant, cow — click-to-reveal habitat/food/movement, **needs 3 photos**: `crow.jpg`, `ant.jpg`, `cow.jpg`), `src/data/whatIsBiodiversity.js`, `quizzes['what-is-biodiversity']` (8 questions). `chapters.js` — Chapter 2 added to Class 6 Science. `topics.js` — full 5-module + practice/quiz topic list added, only Module 1 active. Verified with `npm run build` — no errors.
+**Module 1 (✅ Done)**: `src/components/science/PlantFeatureCards.jsx` (4 plant examples matching the book's Table 2.1 exactly — grass, tulsi, hibiscus, neem — click-to-reveal stem/leaves/flowers, **still needs 4 photos** added to `public/images/science/diversity-in-living-world/`: `grass.jpg`, `tulsi.jpg`, `hibiscus.jpg`, `neem.jpg`), `AnimalFeatureCards.jsx` (3 animal examples matching Table 2.2 — crow, ant, cow — click-to-reveal habitat/food/movement, **still needs 3 photos**: `crow.jpg`, `ant.jpg`, `cow.jpg`), `src/data/whatIsBiodiversity.js`, `quizzes['what-is-biodiversity']` (8 questions). `chapters.js` — Chapter 2 added to Class 6 Science. `topics.js` — full 5-module + practice/quiz topic list added, only Module 1 active.
+
+Follow-up polish on this module:
+- Added a hero image to the intro step (`biodiversity.jpg`, a scene of varied plants/animals) — user supplied it but initially dropped it in the wrong chapter folder (`water-essence-of-life`, which is Class 5's); moved it to the correct `diversity-in-living-world` folder. Worth double-checking chapter-folder placement whenever the user adds an image without being told the exact target path.
+- Fixed a content bug the user caught: the intro's biodiversity-naming sentence was wrongly wrapped in the `analogy` box ("Think of it like this...") even though it isn't a comparison. This led to a new working agreement (see below) and a new `note` prop/callout (sky-blue, Info icon) added to `ExplanationPanel`/`LessonStepRenderer`, now used correctly in this step instead.
+
+Verified with `npm run build` — no errors after each change.
 
 Not yet built: Modules 2–5 (Grouping Plants: Herbs/Shrubs/Trees; Leaves, Roots & Seeds; Grouping Animals by Movement; Adaptations & Habitats) + Chapter Practice/Quiz. Continue one module at a time.
 
@@ -425,7 +437,7 @@ Per user decision, kept the same granular one-concept-per-module style used thro
 
 All 6 planned modules for Chapter 1 are now built. **Chapter 1 Practice + Chapter 1 Quiz (✅ Done)**: `src/data/waterChapterPractice.js` (mixed review across all 6 modules, not scored — folds in all 7 "Let us reflect" questions from the book, including the matching question and the 3 open-ended discussion questions, per the full Figure-it-Out coverage agreement; the paper-fish-folding craft was intentionally skipped as a fun physical activity, not testable content), `quizzes['water-chapter-quiz']` (14-question scored quiz, 2 questions per module, reusing the existing `QuizPage` engine). `topics.js` — both marked active, "Chapter Quiz" flagged `quizOnly: true`. Verified with `npm run build` — no errors.
 
-**Class 5 Science Chapter 1 ("Water — The Essence of Life") is now fully built and closed out** — all 6 modules, Chapter Practice, and Chapter Quiz. Remaining photo assets still needed from the user: 7 for Module 1's `FreshwaterSourceSort` (pond/ocean/glacier/mountain-lake/groundwater-well/river/rain) and 8 for Module 6's `FreshwaterCreatureCards` (dragonfly/water-scorpion/pond-heron/freshwater-turtle/water-snake/reeds/lotus-water-lily/water-hyacinth), all under `frontend/public/images/science/water-essence-of-life/`.
+**Class 5 Science Chapter 1 ("Water — The Essence of Life") is now fully built and closed out** — all 6 modules, Chapter Practice, and Chapter Quiz. **All photo assets have now been added by the user** — confirmed present in `frontend/public/images/science/water-essence-of-life/`: all 7 Module 1 source photos (pond/ocean/glacier/mountain-lake/groundwater-well/river/rain) and all 8 Module 6 creature photos (dragonfly/water-scorpion/pond-heron/freshwater-turtle/water-snake/reeds/lotus-water-lily/water-hyacinth), plus the India rivers map SVG. Nothing outstanding for Chapter 1.
 
 Next possible steps (not started, not yet discussed with user): Chapter 2 "Journey of a River" (not yet read in full — only the unit-overview summary is in the notes so far), or continuing Class 7 Chapter 1 Maths (2 of 7 topics done), or Class 5 Fractions Module 4.5. No decision made yet on which to pick up next.
 
