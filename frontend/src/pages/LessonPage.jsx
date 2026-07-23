@@ -41,6 +41,7 @@ import { lifeInFreshwaterHabitatsLesson } from '../data/lifeInFreshwaterHabitats
 import { waterChapterPracticeLesson } from '../data/waterChapterPractice.js'
 import { whatIsScienceLesson } from '../data/whatIsScience.js'
 import { whatIsBiodiversityLesson } from '../data/whatIsBiodiversity.js'
+import { groupingPlantsHerbsShrubsTreesLesson } from '../data/groupingPlantsHerbsShrubsTrees.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -85,6 +86,7 @@ const lessonsByTopic = {
   'water-chapter-practice': waterChapterPracticeLesson,
   'what-is-science': whatIsScienceLesson,
   'what-is-biodiversity': whatIsBiodiversityLesson,
+  'grouping-plants-herbs-shrubs-trees': groupingPlantsHerbsShrubsTreesLesson,
 }
 
 function LessonPage() {

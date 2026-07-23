@@ -93,6 +93,8 @@ import ScientificMethodSteps from '../science/ScientificMethodSteps.jsx'
 import PenMysteryDemo from '../science/PenMysteryDemo.jsx'
 import PlantFeatureCards from '../science/PlantFeatureCards.jsx'
 import AnimalFeatureCards from '../science/AnimalFeatureCards.jsx'
+import PlantGroupReveal from '../science/PlantGroupReveal.jsx'
+import PlantGroupSorter from '../science/PlantGroupSorter.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -188,6 +190,8 @@ const visualComponents = {
   PenMysteryDemo,
   PlantFeatureCards,
   AnimalFeatureCards,
+  PlantGroupReveal,
+  PlantGroupSorter,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

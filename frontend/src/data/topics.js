@@ -69,7 +69,7 @@ export const topics = {
   ],
   'diversity-in-living-world': [
     { id: 'what-is-biodiversity', label: 'What is Biodiversity?', active: true },
-    { id: 'grouping-plants-herbs-shrubs-trees', label: 'Grouping Plants: Herbs, Shrubs & Trees', active: false },
+    { id: 'grouping-plants-herbs-shrubs-trees', label: 'Grouping Plants: Herbs, Shrubs & Trees', active: true },
     { id: 'leaves-roots-seeds', label: 'Leaves, Roots & Seeds', active: false },
     { id: 'grouping-animals-by-movement', label: 'Grouping Animals by Movement', active: false },
     { id: 'adaptations-and-habitats', label: 'Adaptations & Habitats', active: false },

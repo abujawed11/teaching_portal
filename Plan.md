@@ -42,7 +42,7 @@
 | Class 5 Science Chapter 1: Water — The Essence of Life (6 modules + Chapter Practice + Chapter Quiz, see notes above) | ✅ Done |
 | Class 6 Science Chapter 1: The Wonderful World of Science (single module — What is Science? / The Scientific Method) | ✅ Done |
 | Class 6 Science Chapter 2: Diversity in the Living World — Module 1 What is Biodiversity? | ✅ Done |
-| Class 6 Science Chapter 2 — Module 2 Grouping Plants: Herbs, Shrubs & Trees | Not started |
+| Class 6 Science Chapter 2 — Module 2 Grouping Plants: Herbs, Shrubs & Trees | ✅ Done |
 | Class 6 Science Chapter 2 — Module 3 Leaves, Roots & Seeds | Not started |
 | Class 6 Science Chapter 2 — Module 4 Grouping Animals by Movement | Not started |
 | Class 6 Science Chapter 2 — Module 5 Adaptations & Habitats | Not started |
@@ -54,7 +54,7 @@
 
 **Class 5 Science status: Chapter 1 ("Water — The Essence of Life") is fully done** — 6 modules, Chapter Practice, and Chapter Quiz, all built and active, all photos supplied. Chapter 2 ("Journey of a River") has not been read yet (only a one-paragraph unit overview exists in `books/class-5-science-ncert/Class5-Science-Notes.md`) — deferred in favour of Class 6 Science, per user decision.
 
-**Class 6 Science status (current focus): Chapter 1 is fully done** (single module). **Chapter 2 ("Diversity in the Living World") is in progress** — Module 1 (What is Biodiversity?) is built and active, still needs 7 photos (`grass.jpg`, `tulsi.jpg`, `hibiscus.jpg`, `neem.jpg`, `crow.jpg`, `ant.jpg`, `cow.jpg` under `public/images/science/diversity-in-living-world/`). Modules 2–5 + Chapter Practice/Quiz are planned (see [[Class 6 Science Chapter 2]] section below) but not yet built. Next step: Module 2 — Grouping Plants: Herbs, Shrubs & Trees.
+**Class 6 Science status (current focus): Chapter 1 is fully done** (single module). **Chapter 2 ("Diversity in the Living World") is in progress** — Modules 1 and 2 are built and active. Still needs 10 photos under `public/images/science/diversity-in-living-world/`: `grass.jpg`, `tulsi.jpg`, `hibiscus.jpg`, `neem.jpg`, `crow.jpg`, `ant.jpg`, `cow.jpg` (Module 1), plus `mango.jpg`, `rose.jpg`, `tomato.jpg` (Module 2). Modules 3–5 + Chapter Practice/Quiz are planned (see [[Class 6 Science Chapter 2]] section below) but not yet built. Next step: Module 3 — Leaves, Roots & Seeds.
 
 Source book: NCERT "Curiosity" Grade 6 (`books/class-6-science-ncert/`, `fecu101.pdf`–`fecu112.pdf`). Chapter 1 ("The Wonderful World of Science") has been read in full and notes saved to `books/class-6-science-ncert/Class6-Science-Notes.md`. Key finding: **this chapter is structurally very different from Class 5 Science** — it's a short (8-page), purely narrative/motivational introduction with no diagrams, no numeric content, and no multi-section structure to split into several modules. It exists to build curiosity and teach the scientific method (5 steps: Observe → Question → Guess → Test → Analyse) via a relatable "why did my pen stop writing?" example, plus a preview/teaser of topics coming later in the book (life/growth, food, materials, water, hot/cold, space). It has 3 "Let us think and write" prompts (all open-ended discussion, no fixed answers) and no numbered "Let us reflect" section.
 
@@ -84,7 +84,9 @@ Follow-up polish on this module:
 
 Verified with `npm run build` — no errors after each change.
 
-Not yet built: Modules 2–5 (Grouping Plants: Herbs/Shrubs/Trees; Leaves, Roots & Seeds; Grouping Animals by Movement; Adaptations & Habitats) + Chapter Practice/Quiz. Continue one module at a time.
+**Module 2 (✅ Done)**: `src/components/science/PlantGroupReveal.jsx` (staged reveal of Tree/Shrub/Herb definitions by height+stem+branching), `PlantGroupSorter.jsx` (6-plant classify game — mango/rose/tomato/neem/hibiscus/tulsi into Tree/Shrub/Herb, reusing 3 photos already needed for Module 1 — hibiscus/neem/tulsi — plus **3 new photos needed**: `mango.jpg`, `rose.jpg`, `tomato.jpg`), `src/data/groupingPlantsHerbsShrubsTrees.js`, `quizzes['grouping-plants-herbs-shrubs-trees']` (8 questions). Covers climbers/creepers briefly per the book. Verified with `npm run build` — no errors.
+
+Not yet built: Modules 3–5 (Leaves, Roots & Seeds; Grouping Animals by Movement; Adaptations & Habitats) + Chapter Practice/Quiz. Continue one module at a time.
 
 ### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
 
