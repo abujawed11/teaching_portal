@@ -37,6 +37,7 @@ import { formsOfWaterLesson } from '../data/formsOfWater.js'
 import { waterCycleLesson } from '../data/waterCycle.js'
 import { groundwaterLesson } from '../data/groundwater.js'
 import { riversAndLandLesson } from '../data/riversAndLand.js'
+import { lifeInFreshwaterHabitatsLesson } from '../data/lifeInFreshwaterHabitats.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -77,6 +78,7 @@ const lessonsByTopic = {
   'water-cycle': waterCycleLesson,
   'groundwater': groundwaterLesson,
   'rivers-and-land': riversAndLandLesson,
+  'life-in-freshwater-habitats': lifeInFreshwaterHabitatsLesson,
 }
 
 function LessonPage() {

@@ -85,6 +85,10 @@ import GroundwaterSoakDemo from '../science/GroundwaterSoakDemo.jsx'
 import RechargeSurfaceSort from '../science/RechargeSurfaceSort.jsx'
 import TerrainFlowDemo from '../science/TerrainFlowDemo.jsx'
 import RiverFlowMap from '../science/RiverFlowMap.jsx'
+import TraitRevealTable from '../science/TraitRevealTable.jsx'
+import FreshwaterCreatureCards from '../science/FreshwaterCreatureCards.jsx'
+import WaxyLeafDemo from '../science/WaxyLeafDemo.jsx'
+import FoodChainBuilder from '../science/FoodChainBuilder.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -172,6 +176,10 @@ const visualComponents = {
   RechargeSurfaceSort,
   TerrainFlowDemo,
   RiverFlowMap,
+  TraitRevealTable,
+  FreshwaterCreatureCards,
+  WaxyLeafDemo,
+  FoodChainBuilder,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
