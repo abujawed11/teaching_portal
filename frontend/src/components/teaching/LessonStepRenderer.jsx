@@ -77,6 +77,8 @@ import ButtonPressCalculator from '../largeNumbers/ButtonPressCalculator.jsx'
 import WaterDropIllustration from '../science/WaterDropIllustration.jsx'
 import WaterProportionDemo from '../science/WaterProportionDemo.jsx'
 import FreshwaterSourceSort from '../science/FreshwaterSourceSort.jsx'
+import WaterStateExplorer from '../science/WaterStateExplorer.jsx'
+import CondensationDemo from '../science/CondensationDemo.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -156,6 +158,8 @@ const visualComponents = {
   ButtonPressCalculator,
   WaterProportionDemo,
   FreshwaterSourceSort,
+  WaterStateExplorer,
+  CondensationDemo,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

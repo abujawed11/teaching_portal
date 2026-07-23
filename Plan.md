@@ -375,7 +375,11 @@ Per user decision, kept the same granular one-concept-per-module style used thro
 - **Module 6 — Life in Freshwater Habitats**: land vs. water animal traits, the Information Card organisms (dragonfly, water scorpion, pond heron, freshwater turtle, water snake, reeds, lotus/water lily, water hyacinth), the waxy-leaf activity (Activity 9), the food-chain game (Activity 10).
 - **Chapter 1 Practice + Chapter 1 Quiz**: mixed review across all 6 modules, folding in all 7 "Let us reflect" questions (per the [[Working agreement: full Figure-it-Out coverage]] pattern already used for Maths).
 
-Not yet built. Next step: build Module 1, following the usual step-by-step build-and-check-in pattern (one module at a time, not all six at once).
+**Module 1 (✅ Done)**: `src/components/science/WaterDropIllustration.jsx` (intro SVG), `WaterProportionDemo.jsx` (200ml/5ml reveal), `FreshwaterSourceSort.jsx` (7-source click-to-reveal grid — needs 7 photos added to `public/images/science/water-essence-of-life/`: pond/ocean/glacier/mountain-lake/groundwater-well/river/rain), `src/data/freshwaterVsSaltwater.js`, `quizzes['freshwater-vs-saltwater']` (10 questions). Science subject activated, Chapter 1 added to `chapters.js`, topic list added to `topics.js`.
+
+**Module 2 (✅ Done)**: `src/components/science/WaterStateExplorer.jsx` (Heat/Cool toggle between solid/liquid/vapour, reversible), `CondensationDemo.jsx` (recreates the book's ice-in-a-steel-glass Activity 2 — condensation droplets forming on the outside), `src/data/formsOfWater.js`, `quizzes['forms-of-water']` (10 questions). Both visuals are original SVG/CSS/Framer Motion, no photos needed (per [[Decision: image vs. SVG, condition-based]] above). Covers all 3 of Activity 2's sub-questions plus extends into evaporation-without-heat and dew as real-world examples. Verified with `npm run build` — no errors.
+
+Not yet built: Modules 3–6 (Water Cycle, Groundwater, Rivers and Land, Life in Freshwater Habitats) + Chapter Practice/Quiz. Continue one module at a time, following the usual step-by-step build-and-check-in pattern.
 
 ### Phase 3, Module 4.3 — Comparing Fractions (✅ Done)
 

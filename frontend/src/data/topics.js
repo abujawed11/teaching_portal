@@ -56,7 +56,7 @@ export const topics = {
   ],
   'water-essence-of-life': [
     { id: 'freshwater-vs-saltwater', label: 'Freshwater vs. Saltwater', active: true },
-    { id: 'forms-of-water', label: 'Forms of Water', active: false },
+    { id: 'forms-of-water', label: 'Forms of Water', active: true },
     { id: 'water-cycle', label: 'The Water Cycle', active: false },
     { id: 'groundwater', label: 'Groundwater', active: false },
     { id: 'rivers-and-land', label: 'Rivers and Land', active: false },
