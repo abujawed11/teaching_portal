@@ -58,7 +58,7 @@ export const topics = {
     { id: 'freshwater-vs-saltwater', label: 'Freshwater vs. Saltwater', active: true },
     { id: 'forms-of-water', label: 'Forms of Water', active: true },
     { id: 'water-cycle', label: 'The Water Cycle', active: true },
-    { id: 'groundwater', label: 'Groundwater', active: false },
+    { id: 'groundwater', label: 'Groundwater', active: true },
     { id: 'rivers-and-land', label: 'Rivers and Land', active: false },
     { id: 'life-in-freshwater-habitats', label: 'Life in Freshwater Habitats', active: false },
     { id: 'water-chapter-practice', label: 'Chapter Practice', active: false },

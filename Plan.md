@@ -381,7 +381,9 @@ Per user decision, kept the same granular one-concept-per-module style used thro
 
 **Module 3 (✅ Done)**: `src/components/science/WaterCycleBagDemo.jsx` (recreates the book's Activity 3 "water cycle in a bag," staged with the book's own Observe/Wonder/Because framing), `WaterCycleDiagram.jsx` (the flagship full-cycle animated landscape diagram — sun, ocean, mountain, cloud — stepping through Evaporation → Condensation → Precipitation → Collection, loops back), `src/data/waterCycle.js`, `quizzes['water-cycle']` (10 questions). Includes the Keibul Lamjao National Park "Do you know?" fact as a question-style reveal per the new working agreement above. Both visuals are original SVG/Framer Motion, no photos needed. Verified with `npm run build` — no errors.
 
-Not yet built: Modules 4–6 (Groundwater, Rivers and Land, Life in Freshwater Habitats) + Chapter Practice/Quiz. Continue one module at a time, following the usual step-by-step build-and-check-in pattern.
+**Module 4 (✅ Done)**: `src/components/science/GroundwaterSoakDemo.jsx` (Activity 4 recreation — rain soaks through soil/rock cross-section into a water table, then drawn up via a well/handpump), `RechargeSurfaceSort.jsx` (Activity 5 — concrete road / green lawn / paved area click-to-reveal, using simple CSS-drawn surface previews rather than photos since these are abstract surface types, not real-world recognition content), `src/data/groundwater.js`, `quizzes['groundwater']` (10 questions). Includes both the groundwater-recharge tip and the Statue of Unity fact as question-style reveals. Verified with `npm run build` — no errors.
+
+Not yet built: Modules 5–6 (Rivers and Land, Life in Freshwater Habitats) + Chapter Practice/Quiz. Continue one module at a time, following the usual step-by-step build-and-check-in pattern.
 
 ### Phase 3, Module 4.3 — Comparing Fractions (✅ Done)
 
