@@ -89,6 +89,10 @@ import TraitRevealTable from '../science/TraitRevealTable.jsx'
 import FreshwaterCreatureCards from '../science/FreshwaterCreatureCards.jsx'
 import WaxyLeafDemo from '../science/WaxyLeafDemo.jsx'
 import FoodChainBuilder from '../science/FoodChainBuilder.jsx'
+import ScientificMethodSteps from '../science/ScientificMethodSteps.jsx'
+import PenMysteryDemo from '../science/PenMysteryDemo.jsx'
+import PlantFeatureCards from '../science/PlantFeatureCards.jsx'
+import AnimalFeatureCards from '../science/AnimalFeatureCards.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -180,6 +184,10 @@ const visualComponents = {
   FreshwaterCreatureCards,
   WaxyLeafDemo,
   FoodChainBuilder,
+  ScientificMethodSteps,
+  PenMysteryDemo,
+  PlantFeatureCards,
+  AnimalFeatureCards,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

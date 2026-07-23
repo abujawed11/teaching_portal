@@ -17,6 +17,10 @@ export const chapters = {
       { id: 'patterns-in-mathematics', label: 'Chapter 1: Patterns in Mathematics', active: true },
       { id: 'lines-and-angles', label: 'Chapter 2: Lines and Angles', active: true },
     ],
+    science: [
+      { id: 'wonderful-world-of-science', label: 'Chapter 1: The Wonderful World of Science', active: true },
+      { id: 'diversity-in-living-world', label: 'Chapter 2: Diversity in the Living World', active: true },
+    ],
   },
   7: {
     mathematics: [

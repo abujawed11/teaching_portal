@@ -39,6 +39,8 @@ import { groundwaterLesson } from '../data/groundwater.js'
 import { riversAndLandLesson } from '../data/riversAndLand.js'
 import { lifeInFreshwaterHabitatsLesson } from '../data/lifeInFreshwaterHabitats.js'
 import { waterChapterPracticeLesson } from '../data/waterChapterPractice.js'
+import { whatIsScienceLesson } from '../data/whatIsScience.js'
+import { whatIsBiodiversityLesson } from '../data/whatIsBiodiversity.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -81,6 +83,8 @@ const lessonsByTopic = {
   'rivers-and-land': riversAndLandLesson,
   'life-in-freshwater-habitats': lifeInFreshwaterHabitatsLesson,
   'water-chapter-practice': waterChapterPracticeLesson,
+  'what-is-science': whatIsScienceLesson,
+  'what-is-biodiversity': whatIsBiodiversityLesson,
 }
 
 function LessonPage() {

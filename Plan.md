@@ -39,10 +39,40 @@
 | Class 7 Chapter 1 — Fermi Puzzles and Fascinating Facts | Not started |
 | Class 7 Chapter 1 — Chapter Practice + Chapter Quiz | Not started |
 | Digital Skills & Computer Fundamentals course (see [[1a. Digital Skills & Computer Fundamentals]] and `Computer.md`) | Planning only, not started |
+| Class 5 Science Chapter 1: Water — The Essence of Life (6 modules + Chapter Practice + Chapter Quiz, see notes above) | ✅ Done |
+| Class 6 Science Chapter 1 (book not yet read — see below) | Not started (picking up next) |
 
-**Class 6 status: Chapter 1 (Patterns in Mathematics) and Chapter 2 (Lines and Angles) are both fully done** — every topic built, active, and quizzed. Nothing is queued next for Class 6 — no Chapter 3 has been planned or reviewed from the source book yet.
+**Class 6 Maths status: Chapter 1 (Patterns in Mathematics) and Chapter 2 (Lines and Angles) are both fully done** — every topic built, active, and quizzed. Nothing is queued next for Class 6 Maths — no Chapter 3 has been planned or reviewed from the source book yet.
 
 **Class 7 status: Chapter 1 (Large Numbers Around Us) is 2 of 7 topics done** (Building Big Numbers, Land of Tens). Next up: Indian vs American Number Systems — see [[Phase 3c — Class 7]] for details. Class 5 (Fractions Module 4.5) is still the other open thread, see row above.
+
+**Class 5 Science status: Chapter 1 ("Water — The Essence of Life") is fully done** — 6 modules, Chapter Practice, and Chapter Quiz, all built and active. Chapter 2 ("Journey of a River") has not been read yet (only a one-paragraph unit overview exists in `books/class-5-science-ncert/Class5-Science-Notes.md`) — deferred per user decision below, in favour of starting Class 6 Science first.
+
+**Decision (per user, this session): work on Class 6 Science Chapter 1 next**, before returning to Class 5 Science Chapter 2 or the other open Maths threads.
+
+Source book: NCERT "Curiosity" Grade 6 (`books/class-6-science-ncert/`, `fecu101.pdf`–`fecu112.pdf`). Chapter 1 ("The Wonderful World of Science") has been read in full and notes saved to `books/class-6-science-ncert/Class6-Science-Notes.md`. Key finding: **this chapter is structurally very different from Class 5 Science** — it's a short (8-page), purely narrative/motivational introduction with no diagrams, no numeric content, and no multi-section structure to split into several modules. It exists to build curiosity and teach the scientific method (5 steps: Observe → Question → Guess → Test → Analyse) via a relatable "why did my pen stop writing?" example, plus a preview/teaser of topics coming later in the book (life/growth, food, materials, water, hot/cold, space). It has 3 "Let us think and write" prompts (all open-ended discussion, no fixed answers) and no numbered "Let us reflect" section.
+
+Per user decision, built as a single module (not split further), since the chapter has no distinct sub-topics.
+
+**Module — "What is Science? — The Scientific Method" (✅ Done)**: `src/components/science/ScientificMethodSteps.jsx` (the 5-step method — Observe → Question → Guess → Test → Analyse — staged reveal with icons), `PenMysteryDemo.jsx` (the flagship "why did my pen stop writing?" interactive — walks through a wrong first guess, a second correct guess, and analysis, reinforcing that a wrong guess isn't a failure), `src/data/whatIsScience.js` (intro → "science is everywhere" → year preview → scientific-method theory → both interactive demos → "you're already a scientist" everyday examples → all 3 book "Let us think and write" prompts as open-ended discussion questions → 3 factual practice questions → summary), `quizzes['what-is-science']` (8-question quiz). `chapters.js` — Class 6 `science` chapter list added (`wonderful-world-of-science`). `topics.js` — new topic list added with this one module active. Both components are original icon/animation based, no photos needed (conceptual content). Verified with `npm run build` — no errors.
+
+No separate Chapter Practice/Quiz built for this chapter, since it's a single-module chapter — the module's own quiz covers it.
+
+### Class 6 Science Chapter 2 — "Diversity in the Living World" (planning; module plan confirmed, not yet built)
+
+Read in full, notes saved to `books/class-6-science-ncert/Class6-Science-Notes.md`. Much richer/denser than Chapter 1 — real vocabulary (biodiversity, venation, taproot/fibrous roots, dicot/monocot, adaptation, habitat), multiple sub-sections, and a full 10-question "Let us enhance our learning" exercise (this book's equivalent of Class 5's "Let us reflect").
+
+**Confirmed module plan (per user, this session):**
+1. **What is Biodiversity?** (§2.1) — nature-walk framing, plant/animal feature observation, biodiversity + interdependence concept.
+2. **Grouping Plants: Herbs, Shrubs & Trees** (§2.2.1 part 1) — height/stem/branching classification.
+3. **Leaves, Roots & Seeds** (§2.2.1 part 2) — leaf venation (reticulate/parallel), root types (taproot/fibrous), dicot/monocot seeds, and the 3-way connecting pattern between them (flagship "predict the others" interactive candidate).
+4. **Grouping Animals by Movement** (§2.2.2) — movement types & body parts.
+5. **Adaptations & Habitats** (§2.3) — desert/mountain/ocean adaptations (camels, cactus, deodar, rhododendron), habitat/terrestrial/aquatic/amphibians, biodiversity loss & conservation (Project Tiger, Cheetah Reintroduction, Great Indian Bustard), sacred groves.
+6. **Chapter Practice + Chapter Quiz** — covering all 10 "Let us enhance our learning" questions per the full Figure-it-Out coverage agreement.
+
+**Module 1 (✅ Done)**: `src/components/science/PlantFeatureCards.jsx` (4 plant examples matching the book's Table 2.1 exactly — grass, tulsi, hibiscus, neem — click-to-reveal stem/leaves/flowers, **needs 4 photos** added to `public/images/science/diversity-in-living-world/`: `grass.jpg`, `tulsi.jpg`, `hibiscus.jpg`, `neem.jpg`), `AnimalFeatureCards.jsx` (3 animal examples matching Table 2.2 — crow, ant, cow — click-to-reveal habitat/food/movement, **needs 3 photos**: `crow.jpg`, `ant.jpg`, `cow.jpg`), `src/data/whatIsBiodiversity.js`, `quizzes['what-is-biodiversity']` (8 questions). `chapters.js` — Chapter 2 added to Class 6 Science. `topics.js` — full 5-module + practice/quiz topic list added, only Module 1 active. Verified with `npm run build` — no errors.
+
+Not yet built: Modules 2–5 (Grouping Plants: Herbs/Shrubs/Trees; Leaves, Roots & Seeds; Grouping Animals by Movement; Adaptations & Habitats) + Chapter Practice/Quiz. Continue one module at a time.
 
 ### Decision: alignment with the actual current NCERT textbook (Maths Mela, 2025)
 

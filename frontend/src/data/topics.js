@@ -64,4 +64,16 @@ export const topics = {
     { id: 'water-chapter-practice', label: 'Chapter Practice', active: true },
     { id: 'water-chapter-quiz', label: 'Chapter Quiz', active: true, quizOnly: true },
   ],
+  'wonderful-world-of-science': [
+    { id: 'what-is-science', label: 'What is Science? — The Scientific Method', active: true },
+  ],
+  'diversity-in-living-world': [
+    { id: 'what-is-biodiversity', label: 'What is Biodiversity?', active: true },
+    { id: 'grouping-plants-herbs-shrubs-trees', label: 'Grouping Plants: Herbs, Shrubs & Trees', active: false },
+    { id: 'leaves-roots-seeds', label: 'Leaves, Roots & Seeds', active: false },
+    { id: 'grouping-animals-by-movement', label: 'Grouping Animals by Movement', active: false },
+    { id: 'adaptations-and-habitats', label: 'Adaptations & Habitats', active: false },
+    { id: 'diversity-chapter-practice', label: 'Chapter Practice', active: false },
+    { id: 'diversity-chapter-quiz', label: 'Chapter Quiz', active: false, quizOnly: true },
+  ],
 }
