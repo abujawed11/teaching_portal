@@ -5,7 +5,12 @@ export const whatIsBiodiversityLesson = {
     {
       type: 'intro',
       title: 'A Walk Through Nature',
-      text: "A scientist, Dr Raghu, and Maniram chacha — an elder who can mimic bird calls and spot plants and animals like an expert — take a class on a nature walk.\n\nAs the students walk, they notice grasses, bushes and tall trees, birds on branches, butterflies drifting between flowers, and monkeys leaping tree to tree. Dr Raghu points out something amazing: every single bird has its own unique chirp! This huge variety of plants and animals, all around us, has a name.",
+      image: {
+        src: '/images/science/diversity-in-living-world/biodiversity.jpg',
+        alt: 'A variety of plants and animals living together in nature',
+      },
+      text: "A scientist, Dr Raghu, and Maniram chacha — an elder who can mimic bird calls and spot plants and animals like an expert — take a class on a nature walk.\n\nAs the students walk, they notice grasses, bushes and tall trees, birds on branches, butterflies drifting between flowers, and monkeys leaping tree to tree. Dr Raghu points out something amazing: every single bird has its own unique chirp!",
+      note: 'This huge variety of plants and animals, all around us, has a name — biodiversity.',
     },
     {
       type: 'text',

@@ -1,6 +1,6 @@
-import { Lightbulb } from 'lucide-react'
+import { Lightbulb, Info } from 'lucide-react'
 
-function ExplanationPanel({ title, text, illustration, image, images, analogy }) {
+function ExplanationPanel({ title, text, illustration, image, images, analogy, note }) {
   return (
     <div className="flex flex-col items-center gap-6 text-center w-full">
       {illustration}
@@ -42,6 +42,16 @@ function ExplanationPanel({ title, text, illustration, image, images, analogy })
             <p className="text-base sm:text-lg text-ink leading-relaxed">
               <span className="font-bold text-amber-700">Think of it like this: </span>
               {analogy}
+            </p>
+          </div>
+        )}
+
+        {note && (
+          <div className="flex items-start gap-3 bg-sky-50 border border-sky-200 rounded-2xl px-5 py-4 text-left">
+            <Info size={24} className="text-sky-500 shrink-0 mt-0.5" />
+            <p className="text-base sm:text-lg text-ink leading-relaxed">
+              <span className="font-bold text-sky-700">Note: </span>
+              {note}
             </p>
           </div>
         )}

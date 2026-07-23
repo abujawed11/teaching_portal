@@ -210,6 +210,7 @@ function LessonStepRenderer({ step }) {
           image={step.image}
           images={step.images}
           analogy={step.analogy}
+          note={step.note}
         />
       )
     }
