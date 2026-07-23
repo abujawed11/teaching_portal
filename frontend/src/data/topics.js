@@ -61,7 +61,7 @@ export const topics = {
     { id: 'groundwater', label: 'Groundwater', active: true },
     { id: 'rivers-and-land', label: 'Rivers and Land', active: true },
     { id: 'life-in-freshwater-habitats', label: 'Life in Freshwater Habitats', active: true },
-    { id: 'water-chapter-practice', label: 'Chapter Practice', active: false },
-    { id: 'water-chapter-quiz', label: 'Chapter Quiz', active: false, quizOnly: true },
+    { id: 'water-chapter-practice', label: 'Chapter Practice', active: true },
+    { id: 'water-chapter-quiz', label: 'Chapter Quiz', active: true, quizOnly: true },
   ],
 }
