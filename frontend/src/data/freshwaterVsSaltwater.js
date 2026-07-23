@@ -40,9 +40,12 @@ export const freshwaterVsSaltwaterLesson = {
       title: 'Spot the Freshwater Source',
     },
     {
-      type: 'text',
-      title: 'Do You Know?',
-      text: 'The salt pans of Gujarat are vast flatlands where seawater is dried in the sun to collect salt — it is one of the largest salt-producing areas in India. This is a clever example of putting "useless" salty water to good use!',
+      type: 'question',
+      question:
+        'Do you know? In Gujarat, there are vast flatlands where seawater is deliberately dried out in the sun. What are people collecting, and why does it matter that they use seawater for it?',
+      answer: 'Salt — the salt pans of Gujarat are one of the largest salt-producing areas in India.',
+      explanation:
+        'This is a clever example of putting "useless" salty water to good use: even though we can\'t drink ocean water, drying it out gives us salt, which is genuinely valuable for food and industry.',
     },
     {
       type: 'question',
