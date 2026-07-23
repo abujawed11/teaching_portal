@@ -34,6 +34,7 @@ import { buildingBigNumbersLesson } from '../data/buildingBigNumbers.js'
 import { landOfTensLesson } from '../data/landOfTens.js'
 import { freshwaterVsSaltwaterLesson } from '../data/freshwaterVsSaltwater.js'
 import { formsOfWaterLesson } from '../data/formsOfWater.js'
+import { waterCycleLesson } from '../data/waterCycle.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -71,6 +72,7 @@ const lessonsByTopic = {
   'land-of-tens': landOfTensLesson,
   'freshwater-vs-saltwater': freshwaterVsSaltwaterLesson,
   'forms-of-water': formsOfWaterLesson,
+  'water-cycle': waterCycleLesson,
 }
 
 function LessonPage() {

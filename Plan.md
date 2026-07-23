@@ -379,7 +379,9 @@ Per user decision, kept the same granular one-concept-per-module style used thro
 
 **Module 2 (✅ Done)**: `src/components/science/WaterStateExplorer.jsx` (Heat/Cool toggle between solid/liquid/vapour, reversible), `CondensationDemo.jsx` (recreates the book's ice-in-a-steel-glass Activity 2 — condensation droplets forming on the outside), `src/data/formsOfWater.js`, `quizzes['forms-of-water']` (10 questions). Both visuals are original SVG/CSS/Framer Motion, no photos needed (per [[Decision: image vs. SVG, condition-based]] above). Covers all 3 of Activity 2's sub-questions plus extends into evaporation-without-heat and dew as real-world examples. Verified with `npm run build` — no errors.
 
-Not yet built: Modules 3–6 (Water Cycle, Groundwater, Rivers and Land, Life in Freshwater Habitats) + Chapter Practice/Quiz. Continue one module at a time, following the usual step-by-step build-and-check-in pattern.
+**Module 3 (✅ Done)**: `src/components/science/WaterCycleBagDemo.jsx` (recreates the book's Activity 3 "water cycle in a bag," staged with the book's own Observe/Wonder/Because framing), `WaterCycleDiagram.jsx` (the flagship full-cycle animated landscape diagram — sun, ocean, mountain, cloud — stepping through Evaporation → Condensation → Precipitation → Collection, loops back), `src/data/waterCycle.js`, `quizzes['water-cycle']` (10 questions). Includes the Keibul Lamjao National Park "Do you know?" fact as a question-style reveal per the new working agreement above. Both visuals are original SVG/Framer Motion, no photos needed. Verified with `npm run build` — no errors.
+
+Not yet built: Modules 4–6 (Groundwater, Rivers and Land, Life in Freshwater Habitats) + Chapter Practice/Quiz. Continue one module at a time, following the usual step-by-step build-and-check-in pattern.
 
 ### Phase 3, Module 4.3 — Comparing Fractions (✅ Done)
 

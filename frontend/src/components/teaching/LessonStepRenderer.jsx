@@ -79,6 +79,8 @@ import WaterProportionDemo from '../science/WaterProportionDemo.jsx'
 import FreshwaterSourceSort from '../science/FreshwaterSourceSort.jsx'
 import WaterStateExplorer from '../science/WaterStateExplorer.jsx'
 import CondensationDemo from '../science/CondensationDemo.jsx'
+import WaterCycleBagDemo from '../science/WaterCycleBagDemo.jsx'
+import WaterCycleDiagram from '../science/WaterCycleDiagram.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -160,6 +162,8 @@ const visualComponents = {
   FreshwaterSourceSort,
   WaterStateExplorer,
   CondensationDemo,
+  WaterCycleBagDemo,
+  WaterCycleDiagram,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).
