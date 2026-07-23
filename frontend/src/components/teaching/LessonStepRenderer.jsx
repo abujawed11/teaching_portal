@@ -95,6 +95,10 @@ import PlantFeatureCards from '../science/PlantFeatureCards.jsx'
 import AnimalFeatureCards from '../science/AnimalFeatureCards.jsx'
 import PlantGroupReveal from '../science/PlantGroupReveal.jsx'
 import PlantGroupSorter from '../science/PlantGroupSorter.jsx'
+import VenationCompare from '../science/VenationCompare.jsx'
+import RootCompare from '../science/RootCompare.jsx'
+import LeafRootConnector from '../science/LeafRootConnector.jsx'
+import SeedSplitDemo from '../science/SeedSplitDemo.jsx'
 
 const illustrationComponents = {
   PizzaFractionIllustration,
@@ -192,6 +196,10 @@ const visualComponents = {
   AnimalFeatureCards,
   PlantGroupReveal,
   PlantGroupSorter,
+  VenationCompare,
+  RootCompare,
+  LeafRootConnector,
+  SeedSplitDemo,
 }
 
 // Visual/activity/question steps plug in real components here as they're built (Phase 3+).

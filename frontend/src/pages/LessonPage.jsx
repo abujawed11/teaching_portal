@@ -42,6 +42,7 @@ import { waterChapterPracticeLesson } from '../data/waterChapterPractice.js'
 import { whatIsScienceLesson } from '../data/whatIsScience.js'
 import { whatIsBiodiversityLesson } from '../data/whatIsBiodiversity.js'
 import { groupingPlantsHerbsShrubsTreesLesson } from '../data/groupingPlantsHerbsShrubsTrees.js'
+import { leavesRootsSeedsLesson } from '../data/leavesRootsSeeds.js'
 import { quizzes } from '../data/quizzes.js'
 import { subjects } from '../data/subjects.js'
 import { getChapterLabel } from '../data/chapters.js'
@@ -87,6 +88,7 @@ const lessonsByTopic = {
   'what-is-science': whatIsScienceLesson,
   'what-is-biodiversity': whatIsBiodiversityLesson,
   'grouping-plants-herbs-shrubs-trees': groupingPlantsHerbsShrubsTreesLesson,
+  'leaves-roots-seeds': leavesRootsSeedsLesson,
 }
 
 function LessonPage() {
